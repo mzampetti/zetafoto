@@ -1,0 +1,77 @@
+query Product(
+  $locale: SiteLocale
+  $fallbackLocales: [SiteLocale!]
+  $slug: String!
+) {
+  product(
+    filter: { slug: { eq: $slug } }
+    locale: $locale
+    fallbackLocales: $fallbackLocales
+  ) {
+    name
+    home
+    description
+    id
+    _modelApiKey
+    images {
+      responsiveImage(
+        sizes: "95vw, 1600px"
+        imgixParams: { auto: [format, compress], w: 1600, fit: max }
+      ) {
+        ...rImage
+      }
+    }
+    videoContainer {
+      videoTitle
+      videoUrl {
+        url
+        provider
+        providerUid
+        thumbnailUrl
+      }
+    }
+    fullImages: images {
+      responsiveImage(
+        sizes: "100vw, 1920px"
+        imgixParams: { auto: [format, compress], fit: max }
+      ) {
+        ...rImage
+      }
+    }
+    thumb: images {
+      responsiveImage(
+        sizes: "200px"
+        imgixParams: { auto: [format, compress], w: 200, fit: max }
+      ) {
+        ...rImage
+      }
+    }
+    indepth
+    new
+    serial
+    slug
+    techniques {
+      _modelApiKey
+      id
+      name
+      slug
+    }
+    category {
+      _modelApiKey
+      id
+      name
+      slug
+    }
+    slugs: _allSlugLocales {
+      locale
+      value
+    }
+    variantContainer {
+      id
+      _modelApiKey
+      code
+      feature
+      note
+    }
+  }
+}

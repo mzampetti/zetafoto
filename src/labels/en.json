@@ -1,0 +1,283 @@
+{
+  "locale": "English",
+  "layout": {
+    "open_new_window": "Open in new window",
+    "close": "Close",
+    "main_page": "Main page",
+    "search_label": "Search the website",
+    "search_placeholder": "Search for artworks, events or else"
+  },
+  "sending": "sending...",
+  "loading": "loading...",
+
+  "credits": {
+    "text": "Website design & development",
+    "url": "https://www.cantierecreativo.net",
+    "title": "Web agency & digital partner based in Florence"
+  },
+
+  "404": {
+    "title": "Page not found",
+    "text": "The address may be misspelled or may not exist.",
+    "button": "Go to the homepage"
+  },
+
+  "pagination": {
+    "start": "First",
+    "end": "Last",
+    "forward": "Forward",
+    "back": "Back",
+    "next": "Next"
+  },
+
+  "search-pagination": {
+    "firstPageItemText": "First page",
+    "previousPageItemText": "Previous page",
+    "nextPageItemText": "Next page",
+    "lastPageItemText": "Last page",
+    "firstPageItemAriaLabel": "Go to first page",
+    "previousPageItemAriaLabel": "Go to previous page",
+    "nextPageItemAriaLabel": "Go to next page",
+    "lastPageItemAriaLabel": "Go to last page",
+    "gotoPage": "Go to page",
+    "of": "of"
+  },
+
+  "formTitle": "Send us a message",
+  "events_from": "Events from",
+  "formFullName": "Name",
+  "formLastName": "Last Name",
+  "formEmail": "Email",
+  "formPhoneNumber": "Phone number",
+  "formMessage": "Request",
+  "formPrivacyPolicy": "I agree to ",
+  "formPrivacyFieldsetLabel": "Data protection",
+  "formPrivacyPre": "I've read the ",
+  "formPrivacyAfter": " and accept the terms of UE 2016/679 (GDPR)",
+  "formSend": "Send request",
+  "formSandingTitle": "Sending...",
+  "formSuccessTitle": "The message has been successfully sent",
+  "formSuccessText": "We have received your message and you will be contacted as soon as possible.",
+  "formErrorTitle": "An error has occurred",
+  "formErrorText": "Your message could not be sent.",
+  "newsletter": {
+    "title:": "Newsletter",
+    "accept": "Accept communications",
+    "acceptEmail": "I agree to receive communications via email",
+    "privacyFieldsetLabel": "Data protection",
+    "policy": "the privacy policy",
+    "authorize": "and I authorize the processing of my personal data pursuant to Legislative Decree 196/2003 and GDPR 679/2016",
+    "unsubscribePre": "You can unsubscribe at any time by clicking the link in the footer of our emails. For information about our privacy practices,",
+    "cta": "Go to Mailchimp website",
+    "subscribe": "Subscribe"
+  },
+
+  "preferencePolicy": "Edit privacy preferences",
+  "cookiePolicyId": "",
+
+  "skipContent": "Go to main content",
+  "skipFooter": "Go to footer",
+
+  "splide": {
+    "homeTitle": "Highlighted elements",
+    "hypervisionsTitle": "Hypervisions elements",
+    "CarosulTitle": "Gallery of images",
+    "play": "Start autoplay",
+    "pause": "Pause autoplay",
+    "slideX": "Go to slide",
+    "slideLabel": "of"
+  },
+
+  "backTop": "Back to top",
+  "googleMaps": "Google Maps",
+  "read": "read",
+  "label": {
+    "cart": "Cart",
+    "search": "Search"
+  },
+
+  "search": {
+    "title": "Show results for",
+    "noResults": "No results found",
+    "results": "Results",
+    "label": "Search",
+    "placeholder": "Search",
+    "modify-filters": "Open search",
+    "hide-filters": "Close search",
+    "filter-tipology": "Filter by tipology",
+    "results-for": "Results for:",
+    "show-more": "Mostra di più",
+    "show-less": "Mostra di meno",
+    "show": "Show search",
+    "something-hint": "Search for a broader term.",
+    "no-result-hint": "Your search returned 0 results. Ensure that the keywords are correct and without typos, or try again with more generic terms."
+  },
+  "support-us": {
+    "title": "Support us",
+    "slug": "support-us"
+  },
+  "contact-us": {
+    "title": "Book a visit",
+    "slug": "contact-us"
+  },
+  "courses_index": {
+    "title": "Courses",
+    "slug": "/en/education/scheduled-courses/",
+    "cta": "Discover courses"
+  },
+  "from": "from",
+  "to": "to",
+  "about_page": "About us",
+  "creation": "Collaborations",
+  "manufacture_page": "Manifacture",
+  "training_page": "Training",
+  "Thematic Visits": "Visite tematiche",
+  "contacts_index": "",
+  "donations_page": "Support us",
+  "course": {
+    "label": "Courses",
+    "list": "Courses",
+    "closed": "Closed course",
+    "to_be_scheduled": "To be scheduled",
+    "tags": "Tags",
+    "teachers": "Teachers",
+    "teacher": "Teacher",
+    "empty_list": "There are no courses for this tag",
+    "signup_title": "How to enroll for",
+    "signup_text_not_active": "You can book now this course. The course will take place once it has reached the required amount of particpiants. Book now and you will be notified soon!",
+    "signup_text_active": "The course has reached the required amount of participants and will take place on the announced dates.",
+    "sign_up_form": "Signup Form",
+    "signup_text_closed": "Applications are closed at the moment for this course.",
+    "step_one_signup_title": "1. Send the application form",
+    "step_one_signup_text": "Please fill out the registration form and send it back to us via email to",
+    "step_one_signup_cta": "Download the subscription form",
+    "step_two_signup_title": "2. Pay the deposit",
+    "step_two_signup_text_not_active": "After sending the enrollment form, you can choose to pay the deposit or directly the whole fee, using the same email address.",
+    "step_two_signup_text_active": "After sending the enrollment form, make the deposit payment using the same email address. The course will be activated to reach the minimum number of participants. You will be contacted by our staff to complete the registration.",
+    "step_two_signup_cta": "Pay for the deposit",
+    "step_two_bis_signup_title": "Finalize your enrollment!",
+    "step_two_bis_signup_text_active": "The course has reached the minimum of participants and will take place on the announced dates. Complete your registration using the same email address indicated to pay the deposit.",
+    "step_two_bis_signup_cta": "Pay the balance",
+    "step_three_signup_title": "3. Balance payment",
+    "step_three_signup_text": "After sending the enrollment form, make your payment using the same email address.",
+    "step_three_signup_cta": "Pay the whole fee",
+    "price_taxes": "taxes incl."
+  },
+  "purchase": {
+    "tax_included": "taxes incl.",
+    "subscription": "Subscribe and you will receive two issues of Jacquard Magazine.",
+    "offline": "You can also pay by bank transfer. Write to us or follow the instructions here - ",
+    "contact": "Contact us",
+    "shipping_title": "Shipping",
+    "shipping_text": "Italy: 5 working days. Other: 8/20 working days."
+  },
+  "relatedArticles": {
+    "title": "Related articles",
+    "url": "/en/culture/events-textile-culture/",
+    "cta": "All news"
+  },
+  "relatedTeachers": {
+    "title": "Faculties",
+    "url": "/en/education/faculty/",
+    "cta": "View all faculties"
+  },
+  "categories": "Categories",
+  "article": "Articles",
+  "culture": "Culture",
+  "magazine": "Magazine Jacquard",
+  "donations": {
+    "amount": "Custom amount",
+    "name_label": "Full name *",
+    "name_hint": "Your name is required.",
+    "message_label": "Note",
+    "message_hint": "Leave a note.",
+    "amount_label": "Amount *",
+    "amount_hint": "Select an amount or enter the value of the desired amount.",
+    "action": "Donate with a credit card",
+    "thanks": "Thanks for your donation."
+  },
+  "nav": {
+    "shop": {
+      "url": "https://shop.fabbricapienza.com",
+      "title": "Shop"
+    },
+    "about": {
+      "url": "/en/who-we-are",
+      "title": "Who we are"
+    },
+    "wineclub": {
+      "url": "/en/wine-club",
+      "title": "Wine Club"
+    },
+    "orcia": {
+      "url": "/en/val-d-orcia",
+      "title": "Val d'Orcia"
+    },
+    "team": {
+      "url": "/en/team",
+      "title": "Team"
+    },
+    "wines": {
+      "url": "/en/our-wines",
+      "title": "Our Wines"
+    },
+    "wineMaking": {
+      "url": "/en/the-wine-making",
+      "title": "The wine-making"
+    },
+    "oil": {
+      "url": "/en/olive-oil",
+      "title": "Extra Virgin Olive Oil"
+    },
+    "tours": {
+      "url": "/en/wine-tours",
+      "title": "Wine tours"
+    },
+    "newton": {
+      "url": "/en/tasting",
+      "title": "Casa Newton"
+    },
+    "download": {
+      "url": "/en/download",
+      "title": "Download"
+    },
+    "contacts": {
+      "url": "/en/contacts",
+      "title": "Contacts"
+    },
+    "magazine": {
+      "url": "/en/magazine",
+      "title": "Magazine"
+    },
+    "vineyard": {
+      "url": "/en/the-vineyard",
+      "title": "The vineyard"
+    },
+    "winery": {
+      "url": "/en/winery",
+      "title": "Winery"
+    },
+    "contact": {
+      "url": "/contacts",
+      "title": "Contacts"
+    },
+    "hospitality": "Hospitality"
+  },
+  "wine": {
+    "winery": "Winery",
+    "refinement": "Refinement",
+    "misure": "Misure",
+    "tasting": "Tasting note",
+    "origin": "Origin",
+    "measures": "Measures",
+    "production": "Production",
+    "shop": "Go to Shop",
+    "ourWines": "Our wines",
+    "discoverOurWines": "Disover our wines",
+    "articles": "Articles"
+  },
+  "technique": "Tecnique: ",
+  "techniqueFilter": "Tecnique: ",
+  "category": "Cetegory: ",
+  "product": "Products: "
+}

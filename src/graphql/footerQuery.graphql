@@ -1,0 +1,49 @@
+query Footer($locale: SiteLocale, $fallbackLocales: [SiteLocale!]) {
+  siteInfo {
+    id
+    address
+    email
+  }
+  allTechniques(
+    locale: $locale
+    fallbackLocales: $fallbackLocales
+    orderBy: name_ASC
+    first: 500
+  ) {
+    id
+    name
+    slug
+    _modelApiKey
+  }
+  allCategories(
+    locale: $locale
+    fallbackLocales: $fallbackLocales
+    orderBy: name_ASC
+    first: 500
+  ) {
+    id
+    name
+    slug
+    _modelApiKey
+  }
+  allLegislationPages(locale: $locale, fallbackLocales: $fallbackLocales) {
+    id
+    title
+    slug
+    _modelApiKey
+  }
+  homepage(locale: $locale, fallbackLocales: $fallbackLocales) {
+    splash1Cta1Text
+    splash1Catalogue1Pdf {
+      url
+    }
+    splash1Cta2Text
+    splash1Catalogue2Pdf {
+      url
+    }
+    splash1Cta3Text
+    splash1Catalogue3Pdf {
+      url
+    }
+  }
+}

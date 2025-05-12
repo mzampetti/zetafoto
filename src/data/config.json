@@ -1,0 +1,28 @@
+{
+  "defaultLocale": "it",
+  "locales": ["it", "en"],
+
+  "translations": {
+    "prodotti": {
+      "en": "products"
+    },
+    "tecniche": {
+      "en": "technique"
+    },
+    "blog-post": {
+      "en": "magazine"
+    },
+    "cerca": {
+      "en": "search"
+    },
+    "news": {
+      "en": "news"
+    },
+    "contatti": {
+      "en": "contacts"
+    },
+    "stonfo_azienda": {
+      "en": "stonfo_company"
+    }
+  }
+}

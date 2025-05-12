@@ -1,0 +1,53 @@
+query CompanyPage($locale: SiteLocale, $fallbackLocales: [SiteLocale!]) {
+  companyPage(locale: $locale, fallbackLocales: $fallbackLocales) {
+    id
+    _modelApiKey
+    slug
+    title
+    slugs: _allSlugLocales {
+      locale
+      value
+    }
+    subtitle
+    text
+    image {
+      responsiveImage(
+        sizes: "90vw, 990px"
+        imgixParams: { auto: [format, compress], ar: "7:3", fit: crop }
+      ) {
+        ...rImage
+      }
+    }
+    galleryProduction {
+      responsiveImage(
+        sizes: "(min-width:1024px) 50vw, 90vw, 990px"
+        imgixParams: { auto: [format, compress], ar: "9:7", fit: crop }
+      ) {
+        ...rImage
+      }
+    }
+    titleProduction
+    imageProduction {
+      url
+    }
+    subtitleProduction
+    textProduction
+    blocks {
+      id
+      _modelApiKey
+      title
+      text
+      image {
+        responsiveImage(
+          sizes: "(min-width:1024px) 90vw, 1990px"
+          imgixParams: { auto: [format, compress], ar: "9:5", fit: crop }
+        ) {
+          ...rImage
+        }
+      }
+    }
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
+  }
+}

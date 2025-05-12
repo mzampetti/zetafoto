@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-sans !scroll-smooth;
+  }
+  @media (prefers-reduced-motion) {
+    html {
+      @apply !scroll-auto;
+    }
+  }
+  body {
+    @apply bg-primary text-primary-content font-normal text-base;
+  }
+}
+
+@layer components {
+  .standard-vertical-m {
+    @apply my-12 md:my-20;
+  }
+  .standard-vertical-p {
+    @apply py-12 md:py-20;
+  }
+  .title {
+    @apply text-xl font-semibold md:text-xl font-serif max-w-prose lg:text-2xl;
+  }
+  .title-small {
+    @apply text-xl font-bold font-serif max-w-prose;
+  }
+  .prefix {
+    @apply text-sm uppercase font-bold inline-block max-w-prose;
+  }
+  .text p {
+    @apply mb-2 lg:mb-4;
+  }
+  .slider-auto-width .swiper-slide {
+    width: auto;
+  }
+
+  .container {
+    @apply mx-auto;
+  }
+
+  .checkbox-custom {
+    @apply absolute h-6 w-6 opacity-0;
+  }
+  input:checked + div div {
+    @apply w-3 h-3 opacity-100;
+  }
+  input:focus-visible + div {
+    @apply border-transparent;
+  }
+  input:checked + div svg {
+    @apply block;
+  }
+  .custom-arrow svg {
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.5];
+  }
+
+  .hero-title strong {
+    @apply text-[#E0CFA8];
+  }
+
+  .formatted strong {
+    @apply !font-bold;
+  }
+
+  .formatted a {
+    @apply underline;
+  }
+
+  .formatted h2 {
+    @apply font-serif text-2xl lg:text-3xl xl:text-4xl;
+  }
+  .formatted h3 {
+    @apply font-serif text-xl lg:text-2xl xl:text-3xl;
+  }
+  .formatted h4 {
+    @apply font-serif text-lg lg:text-xl xl:text-2xl;
+  }
+  .formatted img,
+  .formatted p {
+    @apply xl:text-md;
+  }
+
+  .formatted .link {
+    @apply text-md font-light;
+  }
+
+  .formatted > ul,
+  .formatted > ol,
+  .formatted > p,
+  .formatted > hr {
+    @apply mb-4 max-w-prose;
+  }
+
+  .formatted blockquote {
+    @apply px-8 pt-2 italic md:text-md font-serif relative after:content-['\"'] after:absolute after:top-0 after:left-0 after:text-xl after:font-serif;
+  }
+
+  .formatted ol {
+    counter-reset: my-awesome-counter;
+  }
+  .formatted ul,
+  .formatted ol {
+    @apply ml-4 mb-4;
+  }
+
+  .formatted ul li {
+    @apply relative py-[3px] after:absolute after:top-[14px] after:-left-4 after:h-[7px] after:w-[7px] after:xl:top-[18px] after:lg:top-[13px] xl:after:xl:top-[16px] after:rounded-full after:bg-accent;
+  }
+
+  .formatted ol li {
+    @apply relative py-[3px] pl-2;
+    counter-increment: my-awesome-counter;
+  }
+
+  .formatted ol li:after {
+    @apply absolute top-[2px] -left-4 h-[7px] w-[7px] text-inherit font-bold xl:text-base text-primary-content;
+    content: counter(my-awesome-counter) ". ";
+  }
+  .unwrapped {
+    @apply ml-[calc(-50vw+50%)] mr-[calc(-50vw+50%)] !max-w-[calc(100vw-8px)];
+  }
+  table {
+    border-collapse: collapse;
+    @apply text-xs md:text-sm lg:text-base;
+  }
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  caption {
+    caption-side: top;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}
+
+.mapboxgl-ctrl-top-right {
+  @apply absolute top-0 right-0 z-10;
+}
+
+.video-home video {
+  @apply w-full h-full object-cover;
+}
+
+.hero-carousel .swiper-pagination-bullet {
+  @apply !mx-2 border-[1px] bg-transparent border-white scale-[1.8] opacity-100;
+}
+.hero-carousel .swiper-pagination-bullet-active {
+  @apply bg-white;
+}
+.hero-carousel .swiper-pagination {
+  @apply -translate-y-6 lg:text-left lg:!left-[calc(((100vw-1024px)/2)+95px)] xl:!left-[calc(((100vw-1280px)/2)+70px)] 2xl:!left-[calc(((100vw-1536px)/2)+15px)] 3xl:!left-[calc(((100vw-1920px)/2)+15px)] xl:container;
+}
+.custom-shadow {
+  filter: drop-shadow(0px 2px 8px rgba(7, 20, 66, 0.14));
+}

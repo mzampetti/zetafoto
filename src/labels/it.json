@@ -1,0 +1,291 @@
+{
+  "locale": "Italiano",
+  "layout": {
+    "open_new_window": "Apre in un'altra finestra",
+    "close": "Chiudi",
+    "main_page": "Pagina principale",
+    "search_label": "Cerca nel sito",
+    "search_placeholder": "Cerca un'opera, evento, etc..."
+  },
+
+  "sending": "inviando...",
+  "loading": "caricando...",
+  "credits": {
+    "text": "Progettazione e sviluppo",
+    "url": "https://www.cantierecreativo.net",
+    "title": "Cantiere Creativo Agenzia web Ruby on Rails Firenze"
+  },
+
+  "404": {
+    "title": "Pagina non trovata",
+    "text": "La pagina che stai cercando non esiste, o l'indirizzo inserito non è corretto.",
+    "button": "Vai alla pagina iniziale"
+  },
+
+  "pagination": {
+    "start": "Inizio",
+    "end": "Fine",
+    "forward": "Avanti",
+    "back": "Indietro",
+    "next": "Avanti",
+    "title": "Paginazione",
+    "pagePrev": "Vai alla pagina precedente",
+    "pageNext": "Vai alla pagina successiva",
+    "pageGoTo": "Vai a pagina",
+    "pageOf": "di"
+  },
+
+  "search-pagination": {
+    "firstPageItemText": "Inizio",
+    "previousPageItemText": "Indietro",
+    "nextPageItemText": "Avanti",
+    "lastPageItemText": "Fine",
+    "firstPageItemAriaLabel": "Vai alla pagina iniziale",
+    "previousPageItemAriaLabel": "Vai alla pagina prececdente",
+    "nextPageItemAriaLabel": "Vai alla pagina successiva",
+    "lastPageItemAriaLabel": "Vai all'ultima pagina",
+    "gotoPage": "Vai alla pagina",
+    "of": "di"
+  },
+
+  "formTitle": "Scrivici",
+  "formFullName": "Nome",
+  "formLastName": "Cognome",
+  "formEmail": "Email",
+  "formMessage": "Messaggio",
+  "formPhoneNumber": "Telefono",
+  "formPrivacyPolicy": "Ho preso visione e accetto le condizioni della ",
+  "formPrivacyFieldsetLabel": "Protezione e gestione dati personali",
+  "formPrivacyPre": "Letta la ",
+  "formPrivacyAfter": " accetto ai sensi del Regolamento UE 2016/679 (GDPR)",
+  "aaa_famiglie": "Famiglie",
+  "aaa_scuola": "Scuola",
+  "aaa_studiosi": "Studiosi",
+  "aaa_operatori_turistici": "Operatori turistici",
+  "formSend": "Invia richiesta",
+  "formSandingTitle": "Sto inviando il messaggio...",
+  "formSuccessTitle": "Messaggio inviato con successo",
+  "formSuccessText": "Abbiamo ricevuto il tuo messaggio e sarai contattato al più presto.",
+  "formErrorTitle": "Si è verificato un errore",
+  "formErrorText": "Non è stato possibile inviare il tuo messaggio.",
+  "formTitlePrivacyPolicy": "Informativa privacy",
+  "newsletter": {
+    "title:": "Newsletter",
+    "accept": "Ho preso visione e accetto",
+    "acceptEmail": "Accetto di ricevere comunicazioni via email",
+    "privacyFieldsetLabel": "Protezione e gestione dati personali",
+    "policy": "l'Informativa sulla privacy",
+    "authorize": "e autorizzo il trattamento dei miei dati personali ai sensi del D.Lgs. 196/2003 e del GDPR 679/2016",
+    "unsubscribePre": "Puoi annullare l'iscrizione in qualsiasi momento facendo clic sul collegamento a piè di pagina delle nostre e-mail. Per informazioni sulle nostre pratiche sulla privacy,",
+    "cta": "vai al sito di Mailchimp.",
+    "subscribe": "Iscriviti"
+  },
+
+  "preferencePolicy": "Modifica preferenze privacy",
+  "cookiePolicyId": "",
+
+  "skipContent": "Vai al contenuto principale",
+  "skipFooter": "Vai al footer",
+
+  "splide": {
+    "homeTitle": "Elementi in evidenza",
+    "hypervisionsTitle": "Contenuti ipervisione",
+    "CarosulTitle": "Galleria immagini ",
+    "play": "Avvia scorrimento automatico",
+    "pause": "Interrompi scorrimento automatico",
+    "slideX": "Vai all'elemento ",
+    "slideLabel": "di"
+  },
+  "backTop": "Torna al menu",
+  "googleMaps": "Google Maps",
+  "read": "leggi",
+  "label": {
+    "cart": "Carrello",
+    "search": "Cerca"
+  },
+  "search": {
+    "title": "Risultati della ricerca",
+    "noResults": "Nessun risultato trovato",
+    "results": "Risultati",
+    "label": "Cerca nel sito",
+    "placeholder": "Cerca nel sito",
+    "search_label": "Cerca nel sito",
+    "modify-filters": "Apri la ricerca",
+    "hide-filters": "Chiudi la ricerca",
+    "filter-tipology": "Filtra per tipologia",
+    "results-for": "Risultati per:",
+    "show-more": "Mostra di più",
+    "show-less": "Mostra di meno",
+    "show": "Mostra la ricerca",
+    "something-hint": "Inserisci un termine di ricerca.",
+    "no-result-hint": "La tua ricerca ha portato 0 risultati. Assicurati che i termini inseriti siano corretti e senza refusi, oppure effettua una ricerca con termini più generici."
+  },
+  "support-us": {
+    "title": "Sostienici",
+    "slug": "sostieni"
+  },
+  "contact-us": {
+    "title": "Prenota una Visita",
+    "slug": "contattaci"
+  },
+  "courses_index": {
+    "title": "Corsi",
+    "slug": "/it/didattica/corsi-calendario/",
+    "cta": "scopri i corsi"
+  },
+  "from": "dal",
+  "to": "al",
+  "about_page": "Chi siamo",
+  "creation": "Collaborazioni",
+  "manufacture_page": "Manifattura",
+  "training_page": "Didattica",
+  "relatedArticles": {
+    "title": "Articoli correlati",
+    "url": "/it/cultura/eventi-cultura-tessile/",
+    "cta": "Vedi tutti gli articoli"
+  },
+  "relatedTeachers": {
+    "title": "Docenti",
+    "url": "/it/cultura/docenti/",
+    "cta": "Vedi tutti i docenti"
+  },
+  "categories": "Categorie",
+  "article": "Articoli",
+  "culture": "Cultura",
+  "magazine": "Rivista Jacquard",
+  "visit_page": "Visite tematiche",
+  "contacts_index": "",
+  "donations_page": "Donazioni",
+  "course": {
+    "label": "Corsi",
+    "list": "Corsi",
+    "closed": "Corso concluso",
+    "to_be_scheduled": "Corso da programmare",
+    "tags": "Tags",
+    "teachers": "Docenti",
+    "teacher": "Docente",
+    "empty_list": "Non ci sono corsi per questo tag",
+    "signup_title": "Iscrizione",
+    "signup_text_not_active": "Sono aperte le iscrizioni, il corso sarà attivato al raggiungimento del numero minimo di partecipanti.",
+    "signup_text_active": "Il corso ha raggiunto il numero minimo di partecipanti, prenota uno degli ultimi posti rimasti.",
+    "signup_text_closed": "Le iscrizioni al corso sono chiuse.",
+    "sign_up_form": "Modulo d'iscrizione",
+    "step_one_signup_title": "Invio del modulo d'iscrizione",
+    "step_one_signup_text": "Compila il modulo in tutte le sue parti e firma, poi invialo all'indirizzo",
+    "step_one_signup_cta": "Scarica",
+    "step_two_signup_title": "Pagamento quota anticipo",
+    "step_two_signup_text_not_active": "Dopo aver inviato il modulo, effettua il pagamento dell'anticipo utilizzando lo stesso indirizzo mail. Il corso si attiverà al raggiungimento del numero minimo di partecipanti. Sarai contattato dal nostro staff per concludere l'iscrizione.",
+    "step_two_signup_text_active": "Dopo aver inviato il modulo puoi scegliere se versare un anticipo o pagare direttamente l'intera quota, utilizzando lo stesso indirizzo mail.",
+    "step_two_signup_cta": "Paga l'anticipo",
+    "step_two_bis_signup_title": "Pagamento del saldo del corso",
+    "step_two_bis_signup_text_active": "Il corso ha raggiunto il numero minimo di partecipanti e partirà nelle date indicate. Completa la tua iscrizione al corso utilizzando lo stesso indirizzo mail indicato per pagare l'anticipo.",
+    "step_two_bis_signup_cta": "Paga il saldo",
+    "step_three_signup_title": "Pagamento quota totale",
+    "step_three_signup_text": "Dopo aver inviato il modulo, effettua il pagamento della quota utilizzando lo stesso indirizzo mail.",
+    "step_three_signup_cta": "Paga il totale",
+    "price_taxes": "tasse incl."
+  },
+  "purchase": {
+    "tax_included": "Tasse incluse",
+    "subscription": "Abbonati e potrai ricevere i due numeri della nostra rivista semestrale ad un prezzo vantaggioso",
+    "offline": "L’acquisto può essere effettuato anche tramite bonifico o conto corrente. ",
+    "contact": "Contattaci",
+    "shipping_title": "Spedizione",
+    "shipping_text": "Italia: 5 giorni lavorativi. Estero: 8/20 giorni lavorativi."
+  },
+  "donations": {
+    "amount": "Importo libero",
+    "name_label": "Nome e cognome *",
+    "name_hint": "Il tuo nome e necessario per ricevere la donazione.",
+    "message_label": "Messaggio",
+    "message_hint": "Se vuoi puoi lasciare un messaggio per la Fondazione.",
+    "amount_label": "Importo *",
+    "amount_hint": "Seleziona un importo o inserisci il valore dell'importo desiderato.",
+    "action": "Dona con carta di credito",
+    "thanks": "Grazie per la tua donazione"
+  },
+  "nav": {
+    "shop": {
+      "url": "https://shop.fabbricapienza.com",
+      "title": "Shop"
+    },
+    "about": {
+      "url": "/chi-siamo",
+      "title": "Chi Siamo"
+    },
+    "wineclub": {
+      "url": "/wine-club",
+      "title": "Wine Club"
+    },
+    "orcia": {
+      "url": "/val-d-orcia",
+      "title": "Val d'Orcia"
+    },
+    "team": {
+      "url": "/team",
+      "title": "Il Team"
+    },
+    "wines": {
+      "url": "/i-nostri-vini",
+      "title": "I Nostri vini"
+    },
+    "wineMaking": {
+      "url": "/the-wine-making",
+      "title": "Vinificazione"
+    },
+    "oil": {
+      "url": "/olio-nuovo",
+      "title": "Olio d'oliva extra vergine"
+    },
+    "tours": {
+      "url": "/wine-tours",
+      "title": "Wine tours"
+    },
+    "newton": {
+      "url": "/casa-newton",
+      "title": "Casa Newton"
+    },
+    "download": {
+      "url": "/download",
+      "title": "Download"
+    },
+    "contacts": {
+      "url": "/contatti",
+      "title": "Contatti"
+    },
+    "magazine": {
+      "url": "/magazine",
+      "title": "Magazine"
+    },
+    "vineyard": {
+      "url": "/the-vineyard",
+      "title": "Il Vigneto"
+    },
+    "winery": {
+      "url": "/cantina",
+      "title": "Cantina"
+    },
+    "contact": {
+      "url": "/contatti",
+      "title": "Contatti"
+    },
+    "hospitality": "Ospitalità"
+  },
+  "wine": {
+    "winery": "Vitigno",
+    "refinement": "Affinamento",
+    "misure": "Formati",
+    "tasting": "Tasting note",
+    "origin": "Origine",
+    "measures": "Misure",
+    "production": "Produzione",
+    "shop": "Vai allo Shop",
+    "ourWines": "I nostri vini",
+    "discoverOurWines": "I nostri vini"
+  },
+  "articles": "Articoli",
+  "technique": "Tecnica: ",
+  "product": "Prodotti: ",
+  "techniqueFilter": "Tecnica: ",
+  "category": "Categoria: "
+}

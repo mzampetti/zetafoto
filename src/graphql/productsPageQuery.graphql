@@ -1,0 +1,73 @@
+query ProductsPage(
+  $locale: SiteLocale
+  $skip: IntType
+  $fallbackLocales: [SiteLocale!]
+) {
+  productsPage(locale: $locale, fallbackLocales: $fallbackLocales) {
+    id
+    _modelApiKey
+    slug
+    slugs: _allSlugLocales {
+      locale
+      value
+    }
+    title
+    subtitle
+    text
+    image {
+      responsiveImage(
+        sizes: "90vw, 990px"
+        imgixParams: { auto: [format, compress], ar: "7:3", fit: crop }
+      ) {
+        ...rImage
+      }
+    }
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
+  }
+  allProducts(
+    locale: $locale
+    fallbackLocales: $fallbackLocales
+    skip: $skip
+    orderBy: name_ASC
+    first: 100
+  ) {
+    name
+    home
+    description
+    id
+    _modelApiKey
+    images {
+      responsiveImage(
+        sizes: "(min-width:1024px) 30vw, 95vw, 400px"
+        imgixParams: { auto: [format, compress], w: 400, fit: max }
+      ) {
+        ...rImage
+      }
+    }
+    indepth
+    new
+    serial
+    slug
+    techniques {
+      _modelApiKey
+      id
+      name
+      slug
+    }
+    category {
+      _modelApiKey
+      id
+      name
+      slug
+    }
+    slugs: _allSlugLocales {
+      locale
+      value
+    }
+  }
+  _allProductsMeta(locale: $locale, filter: { name: { isBlank: "false" } }) {
+    count
+  }
+}

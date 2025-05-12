@@ -1,0 +1,23 @@
+{
+  "color-scheme": "light",
+  "primary": "#ffffff",
+  "primary-content": "#071441",
+  "secondary": "#071441",
+  "secondary-content": "#FFFFFF",
+  "accent": "#ea4c4b",
+  "accent-content": "#FFFFFF",
+  "neutral": "#8c8c8c",
+  "neutral-content": "#071441",
+  "base-100": "#8c8c8c",
+  "base-200": "#6376CE",
+  "base-300": "#3D4090",
+  "base-content": "#303263",
+  "info": "#EFE7D2",
+  "info-content": "#C7A663",
+  "success": "#FFE0C5",
+  "success-content": "#F2994A",
+  "warning": "#E6E0F4",
+  "warning-content": "#A284CE",
+  "error": "#CCCCCC",
+  "error-content": "#828282"
+}

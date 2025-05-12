@@ -1,0 +1,9 @@
+fragment rImage on ResponsiveImage {
+  src
+  srcSet
+  base64
+  width
+  height
+  alt
+  title
+}
