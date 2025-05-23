@@ -33,7 +33,7 @@ const FAQGrid = ({ questions }: Props) => {
               <div>
                 <div
                   dangerouslySetInnerHTML={{ __html: q.question }}
-                  className="text-xl font-semibold font-serif uppercase"
+                  className="text-xl font-semibold font-sans uppercase"
                 />
 
                 <div

@@ -38,7 +38,7 @@ const MagazineHero = ({ data, locale }: Props) => {
           <div className="grid gap-4 pb-12 md:col-span-7 lg:pr-12">
             <div className="uppercase text-accent">{_modelApiKey}</div>
             {title && (
-              <h1 className="text-md font-light md:text-xl font-serif lg:text-lg">
+              <h1 className="text-md font-light md:text-xl font-sans lg:text-lg">
                 {title}
               </h1>
             )}

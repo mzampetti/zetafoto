@@ -12,13 +12,11 @@ type Props = {
 };
 
 export default async function Wrapper({ hrefs, locale, children }: Props) {
-  const defaultLocale = config.defaultLocale as SiteLocale;
   const { isEnabled } = draftMode();
   const menuData = await fetchDato(
     MenuDocument,
     {
       locale: locale,
-      fallbackLocales: [defaultLocale],
     },
     isEnabled
   );

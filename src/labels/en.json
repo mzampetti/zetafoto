@@ -1,5 +1,5 @@
 {
-  "locale": "English",
+  "locale": "Eng",
   "layout": {
     "open_new_window": "Open in new window",
     "close": "Close",
@@ -112,18 +112,50 @@
     "something-hint": "Search for a broader term.",
     "no-result-hint": "Your search returned 0 results. Ensure that the keywords are correct and without typos, or try again with more generic terms."
   },
-  "support-us": {
-    "title": "Support us",
-    "slug": "support-us"
+  "photosTitle": "Photos",
+  "buildingCategoriesIndex": {
+    "title": "Building Categories",
+    "slug": "/categories"
   },
-  "contact-us": {
+  "locationsIndex": {
     "title": "Book a visit",
     "slug": "contact-us"
   },
-  "courses_index": {
-    "title": "Courses",
-    "slug": "/en/education/scheduled-courses/",
-    "cta": "Discover courses"
+  "citiesIndex": {
+    "title": "Book a visit",
+    "slug": "contact-us"
+  },
+  "architectonicStylesIndex": {
+    "title": "Book a visit",
+    "slug": "contact-us"
+  },
+  "architectonicElementsIndex": {
+    "title": "Book a visit",
+    "slug": "contact-us"
+  },
+  "authorsIndex": {
+    "title": "Book a visit",
+    "slug": "contact-us"
+  },
+  "photosCollectionsIndex": {
+    "title": "Galleries",
+    "slug": "/galleries"
+  },
+  "videosIndex": {
+    "title": "Video",
+    "slug": "/video"
+  },
+  "expositionsIndex": {
+    "title": "Expositions",
+    "slug": "/expositions"
+  },
+  "articlesIndex": {
+    "title": "News",
+    "slug": "/news"
+  },
+  "aboutPage": {
+    "title": "About",
+    "slug": "/about"
   },
   "from": "from",
   "to": "to",
@@ -279,5 +311,6 @@
   "technique": "Tecnique: ",
   "techniqueFilter": "Tecnique: ",
   "category": "Cetegory: ",
-  "product": "Products: "
+  "product": "Products: ",
+  "subtitleHp": "Zenithal phography of architecture"
 }

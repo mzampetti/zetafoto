@@ -62,7 +62,7 @@ const CardPageBlock = ({
         <h2
           className={`${
             i % 2 == 0 ? "right-0" : "left-0"
-          } text-md uppercase md:hidden absolute -bottom-2 font-serif px-6 py-2 bg-primary w-[90%]`}
+          } text-md uppercase md:hidden absolute -bottom-2 font-sans px-6 py-2 bg-primary w-[90%]`}
         >
           {titleCard}
         </h2>
@@ -76,7 +76,7 @@ const CardPageBlock = ({
         <h2
           className={`${
             i % 2 !== 0 ? "" : "md:-translate-x-20 xl:-translate-x-40"
-          } text-md lg:text-lg font-serif px-6 uppercase bg-primary md:py-4 md:block hidden relative my-8`}
+          } text-md lg:text-lg font-sans px-6 uppercase bg-primary md:py-4 md:block hidden relative my-8`}
         >
           {titleCard}
         </h2>

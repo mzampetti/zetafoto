@@ -1,0 +1,60 @@
+query Menu($locale: SiteLocale) {
+  buildingCategoriesIndex(locale: $locale) {
+    id
+    menuLabel
+    _modelApiKey
+  }
+  locationsIndex(locale: $locale) {
+    id
+    menuLabel
+    _modelApiKey
+  }
+  citiesIndex(locale: $locale) {
+    id
+    menuLabel
+    _modelApiKey
+  }
+  architectonicStylesIndex(locale: $locale) {
+    id
+    menuLabel
+    _modelApiKey
+  }
+  architectonicElementsIndex(locale: $locale) {
+    id
+    menuLabel
+    _modelApiKey
+  }
+  authorsIndex(locale: $locale) {
+    id
+    menuLabel
+    _modelApiKey
+  }
+  photosCollectionsIndex(locale: $locale) {
+    id
+    menuLabel
+    _modelApiKey
+  }
+  videosIndex(locale: $locale) {
+    id
+    menuLabel
+    _modelApiKey
+  }
+  expositionsIndex(locale: $locale) {
+    id
+    menuLabel
+    _modelApiKey
+  }
+  articlesIndex(locale: $locale) {
+    id
+    menuLabel
+    _modelApiKey
+  }
+  aboutPage(locale: $locale) {
+    id
+    menuLabel
+    _modelApiKey
+  }
+  _site {
+    locales
+  }
+}

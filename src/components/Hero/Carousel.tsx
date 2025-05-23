@@ -108,7 +108,7 @@ export default function Carousel({
                       </MediaPlayer>
                     </div>
                   )}
-                  <div className="absolute grid gap-3 top-1/2 font-serif left-1/2 z-20 -translate-y-1/2 -translate-x-1/2 w-full container lg:px-24">
+                  <div className="absolute grid gap-3 top-1/2 font-sans left-1/2 z-20 -translate-y-1/2 -translate-x-1/2 w-full container lg:px-24">
                     {title && (
                       <h2 className="text-lg font-semibold lg:w-[55%]] lg:text-2xl">
                         {title}

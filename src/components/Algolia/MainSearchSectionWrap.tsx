@@ -29,7 +29,7 @@ export default function MainSearchResults({ locale, name, ...props }) {
 
   return (
     <div className="mt-12 lg:mt-5">
-      <div className="my-5 lg:mt-0 font-serif text-lg font-bold lg:mb-12">
+      <div className="my-5 lg:mt-0 font-sans text-lg font-bold lg:mb-12">
         {translate(name, locale)}
       </div>
       <div className="pb-10">

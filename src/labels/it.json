@@ -1,5 +1,5 @@
 {
-  "locale": "Italiano",
+  "locale": "Ita",
   "layout": {
     "open_new_window": "Apre in un'altra finestra",
     "close": "Chiudi",
@@ -7,7 +7,6 @@
     "search_label": "Cerca nel sito",
     "search_placeholder": "Cerca un'opera, evento, etc..."
   },
-
   "sending": "inviando...",
   "loading": "caricando...",
   "credits": {
@@ -15,13 +14,11 @@
     "url": "https://www.cantierecreativo.net",
     "title": "Cantiere Creativo Agenzia web Ruby on Rails Firenze"
   },
-
   "404": {
     "title": "Pagina non trovata",
     "text": "La pagina che stai cercando non esiste, o l'indirizzo inserito non è corretto.",
     "button": "Vai alla pagina iniziale"
   },
-
   "pagination": {
     "start": "Inizio",
     "end": "Fine",
@@ -34,7 +31,6 @@
     "pageGoTo": "Vai a pagina",
     "pageOf": "di"
   },
-
   "search-pagination": {
     "firstPageItemText": "Inizio",
     "previousPageItemText": "Indietro",
@@ -47,7 +43,6 @@
     "gotoPage": "Vai alla pagina",
     "of": "di"
   },
-
   "formTitle": "Scrivici",
   "formFullName": "Nome",
   "formLastName": "Cognome",
@@ -58,10 +53,6 @@
   "formPrivacyFieldsetLabel": "Protezione e gestione dati personali",
   "formPrivacyPre": "Letta la ",
   "formPrivacyAfter": " accetto ai sensi del Regolamento UE 2016/679 (GDPR)",
-  "aaa_famiglie": "Famiglie",
-  "aaa_scuola": "Scuola",
-  "aaa_studiosi": "Studiosi",
-  "aaa_operatori_turistici": "Operatori turistici",
   "formSend": "Invia richiesta",
   "formSandingTitle": "Sto inviando il messaggio...",
   "formSuccessTitle": "Messaggio inviato con successo",
@@ -69,21 +60,8 @@
   "formErrorTitle": "Si è verificato un errore",
   "formErrorText": "Non è stato possibile inviare il tuo messaggio.",
   "formTitlePrivacyPolicy": "Informativa privacy",
-  "newsletter": {
-    "title:": "Newsletter",
-    "accept": "Ho preso visione e accetto",
-    "acceptEmail": "Accetto di ricevere comunicazioni via email",
-    "privacyFieldsetLabel": "Protezione e gestione dati personali",
-    "policy": "l'Informativa sulla privacy",
-    "authorize": "e autorizzo il trattamento dei miei dati personali ai sensi del D.Lgs. 196/2003 e del GDPR 679/2016",
-    "unsubscribePre": "Puoi annullare l'iscrizione in qualsiasi momento facendo clic sul collegamento a piè di pagina delle nostre e-mail. Per informazioni sulle nostre pratiche sulla privacy,",
-    "cta": "vai al sito di Mailchimp.",
-    "subscribe": "Iscriviti"
-  },
-
   "preferencePolicy": "Modifica preferenze privacy",
   "cookiePolicyId": "",
-
   "skipContent": "Vai al contenuto principale",
   "skipFooter": "Vai al footer",
 
@@ -96,13 +74,11 @@
     "slideX": "Vai all'elemento ",
     "slideLabel": "di"
   },
+
   "backTop": "Torna al menu",
   "googleMaps": "Google Maps",
   "read": "leggi",
-  "label": {
-    "cart": "Carrello",
-    "search": "Cerca"
-  },
+
   "search": {
     "title": "Risultati della ricerca",
     "noResults": "Nessun risultato trovato",
@@ -120,18 +96,50 @@
     "something-hint": "Inserisci un termine di ricerca.",
     "no-result-hint": "La tua ricerca ha portato 0 risultati. Assicurati che i termini inseriti siano corretti e senza refusi, oppure effettua una ricerca con termini più generici."
   },
-  "support-us": {
-    "title": "Sostienici",
-    "slug": "sostieni"
+  "photosTitle": "Fotografie",
+  "buildingCategoriesIndex": {
+    "title": "Categorie di edifici",
+    "slug": "/categorie"
   },
-  "contact-us": {
-    "title": "Prenota una Visita",
-    "slug": "contattaci"
+  "locationsIndex": {
+    "title": "Luoghi",
+    "slug": "/luoghi"
   },
-  "courses_index": {
-    "title": "Corsi",
-    "slug": "/it/didattica/corsi-calendario/",
-    "cta": "scopri i corsi"
+  "citiesIndex": {
+    "title": "Città",
+    "slug": "/citta"
+  },
+  "architectonicStylesIndex": {
+    "title": "Stili architettonici",
+    "slug": "/stili"
+  },
+  "architectonicElementsIndex": {
+    "title": "Elementi architettonici",
+    "slug": "/elementi"
+  },
+  "authorsIndex": {
+    "title": "Architetti e autori",
+    "slug": "/autori"
+  },
+  "photosCollectionsIndex": {
+    "title": "Gallerie a tema",
+    "slug": "/gallerie-tema"
+  },
+  "videosIndex": {
+    "title": "Sequenze",
+    "slug": "/video-sequenze"
+  },
+  "expositionsIndex": {
+    "title": "Esposizioni",
+    "slug": "/mostre"
+  },
+  "articlesIndex": {
+    "title": "Articoli",
+    "slug": "/news"
+  },
+  "aboutPage": {
+    "title": "Tecnica Biografia",
+    "slug": "/tecnica-biografia"
   },
   "from": "dal",
   "to": "al",
@@ -204,88 +212,10 @@
     "action": "Dona con carta di credito",
     "thanks": "Grazie per la tua donazione"
   },
-  "nav": {
-    "shop": {
-      "url": "https://shop.fabbricapienza.com",
-      "title": "Shop"
-    },
-    "about": {
-      "url": "/chi-siamo",
-      "title": "Chi Siamo"
-    },
-    "wineclub": {
-      "url": "/wine-club",
-      "title": "Wine Club"
-    },
-    "orcia": {
-      "url": "/val-d-orcia",
-      "title": "Val d'Orcia"
-    },
-    "team": {
-      "url": "/team",
-      "title": "Il Team"
-    },
-    "wines": {
-      "url": "/i-nostri-vini",
-      "title": "I Nostri vini"
-    },
-    "wineMaking": {
-      "url": "/the-wine-making",
-      "title": "Vinificazione"
-    },
-    "oil": {
-      "url": "/olio-nuovo",
-      "title": "Olio d'oliva extra vergine"
-    },
-    "tours": {
-      "url": "/wine-tours",
-      "title": "Wine tours"
-    },
-    "newton": {
-      "url": "/casa-newton",
-      "title": "Casa Newton"
-    },
-    "download": {
-      "url": "/download",
-      "title": "Download"
-    },
-    "contacts": {
-      "url": "/contatti",
-      "title": "Contatti"
-    },
-    "magazine": {
-      "url": "/magazine",
-      "title": "Magazine"
-    },
-    "vineyard": {
-      "url": "/the-vineyard",
-      "title": "Il Vigneto"
-    },
-    "winery": {
-      "url": "/cantina",
-      "title": "Cantina"
-    },
-    "contact": {
-      "url": "/contatti",
-      "title": "Contatti"
-    },
-    "hospitality": "Ospitalità"
-  },
-  "wine": {
-    "winery": "Vitigno",
-    "refinement": "Affinamento",
-    "misure": "Formati",
-    "tasting": "Tasting note",
-    "origin": "Origine",
-    "measures": "Misure",
-    "production": "Produzione",
-    "shop": "Vai allo Shop",
-    "ourWines": "I nostri vini",
-    "discoverOurWines": "I nostri vini"
-  },
   "articles": "Articoli",
   "technique": "Tecnica: ",
   "product": "Prodotti: ",
   "techniqueFilter": "Tecnica: ",
-  "category": "Categoria: "
+  "category": "Categoria: ",
+  "subtitleHp": "Fotografia zenitale di Architettura"
 }

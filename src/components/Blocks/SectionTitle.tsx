@@ -14,7 +14,7 @@ const SectionTitle = ({
     <>
       <div className={`w-full grid gap-6`}>
         {title && (
-          <h2 className="text-lg font-light font-serif max-w-prose lg:text-xl;">
+          <h2 className="text-lg font-light font-sans max-w-prose lg:text-xl;">
             {title}
           </h2>
         )}

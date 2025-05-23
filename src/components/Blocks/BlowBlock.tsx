@@ -58,7 +58,7 @@ export default function BowBlock({
                         titleSmall || date
                           ? "md:text-md lg:text-lg"
                           : "md:text-lg lg:text-2xl"
-                      } text-center font-serif text-smd md:px-4`}
+                      } text-center font-sans text-smd md:px-4`}
                     />
                   )}
                   {text && (

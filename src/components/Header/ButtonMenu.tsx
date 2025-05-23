@@ -14,14 +14,14 @@ const ButtonMenu = ({ navbarToggleHandler, navbarOpen }: Props) => {
       onClick={navbarToggleHandler}
       id="navbarToggler"
       aria-label="Mobile Menu"
+      aria-expanded={navbarOpen ? "true" : "false"}
       className={`${
         navbarOpen ? "text-primary" : "text-secondary"
       } flex text-[16px] items-center xl:hidden justify-center z-10 relative`}
     >
-      <span className="uppercase pr-2">{navbarOpen ? "close" : "menu"}</span>
       <CustomIcon
-        classes={navbarOpen ? "size-4 bg-primary" : "size-4 bg-secondary"}
-        fileName={navbarOpen ? "close" : "hamburger-menu"}
+        classes="size-6 bg-secondary"
+        fileName={navbarOpen ? "close-menu-mobile" : "hamburger"}
       />
     </button>
   );

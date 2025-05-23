@@ -5,27 +5,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import translate from "@/labels";
+import CustomIcon from "@/components/Blocks/CustomIcon";
 
 type Props = {
   lng: SiteLocale;
   languages: SiteLocale[];
-  sticky: Boolean;
-  navbarOpen: Boolean;
-  isDropdownOpen: Boolean;
   hrefs?: any;
 };
 
-const LanguageSelector = ({
-  lng,
-  languages,
-  hrefs,
-  sticky,
-  navbarOpen,
-  isDropdownOpen,
-}: Props) => {
+const LanguageSelector = ({ lng, languages, hrefs }: Props) => {
   const pathname = usePathname();
   return (
-    <div className="flex mt-3 xl:px-6 xl:-mt-2 xl:pl-12 xl:pr-0">
+    <div className="hidden xl:flex border-l border-[#e0e0e0]">
       {languages.map((locale, i: number) => {
         const fallbackLocale: string = `/${locale}`;
         return (
@@ -38,10 +29,14 @@ const LanguageSelector = ({
             >
               <div
                 className={`${
-                  locale === lng ? "hidden" : "xl:text-white"
-                } inline-flex text-sm font-normal`}
+                  locale === lng ? "hidden" : ""
+                } inline-flex items-center pl-6 gap-1 duration-200 group font-bold text-md`}
               >
                 {translate("locale", locale)}
+                <CustomIcon
+                  classes="size-4 xl:block bg-secondary -rotate-90 group-hover:translate-x-1 duration-200"
+                  fileName="angle_down"
+                />
               </div>
             </Link>
           </div>

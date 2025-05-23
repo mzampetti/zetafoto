@@ -20,7 +20,7 @@ const FormBlock = ({ data, locale }: PropsFormBlock) => {
           )}
           {titleForm && (
             <div
-              className="text-lg md:text-xl lg:w-1/2 xl:text-2xl font-serif"
+              className="text-lg md:text-xl lg:w-1/2 xl:text-2xl font-sans"
               dangerouslySetInnerHTML={{ __html: titleForm }}
             />
           )}

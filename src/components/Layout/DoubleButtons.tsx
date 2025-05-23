@@ -3,7 +3,7 @@ import InternalLink from "../Links/InternalLink";
 export default function DoubleButtons({ first, second, locale }) {
   return (
     <div className="bg-primary z-10 relative">
-      <div className="pb-16 grid gap-1 md:grid-cols-2 font-serif text-smd lg:text-xl max-w-[1800px] mx-auto">
+      <div className="pb-16 grid gap-1 md:grid-cols-2 font-sans text-smd lg:text-xl max-w-[1800px] mx-auto">
         <InternalLink
           record={first}
           locale={locale}

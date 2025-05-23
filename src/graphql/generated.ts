@@ -24,50 +24,140 @@ export type Scalars = {
   UploadId: { input: string; output: string; }
 };
 
-/** Block of type Allegato (attachment) */
-export type AttachmentRecord = RecordInterface & {
-  __typename?: 'AttachmentRecord';
+/** Record of type Info (about_page) */
+export type AboutPageRecord = RecordInterface & {
+  __typename?: 'AboutPageRecord';
+  _allAboutTextLocales?: Maybe<Array<StringMultiLocaleField>>;
+  _allCreditsTextLocales?: Maybe<Array<StringMultiLocaleField>>;
+  _allMenuLabelLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allTechniqueTextLocales?: Maybe<Array<StringMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
   _createdAt: Scalars['DateTime']['output'];
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
   _isValid: Scalars['BooleanType']['output'];
   _modelApiKey: Scalars['String']['output'];
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>;
   _status: ItemStatus;
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
   _updatedAt: Scalars['DateTime']['output'];
-  attachmentFile: FileField;
-  attachmentTitle: Scalars['String']['output'];
+  aboutImage?: Maybe<FileField>;
+  aboutText?: Maybe<Scalars['String']['output']>;
   createdAt: Scalars['DateTime']['output'];
+  creditsText?: Maybe<Scalars['String']['output']>;
   id: Scalars['ItemId']['output'];
+  menuLabel: Scalars['String']['output'];
+  seo?: Maybe<SeoField>;
+  techniqueImage?: Maybe<FileField>;
+  techniqueText?: Maybe<Scalars['String']['output']>;
+  title: Scalars['String']['output'];
   updatedAt: Scalars['DateTime']['output'];
 };
 
 
-/** Block of type Allegato (attachment) */
-export type AttachmentRecord_SeoMetaTagsArgs = {
+/** Record of type Info (about_page) */
+export type AboutPageRecord_AllAboutTextLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Record of type Info (about_page) */
+export type AboutPageRecord_AllCreditsTextLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Record of type Info (about_page) */
+export type AboutPageRecord_AllMenuLabelLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
-export type AttachmentRecordListListNonNullMultiLocaleField = {
-  __typename?: 'AttachmentRecordListListNonNullMultiLocaleField';
-  locale?: Maybe<SiteLocale>;
-  value: Array<AttachmentRecord>;
+
+/** Record of type Info (about_page) */
+export type AboutPageRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
 };
 
-/** Specifies how to filter Boolean fields */
-export type BooleanFilter = {
-  /** Search for records with an exact match */
-  eq?: InputMaybe<Scalars['BooleanType']['input']>;
+
+/** Record of type Info (about_page) */
+export type AboutPageRecord_AllTechniqueTextLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-export type CategoryModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<CategoryModelFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<CategoryModelFilter>>>;
+
+/** Record of type Info (about_page) */
+export type AboutPageRecord_AllTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Info (about_page) */
+export type AboutPageRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Info (about_page) */
+export type AboutPageRecordAboutTextArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Record of type Info (about_page) */
+export type AboutPageRecordCreditsTextArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Record of type Info (about_page) */
+export type AboutPageRecordMenuLabelArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Info (about_page) */
+export type AboutPageRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Info (about_page) */
+export type AboutPageRecordTechniqueTextArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Record of type Info (about_page) */
+export type AboutPageRecordTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+export type ArchitectonicElementModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ArchitectonicElementModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ArchitectonicElementModelFilter>>>;
   _createdAt?: InputMaybe<CreatedAtFilter>;
   _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
   _isValid?: InputMaybe<BooleanFilter>;
@@ -77,7 +167,1105 @@ export type CategoryModelFilter = {
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
   _updatedAt?: InputMaybe<UpdatedAtFilter>;
   createdAt?: InputMaybe<CreatedAtFilter>;
-  description?: InputMaybe<TextFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  name?: InputMaybe<StringFilter>;
+  position?: InputMaybe<PositionFilter>;
+  seo?: InputMaybe<SeoFilter>;
+  slug?: InputMaybe<SlugFilter>;
+  updatedAt?: InputMaybe<UpdatedAtFilter>;
+};
+
+export enum ArchitectonicElementModelOrderBy {
+  _CreatedAtAsc = '_createdAt_ASC',
+  _CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  _UpdatedAtAsc = '_updatedAt_ASC',
+  _UpdatedAtDesc = '_updatedAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  PositionAsc = 'position_ASC',
+  PositionDesc = 'position_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC'
+}
+
+/** Record of type Elemento architettonico (architectonic_element) */
+export type ArchitectonicElementRecord = RecordInterface & {
+  __typename?: 'ArchitectonicElementRecord';
+  _allNameLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  createdAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  name: Scalars['String']['output'];
+  position?: Maybe<Scalars['IntType']['output']>;
+  seo?: Maybe<SeoField>;
+  slug: Scalars['String']['output'];
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type Elemento architettonico (architectonic_element) */
+export type ArchitectonicElementRecord_AllNameLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Elemento architettonico (architectonic_element) */
+export type ArchitectonicElementRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Elemento architettonico (architectonic_element) */
+export type ArchitectonicElementRecord_AllSlugLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Elemento architettonico (architectonic_element) */
+export type ArchitectonicElementRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Elemento architettonico (architectonic_element) */
+export type ArchitectonicElementRecordNameArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Elemento architettonico (architectonic_element) */
+export type ArchitectonicElementRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Elemento architettonico (architectonic_element) */
+export type ArchitectonicElementRecordSlugArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Record of type Indice Elementi Architettonici (architectonic_elements_index) */
+export type ArchitectonicElementsIndexRecord = RecordInterface & {
+  __typename?: 'ArchitectonicElementsIndexRecord';
+  _allMenuLabelLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  createdAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  menuLabel: Scalars['String']['output'];
+  seo?: Maybe<SeoField>;
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type Indice Elementi Architettonici (architectonic_elements_index) */
+export type ArchitectonicElementsIndexRecord_AllMenuLabelLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Elementi Architettonici (architectonic_elements_index) */
+export type ArchitectonicElementsIndexRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Elementi Architettonici (architectonic_elements_index) */
+export type ArchitectonicElementsIndexRecord_AllTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Elementi Architettonici (architectonic_elements_index) */
+export type ArchitectonicElementsIndexRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Elementi Architettonici (architectonic_elements_index) */
+export type ArchitectonicElementsIndexRecordMenuLabelArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Elementi Architettonici (architectonic_elements_index) */
+export type ArchitectonicElementsIndexRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Elementi Architettonici (architectonic_elements_index) */
+export type ArchitectonicElementsIndexRecordTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+export type ArchitectonicStyleModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ArchitectonicStyleModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ArchitectonicStyleModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  createdAt?: InputMaybe<CreatedAtFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  name?: InputMaybe<StringFilter>;
+  position?: InputMaybe<PositionFilter>;
+  seo?: InputMaybe<SeoFilter>;
+  slug?: InputMaybe<SlugFilter>;
+  updatedAt?: InputMaybe<UpdatedAtFilter>;
+};
+
+export enum ArchitectonicStyleModelOrderBy {
+  _CreatedAtAsc = '_createdAt_ASC',
+  _CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  _UpdatedAtAsc = '_updatedAt_ASC',
+  _UpdatedAtDesc = '_updatedAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  PositionAsc = 'position_ASC',
+  PositionDesc = 'position_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC'
+}
+
+/** Record of type Stile architettonico (architectonic_style) */
+export type ArchitectonicStyleRecord = RecordInterface & {
+  __typename?: 'ArchitectonicStyleRecord';
+  _allNameLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  createdAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  name: Scalars['String']['output'];
+  position?: Maybe<Scalars['IntType']['output']>;
+  seo?: Maybe<SeoField>;
+  slug: Scalars['String']['output'];
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type Stile architettonico (architectonic_style) */
+export type ArchitectonicStyleRecord_AllNameLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Stile architettonico (architectonic_style) */
+export type ArchitectonicStyleRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Stile architettonico (architectonic_style) */
+export type ArchitectonicStyleRecord_AllSlugLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Stile architettonico (architectonic_style) */
+export type ArchitectonicStyleRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Stile architettonico (architectonic_style) */
+export type ArchitectonicStyleRecordNameArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Stile architettonico (architectonic_style) */
+export type ArchitectonicStyleRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Stile architettonico (architectonic_style) */
+export type ArchitectonicStyleRecordSlugArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Record of type Indice Stili Architettonici (architectonic_styles_index) */
+export type ArchitectonicStylesIndexRecord = RecordInterface & {
+  __typename?: 'ArchitectonicStylesIndexRecord';
+  _allMenuLabelLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  createdAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  menuLabel: Scalars['String']['output'];
+  seo?: Maybe<SeoField>;
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type Indice Stili Architettonici (architectonic_styles_index) */
+export type ArchitectonicStylesIndexRecord_AllMenuLabelLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Stili Architettonici (architectonic_styles_index) */
+export type ArchitectonicStylesIndexRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Stili Architettonici (architectonic_styles_index) */
+export type ArchitectonicStylesIndexRecord_AllTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Stili Architettonici (architectonic_styles_index) */
+export type ArchitectonicStylesIndexRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Stili Architettonici (architectonic_styles_index) */
+export type ArchitectonicStylesIndexRecordMenuLabelArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Stili Architettonici (architectonic_styles_index) */
+export type ArchitectonicStylesIndexRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Stili Architettonici (architectonic_styles_index) */
+export type ArchitectonicStylesIndexRecordTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+export type ArticleModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ArticleModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ArticleModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  attachment?: InputMaybe<FileFilter>;
+  createdAt?: InputMaybe<CreatedAtFilter>;
+  date?: InputMaybe<DateFilter>;
+  externalLink?: InputMaybe<StringFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  position?: InputMaybe<PositionFilter>;
+  seo?: InputMaybe<SeoFilter>;
+  slug?: InputMaybe<SlugFilter>;
+  text?: InputMaybe<TextFilter>;
+  title?: InputMaybe<StringFilter>;
+  updatedAt?: InputMaybe<UpdatedAtFilter>;
+};
+
+export enum ArticleModelOrderBy {
+  _CreatedAtAsc = '_createdAt_ASC',
+  _CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  _UpdatedAtAsc = '_updatedAt_ASC',
+  _UpdatedAtDesc = '_updatedAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  DateAsc = 'date_ASC',
+  DateDesc = 'date_DESC',
+  ExternalLinkAsc = 'externalLink_ASC',
+  ExternalLinkDesc = 'externalLink_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  PositionAsc = 'position_ASC',
+  PositionDesc = 'position_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC'
+}
+
+/** Record of type News (article) */
+export type ArticleRecord = RecordInterface & {
+  __typename?: 'ArticleRecord';
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allTextLocales?: Maybe<Array<StringMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  attachment?: Maybe<FileField>;
+  createdAt: Scalars['DateTime']['output'];
+  date: Scalars['Date']['output'];
+  externalLink?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ItemId']['output'];
+  position?: Maybe<Scalars['IntType']['output']>;
+  seo?: Maybe<SeoField>;
+  slug: Scalars['String']['output'];
+  text?: Maybe<Scalars['String']['output']>;
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type News (article) */
+export type ArticleRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type News (article) */
+export type ArticleRecord_AllSlugLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type News (article) */
+export type ArticleRecord_AllTextLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Record of type News (article) */
+export type ArticleRecord_AllTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type News (article) */
+export type ArticleRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type News (article) */
+export type ArticleRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type News (article) */
+export type ArticleRecordSlugArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type News (article) */
+export type ArticleRecordTextArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Record of type News (article) */
+export type ArticleRecordTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Record of type Indice News (articles_index) */
+export type ArticlesIndexRecord = RecordInterface & {
+  __typename?: 'ArticlesIndexRecord';
+  _allMenuLabelLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  createdAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  menuLabel: Scalars['String']['output'];
+  seo?: Maybe<SeoField>;
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type Indice News (articles_index) */
+export type ArticlesIndexRecord_AllMenuLabelLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice News (articles_index) */
+export type ArticlesIndexRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice News (articles_index) */
+export type ArticlesIndexRecord_AllTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice News (articles_index) */
+export type ArticlesIndexRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice News (articles_index) */
+export type ArticlesIndexRecordMenuLabelArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice News (articles_index) */
+export type ArticlesIndexRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice News (articles_index) */
+export type ArticlesIndexRecordTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+export type AuthorModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<AuthorModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<AuthorModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  createdAt?: InputMaybe<CreatedAtFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  name?: InputMaybe<StringFilter>;
+  nameAlias?: InputMaybe<StringFilter>;
+  seo?: InputMaybe<SeoFilter>;
+  slug?: InputMaybe<SlugFilter>;
+  updatedAt?: InputMaybe<UpdatedAtFilter>;
+};
+
+export enum AuthorModelOrderBy {
+  _CreatedAtAsc = '_createdAt_ASC',
+  _CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  _UpdatedAtAsc = '_updatedAt_ASC',
+  _UpdatedAtDesc = '_updatedAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  NameAliasAsc = 'nameAlias_ASC',
+  NameAliasDesc = 'nameAlias_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC'
+}
+
+/** Record of type Autore (author) */
+export type AuthorRecord = RecordInterface & {
+  __typename?: 'AuthorRecord';
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  createdAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  name: Scalars['String']['output'];
+  nameAlias?: Maybe<Scalars['String']['output']>;
+  seo?: Maybe<SeoField>;
+  slug: Scalars['String']['output'];
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type Autore (author) */
+export type AuthorRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Autore (author) */
+export type AuthorRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Autore (author) */
+export type AuthorRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Record of type Indice Autori (authors_index) */
+export type AuthorsIndexRecord = RecordInterface & {
+  __typename?: 'AuthorsIndexRecord';
+  _allMenuLabelLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  createdAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  menuLabel: Scalars['String']['output'];
+  seo?: Maybe<SeoField>;
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type Indice Autori (authors_index) */
+export type AuthorsIndexRecord_AllMenuLabelLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Autori (authors_index) */
+export type AuthorsIndexRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Autori (authors_index) */
+export type AuthorsIndexRecord_AllTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Autori (authors_index) */
+export type AuthorsIndexRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Autori (authors_index) */
+export type AuthorsIndexRecordMenuLabelArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Autori (authors_index) */
+export type AuthorsIndexRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Autori (authors_index) */
+export type AuthorsIndexRecordTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Specifies how to filter Boolean fields */
+export type BooleanFilter = {
+  /** Search for records with an exact match */
+  eq?: InputMaybe<Scalars['BooleanType']['input']>;
+};
+
+/** Record of type Indice Tipi Edifici (building_categories_index) */
+export type BuildingCategoriesIndexRecord = RecordInterface & {
+  __typename?: 'BuildingCategoriesIndexRecord';
+  _allMenuLabelLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  createdAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  menuLabel: Scalars['String']['output'];
+  seo?: Maybe<SeoField>;
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type Indice Tipi Edifici (building_categories_index) */
+export type BuildingCategoriesIndexRecord_AllMenuLabelLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Tipi Edifici (building_categories_index) */
+export type BuildingCategoriesIndexRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Tipi Edifici (building_categories_index) */
+export type BuildingCategoriesIndexRecord_AllTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Tipi Edifici (building_categories_index) */
+export type BuildingCategoriesIndexRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Tipi Edifici (building_categories_index) */
+export type BuildingCategoriesIndexRecordMenuLabelArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Tipi Edifici (building_categories_index) */
+export type BuildingCategoriesIndexRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Tipi Edifici (building_categories_index) */
+export type BuildingCategoriesIndexRecordTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+export type BuildingCategoryModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<BuildingCategoryModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<BuildingCategoryModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  createdAt?: InputMaybe<CreatedAtFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  name?: InputMaybe<StringFilter>;
+  position?: InputMaybe<PositionFilter>;
+  previousUrl?: InputMaybe<StringFilter>;
+  seo?: InputMaybe<SeoFilter>;
+  slug?: InputMaybe<SlugFilter>;
+  updatedAt?: InputMaybe<UpdatedAtFilter>;
+};
+
+export enum BuildingCategoryModelOrderBy {
+  _CreatedAtAsc = '_createdAt_ASC',
+  _CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  _UpdatedAtAsc = '_updatedAt_ASC',
+  _UpdatedAtDesc = '_updatedAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  PositionAsc = 'position_ASC',
+  PositionDesc = 'position_DESC',
+  PreviousUrlAsc = 'previousUrl_ASC',
+  PreviousUrlDesc = 'previousUrl_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC'
+}
+
+/** Record of type Tipo edificio (building_category) */
+export type BuildingCategoryRecord = RecordInterface & {
+  __typename?: 'BuildingCategoryRecord';
+  _allNameLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allPreviousUrlLocales?: Maybe<Array<StringMultiLocaleField>>;
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  createdAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  name: Scalars['String']['output'];
+  position?: Maybe<Scalars['IntType']['output']>;
+  previousUrl?: Maybe<Scalars['String']['output']>;
+  seo?: Maybe<SeoField>;
+  slug: Scalars['String']['output'];
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type Tipo edificio (building_category) */
+export type BuildingCategoryRecord_AllNameLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Tipo edificio (building_category) */
+export type BuildingCategoryRecord_AllPreviousUrlLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Tipo edificio (building_category) */
+export type BuildingCategoryRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Tipo edificio (building_category) */
+export type BuildingCategoryRecord_AllSlugLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Tipo edificio (building_category) */
+export type BuildingCategoryRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Tipo edificio (building_category) */
+export type BuildingCategoryRecordNameArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Tipo edificio (building_category) */
+export type BuildingCategoryRecordPreviousUrlArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Tipo edificio (building_category) */
+export type BuildingCategoryRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Tipo edificio (building_category) */
+export type BuildingCategoryRecordSlugArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Record of type Indice Città (cities_index) */
+export type CitiesIndexRecord = RecordInterface & {
+  __typename?: 'CitiesIndexRecord';
+  _allMenuLabelLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  createdAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  menuLabel: Scalars['String']['output'];
+  seo?: Maybe<SeoField>;
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type Indice Città (cities_index) */
+export type CitiesIndexRecord_AllMenuLabelLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Città (cities_index) */
+export type CitiesIndexRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Città (cities_index) */
+export type CitiesIndexRecord_AllTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Città (cities_index) */
+export type CitiesIndexRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Città (cities_index) */
+export type CitiesIndexRecordMenuLabelArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Città (cities_index) */
+export type CitiesIndexRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Città (cities_index) */
+export type CitiesIndexRecordTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+export type CityModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CityModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CityModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  createdAt?: InputMaybe<CreatedAtFilter>;
   id?: InputMaybe<ItemIdFilter>;
   name?: InputMaybe<StringFilter>;
   seo?: InputMaybe<SeoFilter>;
@@ -85,7 +1273,7 @@ export type CategoryModelFilter = {
   updatedAt?: InputMaybe<UpdatedAtFilter>;
 };
 
-export enum CategoryModelOrderBy {
+export enum CityModelOrderBy {
   _CreatedAtAsc = '_createdAt_ASC',
   _CreatedAtDesc = '_createdAt_DESC',
   FirstPublishedAtAsc = '_firstPublishedAt_ASC',
@@ -112,34 +1300,26 @@ export enum CategoryModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC'
 }
 
-/** Record of type Categorie (category) */
-export type CategoryRecord = RecordInterface & {
-  __typename?: 'CategoryRecord';
-  _allDescriptionLocales?: Maybe<Array<StringMultiLocaleField>>;
+/** Record of type Città (city) */
+export type CityRecord = RecordInterface & {
+  __typename?: 'CityRecord';
   _allNameLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allReferencingHomepages: Array<HomepageRecord>;
-  /** Returns meta information regarding a record collection */
-  _allReferencingHomepagesMeta: CollectionMetadata;
-  _allReferencingProducts: Array<ProductRecord>;
-  /** Returns meta information regarding a record collection */
-  _allReferencingProductsMeta: CollectionMetadata;
   _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
   _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
   _createdAt: Scalars['DateTime']['output'];
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
   _isValid: Scalars['BooleanType']['output'];
   _modelApiKey: Scalars['String']['output'];
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>;
   _status: ItemStatus;
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
   _updatedAt: Scalars['DateTime']['output'];
   createdAt: Scalars['DateTime']['output'];
-  description?: Maybe<Scalars['String']['output']>;
   id: Scalars['ItemId']['output'];
   name: Scalars['String']['output'];
   seo?: Maybe<SeoField>;
@@ -148,133 +1328,50 @@ export type CategoryRecord = RecordInterface & {
 };
 
 
-/** Record of type Categorie (category) */
-export type CategoryRecord_AllDescriptionLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Categorie (category) */
-export type CategoryRecord_AllNameLocalesArgs = {
+/** Record of type Città (city) */
+export type CityRecord_AllNameLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Categorie (category) */
-export type CategoryRecord_AllReferencingHomepagesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<HomepageModelFilter>;
-  first?: InputMaybe<Scalars['IntType']['input']>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<HomepageModelOrderBy>>>;
-  skip?: InputMaybe<Scalars['IntType']['input']>;
-  through?: InputMaybe<InverseRelationshipFilterBetweenHomepageAndCategory>;
-};
-
-
-/** Record of type Categorie (category) */
-export type CategoryRecord_AllReferencingHomepagesMetaArgs = {
-  filter?: InputMaybe<HomepageModelFilter>;
-  locale?: InputMaybe<SiteLocale>;
-  through?: InputMaybe<InverseRelationshipFilterBetweenHomepageAndCategory>;
-};
-
-
-/** Record of type Categorie (category) */
-export type CategoryRecord_AllReferencingProductsArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<ProductModelFilter>;
-  first?: InputMaybe<Scalars['IntType']['input']>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<ProductModelOrderBy>>>;
-  skip?: InputMaybe<Scalars['IntType']['input']>;
-  through?: InputMaybe<InverseRelationshipFilterBetweenProductAndCategory>;
-};
-
-
-/** Record of type Categorie (category) */
-export type CategoryRecord_AllReferencingProductsMetaArgs = {
-  filter?: InputMaybe<ProductModelFilter>;
-  locale?: InputMaybe<SiteLocale>;
-  through?: InputMaybe<InverseRelationshipFilterBetweenProductAndCategory>;
-};
-
-
-/** Record of type Categorie (category) */
-export type CategoryRecord_AllSeoLocalesArgs = {
+/** Record of type Città (city) */
+export type CityRecord_AllSeoLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Categorie (category) */
-export type CategoryRecord_AllSlugLocalesArgs = {
+/** Record of type Città (city) */
+export type CityRecord_AllSlugLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Categorie (category) */
-export type CategoryRecord_SeoMetaTagsArgs = {
+/** Record of type Città (city) */
+export type CityRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Categorie (category) */
-export type CategoryRecordDescriptionArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Categorie (category) */
-export type CategoryRecordNameArgs = {
+/** Record of type Città (city) */
+export type CityRecordNameArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Categorie (category) */
-export type CategoryRecordSeoArgs = {
+/** Record of type Città (city) */
+export type CityRecordSeoArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Categorie (category) */
-export type CategoryRecordSlugArgs = {
+/** Record of type Città (city) */
+export type CityRecordSlugArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-/** Block of type codice fiscale (codice_fiscale) */
-export type CodiceFiscaleRecord = RecordInterface & {
-  __typename?: 'CodiceFiscaleRecord';
-  _createdAt: Scalars['DateTime']['output'];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
-  _isValid: Scalars['BooleanType']['output'];
-  _modelApiKey: Scalars['String']['output'];
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _updatedAt: Scalars['DateTime']['output'];
-  createdAt: Scalars['DateTime']['output'];
-  id: Scalars['ItemId']['output'];
-  updatedAt: Scalars['DateTime']['output'];
-};
-
-
-/** Block of type codice fiscale (codice_fiscale) */
-export type CodiceFiscaleRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
@@ -308,275 +1405,94 @@ export type ColorField = {
   red: Scalars['IntType']['output'];
 };
 
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecord = RecordInterface & {
-  __typename?: 'CompanyPageRecord';
-  _allBlocksLocales?: Maybe<Array<TextImageBlockRecordListListNonNullMultiLocaleField>>;
-  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
-  _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allSubtitleLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allSubtitleProductionLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allTextLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allTextProductionLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allTitleProductionLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _createdAt: Scalars['DateTime']['output'];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
-  _isValid: Scalars['BooleanType']['output'];
-  _locales: Array<SiteLocale>;
-  _modelApiKey: Scalars['String']['output'];
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _updatedAt: Scalars['DateTime']['output'];
-  blocks: Array<TextImageBlockRecord>;
-  createdAt: Scalars['DateTime']['output'];
-  galleryProduction: Array<FileField>;
-  id: Scalars['ItemId']['output'];
-  image?: Maybe<FileField>;
-  imageProduction?: Maybe<FileField>;
-  seo?: Maybe<SeoField>;
-  slug: Scalars['String']['output'];
-  subtitle?: Maybe<Scalars['String']['output']>;
-  subtitleProduction?: Maybe<Scalars['String']['output']>;
-  text?: Maybe<Scalars['String']['output']>;
-  textProduction?: Maybe<Scalars['String']['output']>;
-  title: Scalars['String']['output'];
-  titleProduction?: Maybe<Scalars['String']['output']>;
-  updatedAt: Scalars['DateTime']['output'];
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecord_AllBlocksLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecord_AllSeoLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecord_AllSlugLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecord_AllSubtitleLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecord_AllSubtitleProductionLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecord_AllTextLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecord_AllTextProductionLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecord_AllTitleLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecord_AllTitleProductionLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecordBlocksArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecordSeoArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecordSlugArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecordSubtitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecordSubtitleProductionArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecordTextArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecordTextProductionArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecordTitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina azienda (company_page) */
-export type CompanyPageRecordTitleProductionArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-/** Record of type Pagina contatti (contact_page) */
+/** Record of type Pagina Contatti (contact_page) */
 export type ContactPageRecord = RecordInterface & {
   __typename?: 'ContactPageRecord';
+  _allFooterTextLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allMenuLabelLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
   _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
-  _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allTextLocales?: Maybe<Array<StringMultiLocaleField>>;
   _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
   _createdAt: Scalars['DateTime']['output'];
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
   _isValid: Scalars['BooleanType']['output'];
   _modelApiKey: Scalars['String']['output'];
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>;
   _status: ItemStatus;
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
   _updatedAt: Scalars['DateTime']['output'];
-  cover: ImageFileField;
   createdAt: Scalars['DateTime']['output'];
+  email: Scalars['String']['output'];
+  footerText: Scalars['String']['output'];
   id: Scalars['ItemId']['output'];
-  map: LatLonField;
+  instagramUrl: Scalars['String']['output'];
+  menuLabel: Scalars['String']['output'];
   seo?: Maybe<SeoField>;
-  slug: Scalars['String']['output'];
-  text?: Maybe<Scalars['String']['output']>;
   title: Scalars['String']['output'];
   updatedAt: Scalars['DateTime']['output'];
 };
 
 
-/** Record of type Pagina contatti (contact_page) */
+/** Record of type Pagina Contatti (contact_page) */
+export type ContactPageRecord_AllFooterTextLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Pagina Contatti (contact_page) */
+export type ContactPageRecord_AllMenuLabelLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Pagina Contatti (contact_page) */
 export type ContactPageRecord_AllSeoLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Pagina contatti (contact_page) */
-export type ContactPageRecord_AllSlugLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina contatti (contact_page) */
-export type ContactPageRecord_AllTextLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Pagina contatti (contact_page) */
+/** Record of type Pagina Contatti (contact_page) */
 export type ContactPageRecord_AllTitleLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Pagina contatti (contact_page) */
+/** Record of type Pagina Contatti (contact_page) */
 export type ContactPageRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Pagina contatti (contact_page) */
+/** Record of type Pagina Contatti (contact_page) */
+export type ContactPageRecordFooterTextArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Pagina Contatti (contact_page) */
+export type ContactPageRecordMenuLabelArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Pagina Contatti (contact_page) */
 export type ContactPageRecordSeoArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Pagina contatti (contact_page) */
-export type ContactPageRecordSlugArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina contatti (contact_page) */
-export type ContactPageRecordTextArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Pagina contatti (contact_page) */
+/** Record of type Pagina Contatti (contact_page) */
 export type ContactPageRecordTitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
@@ -616,6 +1532,252 @@ export type DateFilter = {
   lte?: InputMaybe<Scalars['Date']['input']>;
   /** Exclude records with an exact match */
   neq?: InputMaybe<Scalars['Date']['input']>;
+};
+
+export type ExpositionModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ExpositionModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ExpositionModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  attachment?: InputMaybe<FileFilter>;
+  createdAt?: InputMaybe<CreatedAtFilter>;
+  galleryImages?: InputMaybe<GalleryFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  location?: InputMaybe<StringFilter>;
+  position?: InputMaybe<PositionFilter>;
+  seo?: InputMaybe<SeoFilter>;
+  slug?: InputMaybe<SlugFilter>;
+  text?: InputMaybe<TextFilter>;
+  timePeriod?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  updatedAt?: InputMaybe<UpdatedAtFilter>;
+};
+
+export enum ExpositionModelOrderBy {
+  _CreatedAtAsc = '_createdAt_ASC',
+  _CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  _UpdatedAtAsc = '_updatedAt_ASC',
+  _UpdatedAtDesc = '_updatedAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  LocationAsc = 'location_ASC',
+  LocationDesc = 'location_DESC',
+  PositionAsc = 'position_ASC',
+  PositionDesc = 'position_DESC',
+  TimePeriodAsc = 'timePeriod_ASC',
+  TimePeriodDesc = 'timePeriod_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC'
+}
+
+/** Record of type Mostra (exposition) */
+export type ExpositionRecord = RecordInterface & {
+  __typename?: 'ExpositionRecord';
+  _allLocationLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allTextLocales?: Maybe<Array<StringMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  attachment: FileField;
+  createdAt: Scalars['DateTime']['output'];
+  galleryImages: Array<FileField>;
+  id: Scalars['ItemId']['output'];
+  location: Scalars['String']['output'];
+  position?: Maybe<Scalars['IntType']['output']>;
+  seo?: Maybe<SeoField>;
+  slug: Scalars['String']['output'];
+  text?: Maybe<Scalars['String']['output']>;
+  timePeriod?: Maybe<Scalars['String']['output']>;
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type Mostra (exposition) */
+export type ExpositionRecord_AllLocationLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Mostra (exposition) */
+export type ExpositionRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Mostra (exposition) */
+export type ExpositionRecord_AllSlugLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Mostra (exposition) */
+export type ExpositionRecord_AllTextLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Record of type Mostra (exposition) */
+export type ExpositionRecord_AllTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Mostra (exposition) */
+export type ExpositionRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Mostra (exposition) */
+export type ExpositionRecordLocationArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Mostra (exposition) */
+export type ExpositionRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Mostra (exposition) */
+export type ExpositionRecordSlugArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Mostra (exposition) */
+export type ExpositionRecordTextArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Record of type Mostra (exposition) */
+export type ExpositionRecordTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Record of type Indice Mostre (expositions_index) */
+export type ExpositionsIndexRecord = RecordInterface & {
+  __typename?: 'ExpositionsIndexRecord';
+  _allMenuLabelLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  createdAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  menuLabel: Scalars['String']['output'];
+  seo?: Maybe<SeoField>;
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type Indice Mostre (expositions_index) */
+export type ExpositionsIndexRecord_AllMenuLabelLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Mostre (expositions_index) */
+export type ExpositionsIndexRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Mostre (expositions_index) */
+export type ExpositionsIndexRecord_AllTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Mostre (expositions_index) */
+export type ExpositionsIndexRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Mostre (expositions_index) */
+export type ExpositionsIndexRecordMenuLabelArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Mostre (expositions_index) */
+export type ExpositionsIndexRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Mostre (expositions_index) */
+export type ExpositionsIndexRecordTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
 };
 
 export enum FaviconType {
@@ -818,383 +1980,82 @@ export type GlobalSeoField = {
   twitterAccount?: Maybe<Scalars['String']['output']>;
 };
 
-/** Linking fields */
-export enum HomepageModelFieldsReferencingCategoryModel {
-  HomepageSliders = 'homepage_sliders',
-  HomepageSlidersSlideLink = 'homepage_sliders__slide_link'
-}
-
-/** Linking fields */
-export enum HomepageModelFieldsReferencingProductModel {
-  HomepageSliders = 'homepage_sliders',
-  HomepageSlidersSlideLink = 'homepage_sliders__slide_link'
-}
-
-/** Linking fields */
-export enum HomepageModelFieldsReferencingTechniqueModel {
-  HomepageSliders = 'homepage_sliders',
-  HomepageSlidersSlideLink = 'homepage_sliders__slide_link'
-}
-
-export type HomepageModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<HomepageModelFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<HomepageModelFilter>>>;
-  _createdAt?: InputMaybe<CreatedAtFilter>;
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
-  _isValid?: InputMaybe<BooleanFilter>;
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _publishedAt?: InputMaybe<PublishedAtFilter>;
-  _status?: InputMaybe<StatusFilter>;
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _updatedAt?: InputMaybe<UpdatedAtFilter>;
-  createdAt?: InputMaybe<CreatedAtFilter>;
-  heroCtaLink?: InputMaybe<StringFilter>;
-  heroCtaText?: InputMaybe<StringFilter>;
-  heroImage?: InputMaybe<FileFilter>;
-  heroText?: InputMaybe<TextFilter>;
-  heroTitle?: InputMaybe<StringFilter>;
-  id?: InputMaybe<ItemIdFilter>;
-  seo?: InputMaybe<SeoFilter>;
-  splash1Catalogue1Pdf?: InputMaybe<FileFilter>;
-  splash1Catalogue2Pdf?: InputMaybe<FileFilter>;
-  splash1Catalogue3Pdf?: InputMaybe<FileFilter>;
-  splash1Cta1Text?: InputMaybe<StringFilter>;
-  splash1Cta2Text?: InputMaybe<StringFilter>;
-  splash1Cta3Text?: InputMaybe<StringFilter>;
-  splash1Image?: InputMaybe<FileFilter>;
-  splash1Text?: InputMaybe<TextFilter>;
-  splash1Title?: InputMaybe<StringFilter>;
-  updatedAt?: InputMaybe<UpdatedAtFilter>;
-};
-
-export enum HomepageModelOrderBy {
-  _CreatedAtAsc = '_createdAt_ASC',
-  _CreatedAtDesc = '_createdAt_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  _UpdatedAtAsc = '_updatedAt_ASC',
-  _UpdatedAtDesc = '_updatedAt_DESC',
-  CreatedAtAsc = 'createdAt_ASC',
-  CreatedAtDesc = 'createdAt_DESC',
-  HeroCtaLinkAsc = 'heroCtaLink_ASC',
-  HeroCtaLinkDesc = 'heroCtaLink_DESC',
-  HeroCtaTextAsc = 'heroCtaText_ASC',
-  HeroCtaTextDesc = 'heroCtaText_DESC',
-  HeroTitleAsc = 'heroTitle_ASC',
-  HeroTitleDesc = 'heroTitle_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  Splash1Cta1TextAsc = 'splash1Cta1Text_ASC',
-  Splash1Cta1TextDesc = 'splash1Cta1Text_DESC',
-  Splash1Cta2TextAsc = 'splash1Cta2Text_ASC',
-  Splash1Cta2TextDesc = 'splash1Cta2Text_DESC',
-  Splash1Cta3TextAsc = 'splash1Cta3Text_ASC',
-  Splash1Cta3TextDesc = 'splash1Cta3Text_DESC',
-  Splash1TitleAsc = 'splash1Title_ASC',
-  Splash1TitleDesc = 'splash1Title_DESC',
-  UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC'
-}
-
-/** Record of type Home page (homepage) */
+/** Record of type Homepage (homepage) */
 export type HomepageRecord = RecordInterface & {
   __typename?: 'HomepageRecord';
-  _allHeroCtaLinkLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allHeroCtaTextLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allHeroTextLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allHeroTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
   _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
-  _allSlidersLocales?: Maybe<Array<SlideRecordListListNonNullMultiLocaleField>>;
-  _allSplash1Cta1TextLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allSplash1Cta2TextLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allSplash1Cta3TextLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allSplash1TextLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allSplash1TitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allTextLocales?: Maybe<Array<StringMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
   _createdAt: Scalars['DateTime']['output'];
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
   _isValid: Scalars['BooleanType']['output'];
   _modelApiKey: Scalars['String']['output'];
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>;
   _status: ItemStatus;
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
   _updatedAt: Scalars['DateTime']['output'];
   createdAt: Scalars['DateTime']['output'];
-  heroCtaLink: Scalars['String']['output'];
-  heroCtaText: Scalars['String']['output'];
-  heroImage: FileField;
-  heroText: Scalars['String']['output'];
-  heroTitle: Scalars['String']['output'];
+  galleryImages: Array<FileField>;
   id: Scalars['ItemId']['output'];
   seo?: Maybe<SeoField>;
-  sliders: Array<SlideRecord>;
-  splash1Catalogue1Pdf: FileField;
-  splash1Catalogue2Pdf: FileField;
-  splash1Catalogue3Pdf: FileField;
-  splash1Cta1Text: Scalars['String']['output'];
-  splash1Cta2Text: Scalars['String']['output'];
-  splash1Cta3Text: Scalars['String']['output'];
-  splash1Image: FileField;
-  splash1Text: Scalars['String']['output'];
-  splash1Title: Scalars['String']['output'];
+  text?: Maybe<Scalars['String']['output']>;
+  title: Scalars['String']['output'];
   updatedAt: Scalars['DateTime']['output'];
 };
 
 
-/** Record of type Home page (homepage) */
-export type HomepageRecord_AllHeroCtaLinkLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Home page (homepage) */
-export type HomepageRecord_AllHeroCtaTextLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Home page (homepage) */
-export type HomepageRecord_AllHeroTextLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Home page (homepage) */
-export type HomepageRecord_AllHeroTitleLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Home page (homepage) */
+/** Record of type Homepage (homepage) */
 export type HomepageRecord_AllSeoLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Home page (homepage) */
-export type HomepageRecord_AllSlidersLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Home page (homepage) */
-export type HomepageRecord_AllSplash1Cta1TextLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Home page (homepage) */
-export type HomepageRecord_AllSplash1Cta2TextLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Home page (homepage) */
-export type HomepageRecord_AllSplash1Cta3TextLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Home page (homepage) */
-export type HomepageRecord_AllSplash1TextLocalesArgs = {
+/** Record of type Homepage (homepage) */
+export type HomepageRecord_AllTextLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
   markdown?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
-/** Record of type Home page (homepage) */
-export type HomepageRecord_AllSplash1TitleLocalesArgs = {
+/** Record of type Homepage (homepage) */
+export type HomepageRecord_AllTitleLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Home page (homepage) */
+/** Record of type Homepage (homepage) */
 export type HomepageRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Home page (homepage) */
-export type HomepageRecordHeroCtaLinkArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Home page (homepage) */
-export type HomepageRecordHeroCtaTextArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Home page (homepage) */
-export type HomepageRecordHeroTextArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Home page (homepage) */
-export type HomepageRecordHeroTitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Home page (homepage) */
+/** Record of type Homepage (homepage) */
 export type HomepageRecordSeoArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Home page (homepage) */
-export type HomepageRecordSlidersArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Home page (homepage) */
-export type HomepageRecordSplash1Cta1TextArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Home page (homepage) */
-export type HomepageRecordSplash1Cta2TextArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Home page (homepage) */
-export type HomepageRecordSplash1Cta3TextArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Home page (homepage) */
-export type HomepageRecordSplash1TextArgs = {
+/** Record of type Homepage (homepage) */
+export type HomepageRecordTextArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
   markdown?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
-/** Record of type Home page (homepage) */
-export type HomepageRecordSplash1TitleArgs = {
+/** Record of type Homepage (homepage) */
+export type HomepageRecordTitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
-};
-
-export type ImageFileField = FileFieldInterface & {
-  __typename?: 'ImageFileField';
-  _createdAt: Scalars['DateTime']['output'];
-  /** The DatoCMS URL where you can edit this entity. To use this field, you need to set a X-Base-Editing-Url header in the request */
-  _editingUrl?: Maybe<Scalars['String']['output']>;
-  _updatedAt: Scalars['DateTime']['output'];
-  alt?: Maybe<Scalars['String']['output']>;
-  author?: Maybe<Scalars['String']['output']>;
-  basename: Scalars['String']['output'];
-  blurUpThumb?: Maybe<Scalars['String']['output']>;
-  blurhash?: Maybe<Scalars['String']['output']>;
-  colors: Array<ColorField>;
-  copyright?: Maybe<Scalars['String']['output']>;
-  customData: Scalars['CustomData']['output'];
-  exifInfo: Scalars['CustomData']['output'];
-  filename: Scalars['String']['output'];
-  focalPoint: FocalPoint;
-  format: Scalars['String']['output'];
-  height: Scalars['IntType']['output'];
-  id: Scalars['UploadId']['output'];
-  md5: Scalars['String']['output'];
-  mimeType: Scalars['String']['output'];
-  notes?: Maybe<Scalars['String']['output']>;
-  responsiveImage: ResponsiveImage;
-  size: Scalars['IntType']['output'];
-  smartTags: Array<Scalars['String']['output']>;
-  tags: Array<Scalars['String']['output']>;
-  thumbhash?: Maybe<Scalars['String']['output']>;
-  title?: Maybe<Scalars['String']['output']>;
-  url: Scalars['String']['output'];
-  video?: Maybe<UploadVideoField>;
-  width: Scalars['IntType']['output'];
-};
-
-
-export type ImageFileFieldAltArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-export type ImageFileFieldBlurUpThumbArgs = {
-  imgixParams?: InputMaybe<ImgixParams>;
-  punch?: Scalars['Float']['input'];
-  quality?: Scalars['Int']['input'];
-  size?: Scalars['Int']['input'];
-};
-
-
-export type ImageFileFieldCustomDataArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-export type ImageFileFieldFocalPointArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-export type ImageFileFieldResponsiveImageArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  imgixParams?: InputMaybe<ImgixParams>;
-  locale?: InputMaybe<SiteLocale>;
-  sizes?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-export type ImageFileFieldTitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-export type ImageFileFieldUrlArgs = {
-  imgixParams?: InputMaybe<ImgixParams>;
 };
 
 export type ImgixParams = {
@@ -2997,84 +3858,22 @@ export type InUseFilter = {
   eq?: InputMaybe<Scalars['BooleanType']['input']>;
 };
 
-/** Specifies how to filter by linking fields */
-export type InverseRelationshipFieldFilterBetweenHomepageAndCategory = {
-  /** Filter linking records that reference current record in at least one of the specified fields */
-  anyIn?: InputMaybe<Array<HomepageModelFieldsReferencingCategoryModel>>;
-  /** Filter linking records that do not reference current record in any of the specified fields */
-  notIn?: InputMaybe<Array<HomepageModelFieldsReferencingCategoryModel>>;
-};
-
-/** Specifies how to filter by linking fields */
-export type InverseRelationshipFieldFilterBetweenHomepageAndProduct = {
-  /** Filter linking records that reference current record in at least one of the specified fields */
-  anyIn?: InputMaybe<Array<HomepageModelFieldsReferencingProductModel>>;
-  /** Filter linking records that do not reference current record in any of the specified fields */
-  notIn?: InputMaybe<Array<HomepageModelFieldsReferencingProductModel>>;
-};
-
-/** Specifies how to filter by linking fields */
-export type InverseRelationshipFieldFilterBetweenHomepageAndTechnique = {
-  /** Filter linking records that reference current record in at least one of the specified fields */
-  anyIn?: InputMaybe<Array<HomepageModelFieldsReferencingTechniqueModel>>;
-  /** Filter linking records that do not reference current record in any of the specified fields */
-  notIn?: InputMaybe<Array<HomepageModelFieldsReferencingTechniqueModel>>;
-};
-
-/** Specifies how to filter by linking fields */
-export type InverseRelationshipFieldFilterBetweenProductAndCategory = {
-  /** Filter linking records that reference current record in at least one of the specified fields */
-  anyIn?: InputMaybe<Array<ProductModelFieldsReferencingCategoryModel>>;
-  /** Filter linking records that do not reference current record in any of the specified fields */
-  notIn?: InputMaybe<Array<ProductModelFieldsReferencingCategoryModel>>;
-};
-
-/** Specifies how to filter by linking fields */
-export type InverseRelationshipFieldFilterBetweenProductAndTechnique = {
-  /** Filter linking records that reference current record in at least one of the specified fields */
-  anyIn?: InputMaybe<Array<ProductModelFieldsReferencingTechniqueModel>>;
-  /** Filter linking records that do not reference current record in any of the specified fields */
-  notIn?: InputMaybe<Array<ProductModelFieldsReferencingTechniqueModel>>;
-};
-
-/** Specifies how to filter linking records */
-export type InverseRelationshipFilterBetweenHomepageAndCategory = {
-  /** Specifies how to filter by linking fields */
-  fields?: InputMaybe<InverseRelationshipFieldFilterBetweenHomepageAndCategory>;
-  /** Specifies how to filter by linking locales */
-  locales?: InputMaybe<LinkingLocalesFilter>;
-};
-
-/** Specifies how to filter linking records */
-export type InverseRelationshipFilterBetweenHomepageAndProduct = {
-  /** Specifies how to filter by linking fields */
-  fields?: InputMaybe<InverseRelationshipFieldFilterBetweenHomepageAndProduct>;
-  /** Specifies how to filter by linking locales */
-  locales?: InputMaybe<LinkingLocalesFilter>;
-};
-
-/** Specifies how to filter linking records */
-export type InverseRelationshipFilterBetweenHomepageAndTechnique = {
-  /** Specifies how to filter by linking fields */
-  fields?: InputMaybe<InverseRelationshipFieldFilterBetweenHomepageAndTechnique>;
-  /** Specifies how to filter by linking locales */
-  locales?: InputMaybe<LinkingLocalesFilter>;
-};
-
-/** Specifies how to filter linking records */
-export type InverseRelationshipFilterBetweenProductAndCategory = {
-  /** Specifies how to filter by linking fields */
-  fields?: InputMaybe<InverseRelationshipFieldFilterBetweenProductAndCategory>;
-  /** Specifies how to filter by linking locales */
-  locales?: InputMaybe<LinkingLocalesFilter>;
-};
-
-/** Specifies how to filter linking records */
-export type InverseRelationshipFilterBetweenProductAndTechnique = {
-  /** Specifies how to filter by linking fields */
-  fields?: InputMaybe<InverseRelationshipFieldFilterBetweenProductAndTechnique>;
-  /** Specifies how to filter by linking locales */
-  locales?: InputMaybe<LinkingLocalesFilter>;
+/** Specifies how to filter Integer fields */
+export type IntegerFilter = {
+  /** Search for records with an exact match */
+  eq?: InputMaybe<Scalars['IntType']['input']>;
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']['input']>;
+  /** Filter records with a value that's strictly greater than the one specified */
+  gt?: InputMaybe<Scalars['IntType']['input']>;
+  /** Filter records with a value that's greater than or equal to the one specified */
+  gte?: InputMaybe<Scalars['IntType']['input']>;
+  /** Filter records with a value that's less than the one specified */
+  lt?: InputMaybe<Scalars['IntType']['input']>;
+  /** Filter records with a value that's less or equal than the one specified */
+  lte?: InputMaybe<Scalars['IntType']['input']>;
+  /** Exclude records with an exact match */
+  neq?: InputMaybe<Scalars['IntType']['input']>;
 };
 
 /** Specifies how to filter by ID */
@@ -3095,180 +3894,6 @@ export enum ItemStatus {
   Updated = 'updated'
 }
 
-export type LatLonField = {
-  __typename?: 'LatLonField';
-  latitude: Scalars['FloatType']['output'];
-  longitude: Scalars['FloatType']['output'];
-};
-
-export type LegislationPageModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<LegislationPageModelFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<LegislationPageModelFilter>>>;
-  _createdAt?: InputMaybe<CreatedAtFilter>;
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
-  _isValid?: InputMaybe<BooleanFilter>;
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _publishedAt?: InputMaybe<PublishedAtFilter>;
-  _status?: InputMaybe<StatusFilter>;
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _updatedAt?: InputMaybe<UpdatedAtFilter>;
-  cover?: InputMaybe<FileFilter>;
-  createdAt?: InputMaybe<CreatedAtFilter>;
-  id?: InputMaybe<ItemIdFilter>;
-  image?: InputMaybe<FileFilter>;
-  position?: InputMaybe<PositionFilter>;
-  seo?: InputMaybe<SeoFilter>;
-  slug?: InputMaybe<SlugFilter>;
-  subtitle?: InputMaybe<StringFilter>;
-  text?: InputMaybe<TextFilter>;
-  title?: InputMaybe<StringFilter>;
-  updatedAt?: InputMaybe<UpdatedAtFilter>;
-};
-
-export enum LegislationPageModelOrderBy {
-  _CreatedAtAsc = '_createdAt_ASC',
-  _CreatedAtDesc = '_createdAt_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  _UpdatedAtAsc = '_updatedAt_ASC',
-  _UpdatedAtDesc = '_updatedAt_DESC',
-  CreatedAtAsc = 'createdAt_ASC',
-  CreatedAtDesc = 'createdAt_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  PositionAsc = 'position_ASC',
-  PositionDesc = 'position_DESC',
-  SubtitleAsc = 'subtitle_ASC',
-  SubtitleDesc = 'subtitle_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
-  UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC'
-}
-
-/** Record of type Pagine normativa (legislation_page) */
-export type LegislationPageRecord = RecordInterface & {
-  __typename?: 'LegislationPageRecord';
-  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
-  _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allSubtitleLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allTextLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _createdAt: Scalars['DateTime']['output'];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
-  _isValid: Scalars['BooleanType']['output'];
-  _modelApiKey: Scalars['String']['output'];
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _updatedAt: Scalars['DateTime']['output'];
-  blocks: Array<AttachmentRecord>;
-  cover?: Maybe<FileField>;
-  createdAt: Scalars['DateTime']['output'];
-  id: Scalars['ItemId']['output'];
-  image?: Maybe<FileField>;
-  position?: Maybe<Scalars['IntType']['output']>;
-  seo?: Maybe<SeoField>;
-  slug: Scalars['String']['output'];
-  subtitle?: Maybe<Scalars['String']['output']>;
-  text?: Maybe<Scalars['String']['output']>;
-  title: Scalars['String']['output'];
-  updatedAt: Scalars['DateTime']['output'];
-};
-
-
-/** Record of type Pagine normativa (legislation_page) */
-export type LegislationPageRecord_AllSeoLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagine normativa (legislation_page) */
-export type LegislationPageRecord_AllSlugLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagine normativa (legislation_page) */
-export type LegislationPageRecord_AllSubtitleLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagine normativa (legislation_page) */
-export type LegislationPageRecord_AllTextLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Pagine normativa (legislation_page) */
-export type LegislationPageRecord_AllTitleLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagine normativa (legislation_page) */
-export type LegislationPageRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagine normativa (legislation_page) */
-export type LegislationPageRecordSeoArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagine normativa (legislation_page) */
-export type LegislationPageRecordSlugArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagine normativa (legislation_page) */
-export type LegislationPageRecordSubtitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagine normativa (legislation_page) */
-export type LegislationPageRecordTextArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Pagine normativa (legislation_page) */
-export type LegislationPageRecordTitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
 /** Specifies how to filter Single-link fields */
 export type LinkFilter = {
   /** Search for records with an exact match. The specified value must be a Record ID */
@@ -3281,21 +3906,6 @@ export type LinkFilter = {
   neq?: InputMaybe<Scalars['ItemId']['input']>;
   /** Filter records not linked to one of the specified records */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']['input']>>>;
-};
-
-/** Linking locales */
-export enum LinkingLocale {
-  NonLocalized = '_nonLocalized',
-  En = 'en',
-  It = 'it'
-}
-
-/** Specifies how to filter by linking locales */
-export type LinkingLocalesFilter = {
-  /** Filter linking records that link to current record in at least one of the specified locales */
-  anyIn?: InputMaybe<Array<LinkingLocale>>;
-  /** Filter linking records that do not link to current record in any of the specified locales */
-  notIn?: InputMaybe<Array<LinkingLocale>>;
 };
 
 /** Specifies how to filter Multiple-links fields */
@@ -3312,50 +3922,27 @@ export type LinksFilter = {
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']['input']>>>;
 };
 
-/** Specifies how to filter by locale */
-export type LocalesFilter = {
-  /** Filter records that are localized in all the specified locales */
-  allIn?: InputMaybe<Array<SiteLocale>>;
-  /** Filter records that are localized in at least one of the specified locales */
-  anyIn?: InputMaybe<Array<SiteLocale>>;
-  /** Filter records that are not localized in any of the specified locales */
-  notIn?: InputMaybe<Array<SiteLocale>>;
-};
-
-export enum MuxThumbnailFormatType {
-  Gif = 'gif',
-  Jpg = 'jpg',
-  Png = 'png'
-}
-
-export type NewsModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<NewsModelFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<NewsModelFilter>>>;
+export type LocationModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<LocationModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<LocationModelFilter>>>;
   _createdAt?: InputMaybe<CreatedAtFilter>;
   _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
   _isValid?: InputMaybe<BooleanFilter>;
-  _locales?: InputMaybe<LocalesFilter>;
   _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
   _publishedAt?: InputMaybe<PublishedAtFilter>;
   _status?: InputMaybe<StatusFilter>;
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
   _updatedAt?: InputMaybe<UpdatedAtFilter>;
   createdAt?: InputMaybe<CreatedAtFilter>;
-  date?: InputMaybe<DateFilter>;
   id?: InputMaybe<ItemIdFilter>;
-  image?: InputMaybe<FileFilter>;
+  name?: InputMaybe<StringFilter>;
+  previousUrl?: InputMaybe<StringFilter>;
   seo?: InputMaybe<SeoFilter>;
-  showVideo?: InputMaybe<BooleanFilter>;
   slug?: InputMaybe<SlugFilter>;
-  subtitle?: InputMaybe<StringFilter>;
-  text?: InputMaybe<TextFilter>;
-  title?: InputMaybe<StringFilter>;
   updatedAt?: InputMaybe<UpdatedAtFilter>;
-  url?: InputMaybe<StringFilter>;
-  video?: InputMaybe<VideoFilter>;
 };
 
-export enum NewsModelOrderBy {
+export enum LocationModelOrderBy {
   _CreatedAtAsc = '_createdAt_ASC',
   _CreatedAtDesc = '_createdAt_DESC',
   FirstPublishedAtAsc = '_firstPublishedAt_ASC',
@@ -3374,38 +3961,31 @@ export enum NewsModelOrderBy {
   _UpdatedAtDesc = '_updatedAt_DESC',
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
-  DateAsc = 'date_ASC',
-  DateDesc = 'date_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
-  ShowVideoAsc = 'showVideo_ASC',
-  ShowVideoDesc = 'showVideo_DESC',
-  SubtitleAsc = 'subtitle_ASC',
-  SubtitleDesc = 'subtitle_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  PreviousUrlAsc = 'previousUrl_ASC',
+  PreviousUrlDesc = 'previousUrl_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
-  UrlAsc = 'url_ASC',
-  UrlDesc = 'url_DESC'
+  UpdatedAtDesc = 'updatedAt_DESC'
 }
 
-/** Record of type Pagina news (news_page) */
-export type NewsPageRecord = RecordInterface & {
-  __typename?: 'NewsPageRecord';
+/** Record of type Luogo (location) */
+export type LocationRecord = RecordInterface & {
+  __typename?: 'LocationRecord';
+  _allNameLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allPreviousUrlLocales?: Maybe<Array<StringMultiLocaleField>>;
   _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
   _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allSubtitleLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allTextLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
   _createdAt: Scalars['DateTime']['output'];
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
   _isValid: Scalars['BooleanType']['output'];
   _modelApiKey: Scalars['String']['output'];
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>;
   _status: ItemStatus;
@@ -3413,222 +3993,155 @@ export type NewsPageRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output'];
   createdAt: Scalars['DateTime']['output'];
   id: Scalars['ItemId']['output'];
-  image?: Maybe<FileField>;
+  name: Scalars['String']['output'];
+  previousUrl?: Maybe<Scalars['String']['output']>;
   seo?: Maybe<SeoField>;
   slug: Scalars['String']['output'];
-  subtitle?: Maybe<Scalars['String']['output']>;
-  text?: Maybe<Scalars['String']['output']>;
-  title: Scalars['String']['output'];
   updatedAt: Scalars['DateTime']['output'];
 };
 
 
-/** Record of type Pagina news (news_page) */
-export type NewsPageRecord_AllSeoLocalesArgs = {
+/** Record of type Luogo (location) */
+export type LocationRecord_AllNameLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Pagina news (news_page) */
-export type NewsPageRecord_AllSlugLocalesArgs = {
+/** Record of type Luogo (location) */
+export type LocationRecord_AllPreviousUrlLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Pagina news (news_page) */
-export type NewsPageRecord_AllSubtitleLocalesArgs = {
+/** Record of type Luogo (location) */
+export type LocationRecord_AllSeoLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Pagina news (news_page) */
-export type NewsPageRecord_AllTextLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Pagina news (news_page) */
-export type NewsPageRecord_AllTitleLocalesArgs = {
+/** Record of type Luogo (location) */
+export type LocationRecord_AllSlugLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Pagina news (news_page) */
-export type NewsPageRecord_SeoMetaTagsArgs = {
+/** Record of type Luogo (location) */
+export type LocationRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Pagina news (news_page) */
-export type NewsPageRecordSeoArgs = {
+/** Record of type Luogo (location) */
+export type LocationRecordNameArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Pagina news (news_page) */
-export type NewsPageRecordSlugArgs = {
+/** Record of type Luogo (location) */
+export type LocationRecordPreviousUrlArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Pagina news (news_page) */
-export type NewsPageRecordSubtitleArgs = {
+/** Record of type Luogo (location) */
+export type LocationRecordSeoArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Pagina news (news_page) */
-export type NewsPageRecordTextArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Pagina news (news_page) */
-export type NewsPageRecordTitleArgs = {
+/** Record of type Luogo (location) */
+export type LocationRecordSlugArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
-/** Record of type News (news) */
-export type NewsRecord = RecordInterface & {
-  __typename?: 'NewsRecord';
+/** Record of type Indice Luoghi (locations_index) */
+export type LocationsIndexRecord = RecordInterface & {
+  __typename?: 'LocationsIndexRecord';
+  _allMenuLabelLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
   _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
-  _allSlugLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allSubtitleLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allTextLocales?: Maybe<Array<StringMultiLocaleField>>;
   _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allUrlLocales?: Maybe<Array<StringMultiLocaleField>>;
   _createdAt: Scalars['DateTime']['output'];
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
   _isValid: Scalars['BooleanType']['output'];
-  _locales: Array<SiteLocale>;
   _modelApiKey: Scalars['String']['output'];
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>;
   _status: ItemStatus;
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
   _updatedAt: Scalars['DateTime']['output'];
   createdAt: Scalars['DateTime']['output'];
-  date: Scalars['Date']['output'];
   id: Scalars['ItemId']['output'];
-  image?: Maybe<FileField>;
+  menuLabel: Scalars['String']['output'];
   seo?: Maybe<SeoField>;
-  showVideo?: Maybe<Scalars['BooleanType']['output']>;
-  slug?: Maybe<Scalars['String']['output']>;
-  subtitle?: Maybe<Scalars['String']['output']>;
-  text?: Maybe<Scalars['String']['output']>;
   title: Scalars['String']['output'];
   updatedAt: Scalars['DateTime']['output'];
-  url?: Maybe<Scalars['String']['output']>;
-  video?: Maybe<VideoField>;
 };
 
 
-/** Record of type News (news) */
-export type NewsRecord_AllSeoLocalesArgs = {
+/** Record of type Indice Luoghi (locations_index) */
+export type LocationsIndexRecord_AllMenuLabelLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type News (news) */
-export type NewsRecord_AllSlugLocalesArgs = {
+/** Record of type Indice Luoghi (locations_index) */
+export type LocationsIndexRecord_AllSeoLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type News (news) */
-export type NewsRecord_AllSubtitleLocalesArgs = {
+/** Record of type Indice Luoghi (locations_index) */
+export type LocationsIndexRecord_AllTitleLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type News (news) */
-export type NewsRecord_AllTextLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type News (news) */
-export type NewsRecord_AllTitleLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+/** Record of type Indice Luoghi (locations_index) */
+export type LocationsIndexRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type News (news) */
-export type NewsRecord_AllUrlLocalesArgs = {
+/** Record of type Indice Luoghi (locations_index) */
+export type LocationsIndexRecordMenuLabelArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type News (news) */
-export type NewsRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type News (news) */
-export type NewsRecordSeoArgs = {
+/** Record of type Indice Luoghi (locations_index) */
+export type LocationsIndexRecordSeoArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type News (news) */
-export type NewsRecordSlugArgs = {
+/** Record of type Indice Luoghi (locations_index) */
+export type LocationsIndexRecordTitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
-
-/** Record of type News (news) */
-export type NewsRecordSubtitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type News (news) */
-export type NewsRecordTextArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type News (news) */
-export type NewsRecordTitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type News (news) */
-export type NewsRecordUrlArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
+export enum MuxThumbnailFormatType {
+  Gif = 'gif',
+  Jpg = 'jpg',
+  Png = 'png'
+}
 
 /** Specifies how to filter by image orientation */
 export type OrientationFilter = {
@@ -3638,9 +4151,207 @@ export type OrientationFilter = {
   neq?: InputMaybe<UploadOrientation>;
 };
 
-export type PageModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<PageModelFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<PageModelFilter>>>;
+export type PhotoModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<PhotoModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<PhotoModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  architectonicElements?: InputMaybe<LinksFilter>;
+  architectonicStyles?: InputMaybe<LinksFilter>;
+  authors?: InputMaybe<LinksFilter>;
+  buildingCategory?: InputMaybe<LinkFilter>;
+  captureDate?: InputMaybe<DateFilter>;
+  city?: InputMaybe<LinkFilter>;
+  createdAt?: InputMaybe<CreatedAtFilter>;
+  description?: InputMaybe<TextFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  image?: InputMaybe<FileFilter>;
+  location?: InputMaybe<LinkFilter>;
+  permissions?: InputMaybe<TextFilter>;
+  previousUrl?: InputMaybe<StringFilter>;
+  sellingOptions?: InputMaybe<LinksFilter>;
+  seo?: InputMaybe<SeoFilter>;
+  slug?: InputMaybe<SlugFilter>;
+  title?: InputMaybe<StringFilter>;
+  updatedAt?: InputMaybe<UpdatedAtFilter>;
+};
+
+export enum PhotoModelOrderBy {
+  _CreatedAtAsc = '_createdAt_ASC',
+  _CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  _UpdatedAtAsc = '_updatedAt_ASC',
+  _UpdatedAtDesc = '_updatedAt_DESC',
+  CaptureDateAsc = 'captureDate_ASC',
+  CaptureDateDesc = 'captureDate_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  PreviousUrlAsc = 'previousUrl_ASC',
+  PreviousUrlDesc = 'previousUrl_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC'
+}
+
+/** Record of type Foto (photo) */
+export type PhotoRecord = RecordInterface & {
+  __typename?: 'PhotoRecord';
+  _allDescriptionLocales?: Maybe<Array<StringMultiLocaleField>>;
+  _allPermissionsLocales?: Maybe<Array<StringMultiLocaleField>>;
+  _allPreviousUrlLocales?: Maybe<Array<StringMultiLocaleField>>;
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  architectonicElements: Array<ArchitectonicElementRecord>;
+  architectonicStyles: Array<ArchitectonicStyleRecord>;
+  authors: Array<AuthorRecord>;
+  buildingCategory: BuildingCategoryRecord;
+  captureDate?: Maybe<Scalars['Date']['output']>;
+  city: CityRecord;
+  createdAt: Scalars['DateTime']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ItemId']['output'];
+  image: FileField;
+  location: LocationRecord;
+  permissions?: Maybe<Scalars['String']['output']>;
+  previousUrl?: Maybe<Scalars['String']['output']>;
+  sellingOptions: Array<SellingOptionRecord>;
+  seo?: Maybe<SeoField>;
+  slug: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type Foto (photo) */
+export type PhotoRecord_AllDescriptionLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Record of type Foto (photo) */
+export type PhotoRecord_AllPermissionsLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Record of type Foto (photo) */
+export type PhotoRecord_AllPreviousUrlLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Foto (photo) */
+export type PhotoRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Foto (photo) */
+export type PhotoRecord_AllSlugLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Foto (photo) */
+export type PhotoRecord_AllTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Foto (photo) */
+export type PhotoRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Foto (photo) */
+export type PhotoRecordDescriptionArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Record of type Foto (photo) */
+export type PhotoRecordPermissionsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Record of type Foto (photo) */
+export type PhotoRecordPreviousUrlArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Foto (photo) */
+export type PhotoRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Foto (photo) */
+export type PhotoRecordSlugArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Foto (photo) */
+export type PhotoRecordTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+export type PhotosCollectionModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<PhotosCollectionModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<PhotosCollectionModelFilter>>>;
   _createdAt?: InputMaybe<CreatedAtFilter>;
   _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
   _isValid?: InputMaybe<BooleanFilter>;
@@ -3651,17 +4362,16 @@ export type PageModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>;
   createdAt?: InputMaybe<CreatedAtFilter>;
   id?: InputMaybe<ItemIdFilter>;
-  image?: InputMaybe<FileFilter>;
+  name?: InputMaybe<StringFilter>;
+  photos?: InputMaybe<LinksFilter>;
   position?: InputMaybe<PositionFilter>;
+  previousUrl?: InputMaybe<StringFilter>;
   seo?: InputMaybe<SeoFilter>;
   slug?: InputMaybe<SlugFilter>;
-  subtitle?: InputMaybe<StringFilter>;
-  text?: InputMaybe<TextFilter>;
-  title?: InputMaybe<StringFilter>;
   updatedAt?: InputMaybe<UpdatedAtFilter>;
 };
 
-export enum PageModelOrderBy {
+export enum PhotosCollectionModelOrderBy {
   _CreatedAtAsc = '_createdAt_ASC',
   _CreatedAtDesc = '_createdAt_DESC',
   FirstPublishedAtAsc = '_firstPublishedAt_ASC',
@@ -3682,32 +4392,31 @@ export enum PageModelOrderBy {
   CreatedAtDesc = 'createdAt_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
   PositionAsc = 'position_ASC',
   PositionDesc = 'position_DESC',
-  SubtitleAsc = 'subtitle_ASC',
-  SubtitleDesc = 'subtitle_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
+  PreviousUrlAsc = 'previousUrl_ASC',
+  PreviousUrlDesc = 'previousUrl_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
   UpdatedAtDesc = 'updatedAt_DESC'
 }
 
-/** Record of type Altre Pagine (page) */
-export type PageRecord = RecordInterface & {
-  __typename?: 'PageRecord';
+/** Record of type Galleria a tema (photos_collection) */
+export type PhotosCollectionRecord = RecordInterface & {
+  __typename?: 'PhotosCollectionRecord';
+  _allNameLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allPreviousUrlLocales?: Maybe<Array<StringMultiLocaleField>>;
   _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
   _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allSubtitleLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allTextLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
   _createdAt: Scalars['DateTime']['output'];
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
   _isValid: Scalars['BooleanType']['output'];
   _modelApiKey: Scalars['String']['output'];
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>;
   _status: ItemStatus;
@@ -3715,145 +4424,149 @@ export type PageRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output'];
   createdAt: Scalars['DateTime']['output'];
   id: Scalars['ItemId']['output'];
-  image?: Maybe<FileField>;
+  name: Scalars['String']['output'];
+  photos: Array<PhotoRecord>;
   position?: Maybe<Scalars['IntType']['output']>;
+  previousUrl?: Maybe<Scalars['String']['output']>;
   seo?: Maybe<SeoField>;
   slug: Scalars['String']['output'];
-  subtitle?: Maybe<Scalars['String']['output']>;
-  text?: Maybe<Scalars['String']['output']>;
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type Galleria a tema (photos_collection) */
+export type PhotosCollectionRecord_AllNameLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Galleria a tema (photos_collection) */
+export type PhotosCollectionRecord_AllPreviousUrlLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Galleria a tema (photos_collection) */
+export type PhotosCollectionRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Galleria a tema (photos_collection) */
+export type PhotosCollectionRecord_AllSlugLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Galleria a tema (photos_collection) */
+export type PhotosCollectionRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Galleria a tema (photos_collection) */
+export type PhotosCollectionRecordNameArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Galleria a tema (photos_collection) */
+export type PhotosCollectionRecordPreviousUrlArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Galleria a tema (photos_collection) */
+export type PhotosCollectionRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Galleria a tema (photos_collection) */
+export type PhotosCollectionRecordSlugArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Record of type Indice Gallerie Tema (photos_collections_index) */
+export type PhotosCollectionsIndexRecord = RecordInterface & {
+  __typename?: 'PhotosCollectionsIndexRecord';
+  _allMenuLabelLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  createdAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  menuLabel: Scalars['String']['output'];
+  seo?: Maybe<SeoField>;
   title: Scalars['String']['output'];
   updatedAt: Scalars['DateTime']['output'];
 };
 
 
-/** Record of type Altre Pagine (page) */
-export type PageRecord_AllSeoLocalesArgs = {
+/** Record of type Indice Gallerie Tema (photos_collections_index) */
+export type PhotosCollectionsIndexRecord_AllMenuLabelLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Altre Pagine (page) */
-export type PageRecord_AllSlugLocalesArgs = {
+/** Record of type Indice Gallerie Tema (photos_collections_index) */
+export type PhotosCollectionsIndexRecord_AllSeoLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Altre Pagine (page) */
-export type PageRecord_AllSubtitleLocalesArgs = {
+/** Record of type Indice Gallerie Tema (photos_collections_index) */
+export type PhotosCollectionsIndexRecord_AllTitleLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Altre Pagine (page) */
-export type PageRecord_AllTextLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Altre Pagine (page) */
-export type PageRecord_AllTitleLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+/** Record of type Indice Gallerie Tema (photos_collections_index) */
+export type PhotosCollectionsIndexRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Altre Pagine (page) */
-export type PageRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Altre Pagine (page) */
-export type PageRecordSeoArgs = {
+/** Record of type Indice Gallerie Tema (photos_collections_index) */
+export type PhotosCollectionsIndexRecordMenuLabelArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Altre Pagine (page) */
-export type PageRecordSlugArgs = {
+/** Record of type Indice Gallerie Tema (photos_collections_index) */
+export type PhotosCollectionsIndexRecordSeoArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Altre Pagine (page) */
-export type PageRecordSubtitleArgs = {
+/** Record of type Indice Gallerie Tema (photos_collections_index) */
+export type PhotosCollectionsIndexRecordTitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Altre Pagine (page) */
-export type PageRecordTextArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Altre Pagine (page) */
-export type PageRecordTitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-/** Block of type partita iva (partita_iva) */
-export type PartitaIvaRecord = RecordInterface & {
-  __typename?: 'PartitaIvaRecord';
-  _createdAt: Scalars['DateTime']['output'];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
-  _isValid: Scalars['BooleanType']['output'];
-  _modelApiKey: Scalars['String']['output'];
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _updatedAt: Scalars['DateTime']['output'];
-  createdAt: Scalars['DateTime']['output'];
-  id: Scalars['ItemId']['output'];
-  updatedAt: Scalars['DateTime']['output'];
-};
-
-
-/** Block of type partita iva (partita_iva) */
-export type PartitaIvaRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-/** Block of type categoria (pippo) */
-export type PippoRecord = RecordInterface & {
-  __typename?: 'PippoRecord';
-  _createdAt: Scalars['DateTime']['output'];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
-  _isValid: Scalars['BooleanType']['output'];
-  _modelApiKey: Scalars['String']['output'];
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _updatedAt: Scalars['DateTime']['output'];
-  createdAt: Scalars['DateTime']['output'];
-  id: Scalars['ItemId']['output'];
-  updatedAt: Scalars['DateTime']['output'];
-};
-
-
-/** Block of type categoria (pippo) */
-export type PippoRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
@@ -3873,371 +4586,31 @@ export type PositionFilter = {
   neq?: InputMaybe<Scalars['IntType']['input']>;
 };
 
-/** Linking fields */
-export enum ProductModelFieldsReferencingCategoryModel {
-  ProductCategory = 'product_category'
-}
-
-/** Linking fields */
-export enum ProductModelFieldsReferencingTechniqueModel {
-  ProductTechniques = 'product_techniques'
-}
-
-export type ProductModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<ProductModelFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<ProductModelFilter>>>;
-  _createdAt?: InputMaybe<CreatedAtFilter>;
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
-  _isValid?: InputMaybe<BooleanFilter>;
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _publishedAt?: InputMaybe<PublishedAtFilter>;
-  _status?: InputMaybe<StatusFilter>;
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _updatedAt?: InputMaybe<UpdatedAtFilter>;
-  category?: InputMaybe<LinkFilter>;
-  createdAt?: InputMaybe<CreatedAtFilter>;
-  description?: InputMaybe<TextFilter>;
-  home?: InputMaybe<BooleanFilter>;
-  id?: InputMaybe<ItemIdFilter>;
-  images?: InputMaybe<GalleryFilter>;
-  indepth?: InputMaybe<TextFilter>;
-  name?: InputMaybe<StringFilter>;
-  new?: InputMaybe<BooleanFilter>;
-  seo?: InputMaybe<SeoFilter>;
-  serial?: InputMaybe<StringFilter>;
-  slug?: InputMaybe<SlugFilter>;
-  techniques?: InputMaybe<LinksFilter>;
-  updatedAt?: InputMaybe<UpdatedAtFilter>;
-};
-
-export enum ProductModelOrderBy {
-  _CreatedAtAsc = '_createdAt_ASC',
-  _CreatedAtDesc = '_createdAt_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  _UpdatedAtAsc = '_updatedAt_ASC',
-  _UpdatedAtDesc = '_updatedAt_DESC',
-  CreatedAtAsc = 'createdAt_ASC',
-  CreatedAtDesc = 'createdAt_DESC',
-  HomeAsc = 'home_ASC',
-  HomeDesc = 'home_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  NameAsc = 'name_ASC',
-  NameDesc = 'name_DESC',
-  NewAsc = 'new_ASC',
-  NewDesc = 'new_DESC',
-  SerialAsc = 'serial_ASC',
-  SerialDesc = 'serial_DESC',
-  UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC'
-}
-
-/** Record of type Prodotti (product) */
-export type ProductRecord = RecordInterface & {
-  __typename?: 'ProductRecord';
-  _allAttachmentContainerLocales?: Maybe<Array<AttachmentRecordListListNonNullMultiLocaleField>>;
-  _allDescriptionLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allIndepthLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allNameLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allReferencingHomepages: Array<HomepageRecord>;
-  /** Returns meta information regarding a record collection */
-  _allReferencingHomepagesMeta: CollectionMetadata;
-  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
-  _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allVariantContainerLocales?: Maybe<Array<VariantRecordListListNonNullMultiLocaleField>>;
-  _allVideoContainerLocales?: Maybe<Array<VideoRecordListListNonNullMultiLocaleField>>;
+/** Block of type Prova_modulo (prova_modulo) */
+export type ProvaModuloRecord = RecordInterface & {
+  __typename?: 'ProvaModuloRecord';
   _createdAt: Scalars['DateTime']['output'];
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
   _isValid: Scalars['BooleanType']['output'];
   _modelApiKey: Scalars['String']['output'];
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _updatedAt: Scalars['DateTime']['output'];
-  attachmentContainer: Array<AttachmentRecord>;
-  category: CategoryRecord;
-  createdAt: Scalars['DateTime']['output'];
-  description: Scalars['String']['output'];
-  home?: Maybe<Scalars['BooleanType']['output']>;
-  id: Scalars['ItemId']['output'];
-  images: Array<FileField>;
-  indepth?: Maybe<Scalars['String']['output']>;
-  name: Scalars['String']['output'];
-  new?: Maybe<Scalars['BooleanType']['output']>;
-  seo?: Maybe<SeoField>;
-  serial: Scalars['String']['output'];
-  slug: Scalars['String']['output'];
-  techniques: Array<TechniqueRecord>;
-  updatedAt: Scalars['DateTime']['output'];
-  variantContainer: Array<VariantRecord>;
-  videoContainer: Array<VideoRecord>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecord_AllAttachmentContainerLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecord_AllDescriptionLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecord_AllIndepthLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecord_AllNameLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecord_AllReferencingHomepagesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<HomepageModelFilter>;
-  first?: InputMaybe<Scalars['IntType']['input']>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<HomepageModelOrderBy>>>;
-  skip?: InputMaybe<Scalars['IntType']['input']>;
-  through?: InputMaybe<InverseRelationshipFilterBetweenHomepageAndProduct>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecord_AllReferencingHomepagesMetaArgs = {
-  filter?: InputMaybe<HomepageModelFilter>;
-  locale?: InputMaybe<SiteLocale>;
-  through?: InputMaybe<InverseRelationshipFilterBetweenHomepageAndProduct>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecord_AllSeoLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecord_AllSlugLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecord_AllVariantContainerLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecord_AllVideoContainerLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecordAttachmentContainerArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecordDescriptionArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecordIndepthArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecordNameArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecordSeoArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecordSlugArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecordVariantContainerArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Prodotti (product) */
-export type ProductRecordVideoContainerArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-/** Record of type Pagina prodotti (products_page) */
-export type ProductsPageRecord = RecordInterface & {
-  __typename?: 'ProductsPageRecord';
-  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
-  _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allSubtitleLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allTextLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _createdAt: Scalars['DateTime']['output'];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
-  _isValid: Scalars['BooleanType']['output'];
-  _modelApiKey: Scalars['String']['output'];
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>;
   _status: ItemStatus;
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
   _updatedAt: Scalars['DateTime']['output'];
   createdAt: Scalars['DateTime']['output'];
+  eventi: Array<ArchitectonicElementRecord>;
   id: Scalars['ItemId']['output'];
-  image?: Maybe<FileField>;
-  seo?: Maybe<SeoField>;
-  slug: Scalars['String']['output'];
-  subtitle?: Maybe<Scalars['String']['output']>;
-  text?: Maybe<Scalars['String']['output']>;
-  title: Scalars['String']['output'];
   updatedAt: Scalars['DateTime']['output'];
 };
 
 
-/** Record of type Pagina prodotti (products_page) */
-export type ProductsPageRecord_AllSeoLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina prodotti (products_page) */
-export type ProductsPageRecord_AllSlugLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina prodotti (products_page) */
-export type ProductsPageRecord_AllSubtitleLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina prodotti (products_page) */
-export type ProductsPageRecord_AllTextLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Pagina prodotti (products_page) */
-export type ProductsPageRecord_AllTitleLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina prodotti (products_page) */
-export type ProductsPageRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina prodotti (products_page) */
-export type ProductsPageRecordSeoArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina prodotti (products_page) */
-export type ProductsPageRecordSlugArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina prodotti (products_page) */
-export type ProductsPageRecordSubtitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Pagina prodotti (products_page) */
-export type ProductsPageRecordTextArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Pagina prodotti (products_page) */
-export type ProductsPageRecordTitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+/** Block of type Prova_modulo (prova_modulo) */
+export type ProvaModuloRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
@@ -4263,110 +4636,198 @@ export type PublishedAtFilter = {
 export type Query = {
   __typename?: 'Query';
   /** Returns meta information regarding a record collection */
-  _allCategoriesMeta: CollectionMetadata;
+  _allArchitectonicElementsMeta: CollectionMetadata;
   /** Returns meta information regarding a record collection */
-  _allLegislationPagesMeta: CollectionMetadata;
+  _allArchitectonicStylesMeta: CollectionMetadata;
   /** Returns meta information regarding a record collection */
-  _allNewsMeta: CollectionMetadata;
+  _allArticlesMeta: CollectionMetadata;
   /** Returns meta information regarding a record collection */
-  _allPagesMeta: CollectionMetadata;
+  _allAuthorsMeta: CollectionMetadata;
   /** Returns meta information regarding a record collection */
-  _allProductsMeta: CollectionMetadata;
+  _allBuildingCategoriesMeta: CollectionMetadata;
   /** Returns meta information regarding a record collection */
-  _allTechniquesMeta: CollectionMetadata;
+  _allCitiesMeta: CollectionMetadata;
+  /** Returns meta information regarding a record collection */
+  _allExpositionsMeta: CollectionMetadata;
+  /** Returns meta information regarding a record collection */
+  _allLocationsMeta: CollectionMetadata;
+  /** Returns meta information regarding a record collection */
+  _allPhotosCollectionsMeta: CollectionMetadata;
+  /** Returns meta information regarding a record collection */
+  _allPhotosMeta: CollectionMetadata;
+  /** Returns meta information regarding a record collection */
+  _allSellingOptionsMeta: CollectionMetadata;
   /** Returns meta information regarding an assets collection */
   _allUploadsMeta: CollectionMetadata;
+  /** Returns meta information regarding a record collection */
+  _allVideosMeta: CollectionMetadata;
   /** Returns the single instance record */
   _site: Site;
+  /** Returns the single instance record */
+  aboutPage?: Maybe<AboutPageRecord>;
   /** Returns a collection of records */
-  allCategories: Array<CategoryRecord>;
+  allArchitectonicElements: Array<ArchitectonicElementRecord>;
   /** Returns a collection of records */
-  allLegislationPages: Array<LegislationPageRecord>;
+  allArchitectonicStyles: Array<ArchitectonicStyleRecord>;
   /** Returns a collection of records */
-  allNews: Array<NewsRecord>;
+  allArticles: Array<ArticleRecord>;
   /** Returns a collection of records */
-  allPages: Array<PageRecord>;
+  allAuthors: Array<AuthorRecord>;
   /** Returns a collection of records */
-  allProducts: Array<ProductRecord>;
+  allBuildingCategories: Array<BuildingCategoryRecord>;
   /** Returns a collection of records */
-  allTechniques: Array<TechniqueRecord>;
+  allCities: Array<CityRecord>;
+  /** Returns a collection of records */
+  allExpositions: Array<ExpositionRecord>;
+  /** Returns a collection of records */
+  allLocations: Array<LocationRecord>;
+  /** Returns a collection of records */
+  allPhotos: Array<PhotoRecord>;
+  /** Returns a collection of records */
+  allPhotosCollections: Array<PhotosCollectionRecord>;
+  /** Returns a collection of records */
+  allSellingOptions: Array<SellingOptionRecord>;
   /** Returns a collection of assets */
   allUploads: Array<FileField>;
+  /** Returns a collection of records */
+  allVideos: Array<VideoRecord>;
   /** Returns a specific record */
-  category?: Maybe<CategoryRecord>;
+  architectonicElement?: Maybe<ArchitectonicElementRecord>;
   /** Returns the single instance record */
-  companyPage?: Maybe<CompanyPageRecord>;
+  architectonicElementsIndex?: Maybe<ArchitectonicElementsIndexRecord>;
+  /** Returns a specific record */
+  architectonicStyle?: Maybe<ArchitectonicStyleRecord>;
+  /** Returns the single instance record */
+  architectonicStylesIndex?: Maybe<ArchitectonicStylesIndexRecord>;
+  /** Returns a specific record */
+  article?: Maybe<ArticleRecord>;
+  /** Returns the single instance record */
+  articlesIndex?: Maybe<ArticlesIndexRecord>;
+  /** Returns a specific record */
+  author?: Maybe<AuthorRecord>;
+  /** Returns the single instance record */
+  authorsIndex?: Maybe<AuthorsIndexRecord>;
+  /** Returns the single instance record */
+  buildingCategoriesIndex?: Maybe<BuildingCategoriesIndexRecord>;
+  /** Returns a specific record */
+  buildingCategory?: Maybe<BuildingCategoryRecord>;
+  /** Returns the single instance record */
+  citiesIndex?: Maybe<CitiesIndexRecord>;
+  /** Returns a specific record */
+  city?: Maybe<CityRecord>;
   /** Returns the single instance record */
   contactPage?: Maybe<ContactPageRecord>;
+  /** Returns a specific record */
+  exposition?: Maybe<ExpositionRecord>;
+  /** Returns the single instance record */
+  expositionsIndex?: Maybe<ExpositionsIndexRecord>;
   /** Returns the single instance record */
   homepage?: Maybe<HomepageRecord>;
   /** Returns a specific record */
-  legislationPage?: Maybe<LegislationPageRecord>;
-  /** Returns a specific record */
-  news?: Maybe<NewsRecord>;
+  location?: Maybe<LocationRecord>;
   /** Returns the single instance record */
-  newsPage?: Maybe<NewsPageRecord>;
+  locationsIndex?: Maybe<LocationsIndexRecord>;
   /** Returns a specific record */
-  page?: Maybe<PageRecord>;
+  photo?: Maybe<PhotoRecord>;
   /** Returns a specific record */
-  product?: Maybe<ProductRecord>;
+  photosCollection?: Maybe<PhotosCollectionRecord>;
   /** Returns the single instance record */
-  productsPage?: Maybe<ProductsPageRecord>;
-  /** Returns the single instance record */
-  searchPage?: Maybe<SearchPageRecord>;
-  /** Returns the single instance record */
-  siteInfo?: Maybe<SiteInfoRecord>;
+  photosCollectionsIndex?: Maybe<PhotosCollectionsIndexRecord>;
   /** Returns a specific record */
-  technique?: Maybe<TechniqueRecord>;
+  sellingOption?: Maybe<SellingOptionRecord>;
   /** Returns a specific asset */
   upload?: Maybe<FileField>;
+  /** Returns a specific record */
+  video?: Maybe<VideoRecord>;
+  /** Returns the single instance record */
+  videosIndex?: Maybe<VideosIndexRecord>;
 };
 
 
 /** The query root for this schema */
-export type Query_AllCategoriesMetaArgs = {
+export type Query_AllArchitectonicElementsMetaArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<CategoryModelFilter>;
+  filter?: InputMaybe<ArchitectonicElementModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
 /** The query root for this schema */
-export type Query_AllLegislationPagesMetaArgs = {
+export type Query_AllArchitectonicStylesMetaArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<LegislationPageModelFilter>;
+  filter?: InputMaybe<ArchitectonicStyleModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
 /** The query root for this schema */
-export type Query_AllNewsMetaArgs = {
+export type Query_AllArticlesMetaArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<NewsModelFilter>;
+  filter?: InputMaybe<ArticleModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
 /** The query root for this schema */
-export type Query_AllPagesMetaArgs = {
+export type Query_AllAuthorsMetaArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<PageModelFilter>;
+  filter?: InputMaybe<AuthorModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
 /** The query root for this schema */
-export type Query_AllProductsMetaArgs = {
+export type Query_AllBuildingCategoriesMetaArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<ProductModelFilter>;
+  filter?: InputMaybe<BuildingCategoryModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
 /** The query root for this schema */
-export type Query_AllTechniquesMetaArgs = {
+export type Query_AllCitiesMetaArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<TechniqueModelFilter>;
+  filter?: InputMaybe<CityModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type Query_AllExpositionsMetaArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<ExpositionModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type Query_AllLocationsMetaArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<LocationModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type Query_AllPhotosCollectionsMetaArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<PhotosCollectionModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type Query_AllPhotosMetaArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<PhotoModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type Query_AllSellingOptionsMetaArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<SellingOptionModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
 
@@ -4379,6 +4840,14 @@ export type Query_AllUploadsMetaArgs = {
 
 
 /** The query root for this schema */
+export type Query_AllVideosMetaArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<VideoModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
 export type Query_SiteArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
@@ -4386,67 +4855,129 @@ export type Query_SiteArgs = {
 
 
 /** The query root for this schema */
-export type QueryAllCategoriesArgs = {
+export type QueryAboutPageArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<CategoryModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type QueryAllArchitectonicElementsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<ArchitectonicElementModelFilter>;
   first?: InputMaybe<Scalars['IntType']['input']>;
   locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<CategoryModelOrderBy>>>;
+  orderBy?: InputMaybe<Array<InputMaybe<ArchitectonicElementModelOrderBy>>>;
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
 
 /** The query root for this schema */
-export type QueryAllLegislationPagesArgs = {
+export type QueryAllArchitectonicStylesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<LegislationPageModelFilter>;
+  filter?: InputMaybe<ArchitectonicStyleModelFilter>;
   first?: InputMaybe<Scalars['IntType']['input']>;
   locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<LegislationPageModelOrderBy>>>;
+  orderBy?: InputMaybe<Array<InputMaybe<ArchitectonicStyleModelOrderBy>>>;
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
 
 /** The query root for this schema */
-export type QueryAllNewsArgs = {
+export type QueryAllArticlesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<NewsModelFilter>;
+  filter?: InputMaybe<ArticleModelFilter>;
   first?: InputMaybe<Scalars['IntType']['input']>;
   locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<NewsModelOrderBy>>>;
+  orderBy?: InputMaybe<Array<InputMaybe<ArticleModelOrderBy>>>;
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
 
 /** The query root for this schema */
-export type QueryAllPagesArgs = {
+export type QueryAllAuthorsArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<PageModelFilter>;
+  filter?: InputMaybe<AuthorModelFilter>;
   first?: InputMaybe<Scalars['IntType']['input']>;
   locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>;
+  orderBy?: InputMaybe<Array<InputMaybe<AuthorModelOrderBy>>>;
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
 
 /** The query root for this schema */
-export type QueryAllProductsArgs = {
+export type QueryAllBuildingCategoriesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<ProductModelFilter>;
+  filter?: InputMaybe<BuildingCategoryModelFilter>;
   first?: InputMaybe<Scalars['IntType']['input']>;
   locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<ProductModelOrderBy>>>;
+  orderBy?: InputMaybe<Array<InputMaybe<BuildingCategoryModelOrderBy>>>;
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
 
 /** The query root for this schema */
-export type QueryAllTechniquesArgs = {
+export type QueryAllCitiesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<TechniqueModelFilter>;
+  filter?: InputMaybe<CityModelFilter>;
   first?: InputMaybe<Scalars['IntType']['input']>;
   locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<TechniqueModelOrderBy>>>;
+  orderBy?: InputMaybe<Array<InputMaybe<CityModelOrderBy>>>;
+  skip?: InputMaybe<Scalars['IntType']['input']>;
+};
+
+
+/** The query root for this schema */
+export type QueryAllExpositionsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<ExpositionModelFilter>;
+  first?: InputMaybe<Scalars['IntType']['input']>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<ExpositionModelOrderBy>>>;
+  skip?: InputMaybe<Scalars['IntType']['input']>;
+};
+
+
+/** The query root for this schema */
+export type QueryAllLocationsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<LocationModelFilter>;
+  first?: InputMaybe<Scalars['IntType']['input']>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<LocationModelOrderBy>>>;
+  skip?: InputMaybe<Scalars['IntType']['input']>;
+};
+
+
+/** The query root for this schema */
+export type QueryAllPhotosArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<PhotoModelFilter>;
+  first?: InputMaybe<Scalars['IntType']['input']>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<PhotoModelOrderBy>>>;
+  skip?: InputMaybe<Scalars['IntType']['input']>;
+};
+
+
+/** The query root for this schema */
+export type QueryAllPhotosCollectionsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<PhotosCollectionModelFilter>;
+  first?: InputMaybe<Scalars['IntType']['input']>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<PhotosCollectionModelOrderBy>>>;
+  skip?: InputMaybe<Scalars['IntType']['input']>;
+};
+
+
+/** The query root for this schema */
+export type QueryAllSellingOptionsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<SellingOptionModelFilter>;
+  first?: InputMaybe<Scalars['IntType']['input']>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<SellingOptionModelOrderBy>>>;
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
@@ -4463,23 +4994,130 @@ export type QueryAllUploadsArgs = {
 
 
 /** The query root for this schema */
-export type QueryCategoryArgs = {
+export type QueryAllVideosArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<CategoryModelFilter>;
+  filter?: InputMaybe<VideoModelFilter>;
+  first?: InputMaybe<Scalars['IntType']['input']>;
   locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<CategoryModelOrderBy>>>;
+  orderBy?: InputMaybe<Array<InputMaybe<VideoModelOrderBy>>>;
+  skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
 
 /** The query root for this schema */
-export type QueryCompanyPageArgs = {
+export type QueryArchitectonicElementArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<ArchitectonicElementModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<ArchitectonicElementModelOrderBy>>>;
+};
+
+
+/** The query root for this schema */
+export type QueryArchitectonicElementsIndexArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type QueryArchitectonicStyleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<ArchitectonicStyleModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<ArchitectonicStyleModelOrderBy>>>;
+};
+
+
+/** The query root for this schema */
+export type QueryArchitectonicStylesIndexArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type QueryArticleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<ArticleModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<ArticleModelOrderBy>>>;
+};
+
+
+/** The query root for this schema */
+export type QueryArticlesIndexArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type QueryAuthorArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<AuthorModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<AuthorModelOrderBy>>>;
+};
+
+
+/** The query root for this schema */
+export type QueryAuthorsIndexArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type QueryBuildingCategoriesIndexArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type QueryBuildingCategoryArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<BuildingCategoryModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<BuildingCategoryModelOrderBy>>>;
+};
+
+
+/** The query root for this schema */
+export type QueryCitiesIndexArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type QueryCityArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<CityModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<CityModelOrderBy>>>;
 };
 
 
 /** The query root for this schema */
 export type QueryContactPageArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type QueryExpositionArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<ExpositionModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<ExpositionModelOrderBy>>>;
+};
+
+
+/** The query root for this schema */
+export type QueryExpositionsIndexArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
@@ -4493,75 +5131,52 @@ export type QueryHomepageArgs = {
 
 
 /** The query root for this schema */
-export type QueryLegislationPageArgs = {
+export type QueryLocationArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<LegislationPageModelFilter>;
+  filter?: InputMaybe<LocationModelFilter>;
   locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<LegislationPageModelOrderBy>>>;
+  orderBy?: InputMaybe<Array<InputMaybe<LocationModelOrderBy>>>;
 };
 
 
 /** The query root for this schema */
-export type QueryNewsArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<NewsModelFilter>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<NewsModelOrderBy>>>;
-};
-
-
-/** The query root for this schema */
-export type QueryNewsPageArgs = {
+export type QueryLocationsIndexArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
 /** The query root for this schema */
-export type QueryPageArgs = {
+export type QueryPhotoArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<PageModelFilter>;
+  filter?: InputMaybe<PhotoModelFilter>;
   locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>;
+  orderBy?: InputMaybe<Array<InputMaybe<PhotoModelOrderBy>>>;
 };
 
 
 /** The query root for this schema */
-export type QueryProductArgs = {
+export type QueryPhotosCollectionArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<ProductModelFilter>;
+  filter?: InputMaybe<PhotosCollectionModelFilter>;
   locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<ProductModelOrderBy>>>;
+  orderBy?: InputMaybe<Array<InputMaybe<PhotosCollectionModelOrderBy>>>;
 };
 
 
 /** The query root for this schema */
-export type QueryProductsPageArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** The query root for this schema */
-export type QuerySearchPageArgs = {
+export type QueryPhotosCollectionsIndexArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
 /** The query root for this schema */
-export type QuerySiteInfoArgs = {
+export type QuerySellingOptionArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<SellingOptionModelFilter>;
   locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** The query root for this schema */
-export type QueryTechniqueArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<TechniqueModelFilter>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<TechniqueModelOrderBy>>>;
+  orderBy?: InputMaybe<Array<InputMaybe<SellingOptionModelOrderBy>>>;
 };
 
 
@@ -4573,15 +5188,31 @@ export type QueryUploadArgs = {
   orderBy?: InputMaybe<Array<InputMaybe<UploadOrderBy>>>;
 };
 
+
+/** The query root for this schema */
+export type QueryVideoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<VideoModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<VideoModelOrderBy>>>;
+};
+
+
+/** The query root for this schema */
+export type QueryVideosIndexArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
 export type RecordInterface = {
   _createdAt: Scalars['DateTime']['output'];
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
   _isValid: Scalars['BooleanType']['output'];
   _modelApiKey: Scalars['String']['output'];
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>;
   _status: ItemStatus;
@@ -4629,70 +5260,112 @@ export type ResponsiveImage = {
   width: Scalars['IntType']['output'];
 };
 
-/** Record of type Cerca (search_page) */
-export type SearchPageRecord = RecordInterface & {
-  __typename?: 'SearchPageRecord';
-  _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+export type SellingOptionModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<SellingOptionModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<SellingOptionModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  createdAt?: InputMaybe<CreatedAtFilter>;
+  description?: InputMaybe<TextFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  name?: InputMaybe<StringFilter>;
+  price?: InputMaybe<IntegerFilter>;
+  updatedAt?: InputMaybe<UpdatedAtFilter>;
+};
+
+export enum SellingOptionModelOrderBy {
+  _CreatedAtAsc = '_createdAt_ASC',
+  _CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  _UpdatedAtAsc = '_updatedAt_ASC',
+  _UpdatedAtDesc = '_updatedAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  PriceAsc = 'price_ASC',
+  PriceDesc = 'price_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC'
+}
+
+/** Record of type Opzione vendita (selling_option) */
+export type SellingOptionRecord = RecordInterface & {
+  __typename?: 'SellingOptionRecord';
+  _allDescriptionLocales?: Maybe<Array<StringMultiLocaleField>>;
+  _allNameLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
   _createdAt: Scalars['DateTime']['output'];
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
   _isValid: Scalars['BooleanType']['output'];
-  _locales: Array<SiteLocale>;
   _modelApiKey: Scalars['String']['output'];
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>;
   _status: ItemStatus;
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
   _updatedAt: Scalars['DateTime']['output'];
-  abstract: Scalars['String']['output'];
   createdAt: Scalars['DateTime']['output'];
+  description?: Maybe<Scalars['String']['output']>;
   id: Scalars['ItemId']['output'];
-  seo?: Maybe<SeoField>;
-  slug: Scalars['String']['output'];
-  title: Scalars['String']['output'];
+  name: Scalars['String']['output'];
+  price?: Maybe<Scalars['IntType']['output']>;
   updatedAt: Scalars['DateTime']['output'];
 };
 
 
-/** Record of type Cerca (search_page) */
-export type SearchPageRecord_AllSlugLocalesArgs = {
+/** Record of type Opzione vendita (selling_option) */
+export type SellingOptionRecord_AllDescriptionLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Cerca (search_page) */
-export type SearchPageRecord_AllTitleLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Cerca (search_page) */
-export type SearchPageRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Cerca (search_page) */
-export type SearchPageRecordAbstractArgs = {
   markdown?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
-/** Record of type Cerca (search_page) */
-export type SearchPageRecordSlugArgs = {
+/** Record of type Opzione vendita (selling_option) */
+export type SellingOptionRecord_AllNameLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
-/** Record of type Cerca (search_page) */
-export type SearchPageRecordTitleArgs = {
+/** Record of type Opzione vendita (selling_option) */
+export type SellingOptionRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Opzione vendita (selling_option) */
+export type SellingOptionRecordDescriptionArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Record of type Opzione vendita (selling_option) */
+export type SellingOptionRecordNameArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
@@ -4738,97 +5411,10 @@ export type SiteGlobalSeoArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
-/** Record of type Dati del sito (site_info) */
-export type SiteInfoRecord = RecordInterface & {
-  __typename?: 'SiteInfoRecord';
-  _createdAt: Scalars['DateTime']['output'];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
-  _isValid: Scalars['BooleanType']['output'];
-  _modelApiKey: Scalars['String']['output'];
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _updatedAt: Scalars['DateTime']['output'];
-  address: Scalars['String']['output'];
-  categoriesIcon: FileField;
-  createdAt: Scalars['DateTime']['output'];
-  email: Scalars['String']['output'];
-  id: Scalars['ItemId']['output'];
-  logo: FileField;
-  logoHome: FileField;
-  logoWhite: FileField;
-  tecniquesIcon: FileField;
-  updatedAt: Scalars['DateTime']['output'];
-};
-
-
-/** Record of type Dati del sito (site_info) */
-export type SiteInfoRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Dati del sito (site_info) */
-export type SiteInfoRecordAddressArgs = {
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
 export enum SiteLocale {
   En = 'en',
   It = 'it'
 }
-
-export type SlideModelLinkField = CategoryRecord | CompanyPageRecord | ContactPageRecord | HomepageRecord | PageRecord | ProductRecord | ProductsPageRecord | TechniqueRecord;
-
-/** Block of type Slide (slide) */
-export type SlideRecord = RecordInterface & {
-  __typename?: 'SlideRecord';
-  _createdAt: Scalars['DateTime']['output'];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
-  _isValid: Scalars['BooleanType']['output'];
-  _modelApiKey: Scalars['String']['output'];
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _updatedAt: Scalars['DateTime']['output'];
-  createdAt: Scalars['DateTime']['output'];
-  cta?: Maybe<Scalars['String']['output']>;
-  id: Scalars['ItemId']['output'];
-  image?: Maybe<ImageFileField>;
-  link?: Maybe<SlideModelLinkField>;
-  text?: Maybe<Scalars['String']['output']>;
-  title: Scalars['String']['output'];
-  updatedAt: Scalars['DateTime']['output'];
-  video?: Maybe<VideoFileField>;
-};
-
-
-/** Block of type Slide (slide) */
-export type SlideRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Block of type Slide (slide) */
-export type SlideRecordTextArgs = {
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type SlideRecordListListNonNullMultiLocaleField = {
-  __typename?: 'SlideRecordListListNonNullMultiLocaleField';
-  locale?: Maybe<SiteLocale>;
-  value: Array<SlideRecord>;
-};
 
 /** Specifies how to filter Slug fields */
 export type SlugFilter = {
@@ -4901,192 +5487,6 @@ export type Tag = {
   tag: Scalars['String']['output'];
 };
 
-export type TechniqueModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<TechniqueModelFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<TechniqueModelFilter>>>;
-  _createdAt?: InputMaybe<CreatedAtFilter>;
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
-  _isValid?: InputMaybe<BooleanFilter>;
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _publishedAt?: InputMaybe<PublishedAtFilter>;
-  _status?: InputMaybe<StatusFilter>;
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _updatedAt?: InputMaybe<UpdatedAtFilter>;
-  createdAt?: InputMaybe<CreatedAtFilter>;
-  description?: InputMaybe<TextFilter>;
-  id?: InputMaybe<ItemIdFilter>;
-  name?: InputMaybe<StringFilter>;
-  seo?: InputMaybe<SeoFilter>;
-  slug?: InputMaybe<SlugFilter>;
-  updatedAt?: InputMaybe<UpdatedAtFilter>;
-};
-
-export enum TechniqueModelOrderBy {
-  _CreatedAtAsc = '_createdAt_ASC',
-  _CreatedAtDesc = '_createdAt_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  _UpdatedAtAsc = '_updatedAt_ASC',
-  _UpdatedAtDesc = '_updatedAt_DESC',
-  CreatedAtAsc = 'createdAt_ASC',
-  CreatedAtDesc = 'createdAt_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  NameAsc = 'name_ASC',
-  NameDesc = 'name_DESC',
-  UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC'
-}
-
-/** Record of type Tecniche (technique) */
-export type TechniqueRecord = RecordInterface & {
-  __typename?: 'TechniqueRecord';
-  _allDescriptionLocales?: Maybe<Array<StringMultiLocaleField>>;
-  _allNameLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _allReferencingHomepages: Array<HomepageRecord>;
-  /** Returns meta information regarding a record collection */
-  _allReferencingHomepagesMeta: CollectionMetadata;
-  _allReferencingProducts: Array<ProductRecord>;
-  /** Returns meta information regarding a record collection */
-  _allReferencingProductsMeta: CollectionMetadata;
-  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
-  _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
-  _createdAt: Scalars['DateTime']['output'];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
-  _isValid: Scalars['BooleanType']['output'];
-  _modelApiKey: Scalars['String']['output'];
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _updatedAt: Scalars['DateTime']['output'];
-  createdAt: Scalars['DateTime']['output'];
-  description?: Maybe<Scalars['String']['output']>;
-  id: Scalars['ItemId']['output'];
-  name: Scalars['String']['output'];
-  seo?: Maybe<SeoField>;
-  slug: Scalars['String']['output'];
-  updatedAt: Scalars['DateTime']['output'];
-};
-
-
-/** Record of type Tecniche (technique) */
-export type TechniqueRecord_AllDescriptionLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Tecniche (technique) */
-export type TechniqueRecord_AllNameLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Tecniche (technique) */
-export type TechniqueRecord_AllReferencingHomepagesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<HomepageModelFilter>;
-  first?: InputMaybe<Scalars['IntType']['input']>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<HomepageModelOrderBy>>>;
-  skip?: InputMaybe<Scalars['IntType']['input']>;
-  through?: InputMaybe<InverseRelationshipFilterBetweenHomepageAndTechnique>;
-};
-
-
-/** Record of type Tecniche (technique) */
-export type TechniqueRecord_AllReferencingHomepagesMetaArgs = {
-  filter?: InputMaybe<HomepageModelFilter>;
-  locale?: InputMaybe<SiteLocale>;
-  through?: InputMaybe<InverseRelationshipFilterBetweenHomepageAndTechnique>;
-};
-
-
-/** Record of type Tecniche (technique) */
-export type TechniqueRecord_AllReferencingProductsArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<ProductModelFilter>;
-  first?: InputMaybe<Scalars['IntType']['input']>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<ProductModelOrderBy>>>;
-  skip?: InputMaybe<Scalars['IntType']['input']>;
-  through?: InputMaybe<InverseRelationshipFilterBetweenProductAndTechnique>;
-};
-
-
-/** Record of type Tecniche (technique) */
-export type TechniqueRecord_AllReferencingProductsMetaArgs = {
-  filter?: InputMaybe<ProductModelFilter>;
-  locale?: InputMaybe<SiteLocale>;
-  through?: InputMaybe<InverseRelationshipFilterBetweenProductAndTechnique>;
-};
-
-
-/** Record of type Tecniche (technique) */
-export type TechniqueRecord_AllSeoLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Tecniche (technique) */
-export type TechniqueRecord_AllSlugLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Tecniche (technique) */
-export type TechniqueRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Tecniche (technique) */
-export type TechniqueRecordDescriptionArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Record of type Tecniche (technique) */
-export type TechniqueRecordNameArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Tecniche (technique) */
-export type TechniqueRecordSeoArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Tecniche (technique) */
-export type TechniqueRecordSlugArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
 /** Specifies how to filter text fields */
 export type TextFilter = {
   /** Filter records with the specified field defined (i.e. with any value) or not [DEPRECATED] */
@@ -5099,48 +5499,6 @@ export type TextFilter = {
   matches?: InputMaybe<StringMatchesFilter>;
   /** Exclude records based on a regular expression */
   notMatches?: InputMaybe<StringMatchesFilter>;
-};
-
-/** Block of type Blocco testo e immagine (text_image_block) */
-export type TextImageBlockRecord = RecordInterface & {
-  __typename?: 'TextImageBlockRecord';
-  _createdAt: Scalars['DateTime']['output'];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
-  _isValid: Scalars['BooleanType']['output'];
-  _modelApiKey: Scalars['String']['output'];
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _updatedAt: Scalars['DateTime']['output'];
-  createdAt: Scalars['DateTime']['output'];
-  id: Scalars['ItemId']['output'];
-  image: Array<FileField>;
-  text?: Maybe<Scalars['String']['output']>;
-  title?: Maybe<Scalars['String']['output']>;
-  updatedAt: Scalars['DateTime']['output'];
-};
-
-
-/** Block of type Blocco testo e immagine (text_image_block) */
-export type TextImageBlockRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Block of type Blocco testo e immagine (text_image_block) */
-export type TextImageBlockRecordTextArgs = {
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type TextImageBlockRecordListListNonNullMultiLocaleField = {
-  __typename?: 'TextImageBlockRecordListListNonNullMultiLocaleField';
-  locale?: Maybe<SiteLocale>;
-  value: Array<TextImageBlockRecord>;
 };
 
 /** Specifies how to filter by upload type */
@@ -5530,54 +5888,6 @@ export type UploadWidthFilter = {
   neq?: InputMaybe<Scalars['IntType']['input']>;
 };
 
-/** Block of type Variante (variant) */
-export type VariantRecord = RecordInterface & {
-  __typename?: 'VariantRecord';
-  _createdAt: Scalars['DateTime']['output'];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
-  _isValid: Scalars['BooleanType']['output'];
-  _modelApiKey: Scalars['String']['output'];
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _updatedAt: Scalars['DateTime']['output'];
-  code: Scalars['String']['output'];
-  createdAt: Scalars['DateTime']['output'];
-  feature?: Maybe<Scalars['String']['output']>;
-  id: Scalars['ItemId']['output'];
-  note?: Maybe<Scalars['String']['output']>;
-  updatedAt: Scalars['DateTime']['output'];
-};
-
-
-/** Block of type Variante (variant) */
-export type VariantRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Block of type Variante (variant) */
-export type VariantRecordFeatureArgs = {
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** Block of type Variante (variant) */
-export type VariantRecordNoteArgs = {
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type VariantRecordListListNonNullMultiLocaleField = {
-  __typename?: 'VariantRecordListListNonNullMultiLocaleField';
-  locale?: Maybe<SiteLocale>;
-  value: Array<VariantRecord>;
-};
-
 export type VideoField = {
   __typename?: 'VideoField';
   height: Scalars['IntType']['output'];
@@ -5589,90 +5899,61 @@ export type VideoField = {
   width: Scalars['IntType']['output'];
 };
 
-export type VideoFileField = FileFieldInterface & {
-  __typename?: 'VideoFileField';
-  _createdAt: Scalars['DateTime']['output'];
-  /** The DatoCMS URL where you can edit this entity. To use this field, you need to set a X-Base-Editing-Url header in the request */
-  _editingUrl?: Maybe<Scalars['String']['output']>;
-  _updatedAt: Scalars['DateTime']['output'];
-  alt?: Maybe<Scalars['String']['output']>;
-  author?: Maybe<Scalars['String']['output']>;
-  basename: Scalars['String']['output'];
-  blurUpThumb?: Maybe<Scalars['String']['output']>;
-  blurhash?: Maybe<Scalars['String']['output']>;
-  colors: Array<ColorField>;
-  copyright?: Maybe<Scalars['String']['output']>;
-  customData: Scalars['CustomData']['output'];
-  exifInfo: Scalars['CustomData']['output'];
-  filename: Scalars['String']['output'];
-  focalPoint?: Maybe<FocalPoint>;
-  format: Scalars['String']['output'];
-  height: Scalars['IntType']['output'];
-  id: Scalars['UploadId']['output'];
-  md5: Scalars['String']['output'];
-  mimeType: Scalars['String']['output'];
-  notes?: Maybe<Scalars['String']['output']>;
-  responsiveImage?: Maybe<ResponsiveImage>;
-  size: Scalars['IntType']['output'];
-  smartTags: Array<Scalars['String']['output']>;
-  tags: Array<Scalars['String']['output']>;
-  thumbhash?: Maybe<Scalars['String']['output']>;
-  title?: Maybe<Scalars['String']['output']>;
-  url: Scalars['String']['output'];
-  video: UploadVideoField;
-  width: Scalars['IntType']['output'];
-};
-
-
-export type VideoFileFieldAltArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-export type VideoFileFieldBlurUpThumbArgs = {
-  imgixParams?: InputMaybe<ImgixParams>;
-  punch?: Scalars['Float']['input'];
-  quality?: Scalars['Int']['input'];
-  size?: Scalars['Int']['input'];
-};
-
-
-export type VideoFileFieldCustomDataArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-export type VideoFileFieldFocalPointArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-export type VideoFileFieldResponsiveImageArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  imgixParams?: InputMaybe<ImgixParams>;
-  locale?: InputMaybe<SiteLocale>;
-  sizes?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-export type VideoFileFieldTitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-export type VideoFileFieldUrlArgs = {
-  imgixParams?: InputMaybe<ImgixParams>;
-};
-
 /** Specifies how to filter Video fields */
 export type VideoFilter = {
   /** Filter records with the specified field defined (i.e. with any value) or not */
   exists?: InputMaybe<Scalars['BooleanType']['input']>;
 };
+
+export type VideoModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<VideoModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<VideoModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  createdAt?: InputMaybe<CreatedAtFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  position?: InputMaybe<PositionFilter>;
+  seo?: InputMaybe<SeoFilter>;
+  slug?: InputMaybe<SlugFilter>;
+  title?: InputMaybe<StringFilter>;
+  updatedAt?: InputMaybe<UpdatedAtFilter>;
+  urlVideo?: InputMaybe<VideoFilter>;
+};
+
+export enum VideoModelOrderBy {
+  _CreatedAtAsc = '_createdAt_ASC',
+  _CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  _UpdatedAtAsc = '_updatedAt_ASC',
+  _UpdatedAtDesc = '_updatedAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  PositionAsc = 'position_ASC',
+  PositionDesc = 'position_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC'
+}
 
 export enum VideoMp4Res {
   High = 'high',
@@ -5680,17 +5961,20 @@ export enum VideoMp4Res {
   Medium = 'medium'
 }
 
-/** Block of type Video (video) */
+/** Record of type Video (video) */
 export type VideoRecord = RecordInterface & {
   __typename?: 'VideoRecord';
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
   _createdAt: Scalars['DateTime']['output'];
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
   _isValid: Scalars['BooleanType']['output'];
   _modelApiKey: Scalars['String']['output'];
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>;
   _status: ItemStatus;
@@ -5698,21 +5982,135 @@ export type VideoRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output'];
   createdAt: Scalars['DateTime']['output'];
   id: Scalars['ItemId']['output'];
+  position?: Maybe<Scalars['IntType']['output']>;
+  seo?: Maybe<SeoField>;
+  slug: Scalars['String']['output'];
+  title: Scalars['String']['output'];
   updatedAt: Scalars['DateTime']['output'];
-  videoTitle?: Maybe<Scalars['String']['output']>;
-  videoUrl: VideoField;
+  urlVideo: VideoField;
 };
 
 
-/** Block of type Video (video) */
+/** Record of type Video (video) */
+export type VideoRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Video (video) */
+export type VideoRecord_AllSlugLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Video (video) */
+export type VideoRecord_AllTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Video (video) */
 export type VideoRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
-export type VideoRecordListListNonNullMultiLocaleField = {
-  __typename?: 'VideoRecordListListNonNullMultiLocaleField';
-  locale?: Maybe<SiteLocale>;
-  value: Array<VideoRecord>;
+
+/** Record of type Video (video) */
+export type VideoRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Video (video) */
+export type VideoRecordSlugArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Video (video) */
+export type VideoRecordTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Record of type Indice Video (videos_index) */
+export type VideosIndexRecord = RecordInterface & {
+  __typename?: 'VideosIndexRecord';
+  _allMenuLabelLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  createdAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  menuLabel: Scalars['String']['output'];
+  seo?: Maybe<SeoField>;
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['DateTime']['output'];
+};
+
+
+/** Record of type Indice Video (videos_index) */
+export type VideosIndexRecord_AllMenuLabelLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Video (videos_index) */
+export type VideosIndexRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Video (videos_index) */
+export type VideosIndexRecord_AllTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Video (videos_index) */
+export type VideosIndexRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Video (videos_index) */
+export type VideosIndexRecordMenuLabelArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Video (videos_index) */
+export type VideosIndexRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Indice Video (videos_index) */
+export type VideosIndexRecordTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  locale?: InputMaybe<SiteLocale>;
 };
 
 export type FocalPoint = {
@@ -5721,47 +6119,13 @@ export type FocalPoint = {
   y: Scalars['FloatType']['output'];
 };
 
-export type CategoryQueryVariables = Exact<{
-  locale?: InputMaybe<SiteLocale>;
-  fallbackLocales?: InputMaybe<Array<SiteLocale> | SiteLocale>;
-  slug?: InputMaybe<Scalars['String']['input']>;
-  skip?: InputMaybe<Scalars['IntType']['input']>;
-}>;
-
-
-export type CategoryQuery = { __typename?: 'Query', category?: { __typename?: 'CategoryRecord', id: string, name: string, _modelApiKey: string, description?: string | null, slugs?: Array<{ __typename?: 'StringNonNullMultiLocaleField', locale?: SiteLocale | null, value: string }> | null, seo: Array<{ __typename?: 'Tag', attributes?: Record<string, string> | null, content?: string | null, tag: string }>, products: Array<{ __typename?: 'ProductRecord', name: string, home?: boolean | null, description: string, id: string, _modelApiKey: string, indepth?: string | null, new?: boolean | null, serial: string, slug: string, images: Array<{ __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }>, techniques: Array<{ __typename?: 'TechniqueRecord', _modelApiKey: string, id: string, name: string, slug: string }>, category: { __typename?: 'CategoryRecord', _modelApiKey: string, id: string, name: string, slug: string }, slugs?: Array<{ __typename?: 'StringNonNullMultiLocaleField', locale?: SiteLocale | null, value: string }> | null }> } | null };
-
-export type CompanyPageQueryVariables = Exact<{
-  locale?: InputMaybe<SiteLocale>;
-  fallbackLocales?: InputMaybe<Array<SiteLocale> | SiteLocale>;
-}>;
-
-
-export type CompanyPageQuery = { __typename?: 'Query', companyPage?: { __typename?: 'CompanyPageRecord', id: string, _modelApiKey: string, slug: string, title: string, subtitle?: string | null, text?: string | null, titleProduction?: string | null, subtitleProduction?: string | null, textProduction?: string | null, slugs?: Array<{ __typename?: 'StringNonNullMultiLocaleField', locale?: SiteLocale | null, value: string }> | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null } | null, galleryProduction: Array<{ __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }>, imageProduction?: { __typename?: 'FileField', url: string } | null, blocks: Array<{ __typename?: 'TextImageBlockRecord', id: string, _modelApiKey: string, title?: string | null, text?: string | null, image: Array<{ __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }> }>, seo: Array<{ __typename?: 'Tag', attributes?: Record<string, string> | null, content?: string | null, tag: string }> } | null };
-
-export type ContactPageQueryVariables = Exact<{
-  locale?: InputMaybe<SiteLocale>;
-  fallbackLocales?: InputMaybe<Array<SiteLocale> | SiteLocale>;
-}>;
-
-
-export type ContactPageQuery = { __typename?: 'Query', contactPage?: { __typename?: 'ContactPageRecord', id: string, _modelApiKey: string, slug: string, title: string, text?: string | null, slugs?: Array<{ __typename?: 'StringNonNullMultiLocaleField', locale?: SiteLocale | null, value: string }> | null, map: { __typename?: 'LatLonField', latitude: number, longitude: number }, seo: Array<{ __typename?: 'Tag', attributes?: Record<string, string> | null, content?: string | null, tag: string }>, cover: { __typename?: 'ImageFileField', responsiveImage: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } } } | null, homepage?: { __typename?: 'HomepageRecord', id: string, _modelApiKey: string, splash1Title: string, splash1Text: string, splash1Cta2Text: string, splash1Cta3Text: string, splash1Cta1Text: string, splash1Image: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }, splash1Catalogue1Pdf: { __typename?: 'FileField', url: string }, splash1Catalogue2Pdf: { __typename?: 'FileField', url: string }, splash1Catalogue3Pdf: { __typename?: 'FileField', url: string } } | null };
-
-export type FooterQueryVariables = Exact<{
-  locale?: InputMaybe<SiteLocale>;
-  fallbackLocales?: InputMaybe<Array<SiteLocale> | SiteLocale>;
-}>;
-
-
-export type FooterQuery = { __typename?: 'Query', siteInfo?: { __typename?: 'SiteInfoRecord', id: string, address: string, email: string } | null, allTechniques: Array<{ __typename?: 'TechniqueRecord', id: string, name: string, slug: string, _modelApiKey: string }>, allCategories: Array<{ __typename?: 'CategoryRecord', id: string, name: string, slug: string, _modelApiKey: string }>, allLegislationPages: Array<{ __typename?: 'LegislationPageRecord', id: string, title: string, slug: string, _modelApiKey: string }>, homepage?: { __typename?: 'HomepageRecord', splash1Cta1Text: string, splash1Cta2Text: string, splash1Cta3Text: string, splash1Catalogue1Pdf: { __typename?: 'FileField', url: string }, splash1Catalogue2Pdf: { __typename?: 'FileField', url: string }, splash1Catalogue3Pdf: { __typename?: 'FileField', url: string } } | null };
-
 export type HomeQueryVariables = Exact<{
   locale?: InputMaybe<SiteLocale>;
   fallbackLocales?: InputMaybe<Array<SiteLocale> | SiteLocale>;
 }>;
 
 
-export type HomeQuery = { __typename?: 'Query', homepage?: { __typename?: 'HomepageRecord', id: string, heroTitle: string, heroText: string, heroCtaText: string, heroCtaLink: string, splash1Title: string, splash1Text: string, splash1Cta1Text: string, splash1Cta2Text: string, splash1Cta3Text: string, sliders: Array<{ __typename?: 'SlideRecord', title: string, text?: string | null, cta?: string | null, link?: { __typename?: 'CategoryRecord', id: string, _modelApiKey: string, slug: string, name: string } | { __typename?: 'CompanyPageRecord', id: string, _modelApiKey: string, slug: string, title: string } | { __typename?: 'ContactPageRecord', id: string, _modelApiKey: string, slug: string, title: string } | { __typename?: 'HomepageRecord', id: string, _modelApiKey: string } | { __typename?: 'PageRecord', id: string, _modelApiKey: string, slug: string, title: string } | { __typename?: 'ProductRecord', id: string, _modelApiKey: string, slug: string, name: string } | { __typename?: 'ProductsPageRecord', id: string, _modelApiKey: string, slug: string, title: string } | { __typename?: 'TechniqueRecord', id: string, _modelApiKey: string, slug: string, name: string } | null, image?: { __typename?: 'ImageFileField', responsiveImage: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } } | null, video?: { __typename?: 'VideoFileField', video: { __typename?: 'UploadVideoField', muxPlaybackId: string, title?: string | null, width: number, height: number, blurUpThumb?: string | null, mp4Url?: string | null, thumbnailUrl: string, muxAssetId: string, framerate?: number | null, duration?: number | null, streamingUrl: string } } | null }>, heroImage: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }, splash1Image: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }, splash1Catalogue1Pdf: { __typename?: 'FileField', url: string }, splash1Catalogue2Pdf: { __typename?: 'FileField', url: string }, splash1Catalogue3Pdf: { __typename?: 'FileField', url: string }, seo: Array<{ __typename?: 'Tag', attributes?: Record<string, string> | null, content?: string | null, tag: string }> } | null, allNews: Array<{ __typename?: 'NewsRecord', id: string, url?: string | null, slug?: string | null, title: string, text?: string | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null } | null }>, allProducts: Array<{ __typename?: 'ProductRecord', name: string, home?: boolean | null, description: string, id: string, _modelApiKey: string, indepth?: string | null, new?: boolean | null, serial: string, slug: string, images: Array<{ __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }>, techniques: Array<{ __typename?: 'TechniqueRecord', _modelApiKey: string, id: string, name: string, slug: string }>, category: { __typename?: 'CategoryRecord', _modelApiKey: string, id: string, name: string, slug: string }, slugs?: Array<{ __typename?: 'StringNonNullMultiLocaleField', locale?: SiteLocale | null, value: string }> | null }> };
+export type HomeQuery = { __typename?: 'Query', homepage?: { __typename?: 'HomepageRecord', id: string, title: string } | null };
 
 export type LayoutQueryVariables = Exact<{
   locale?: InputMaybe<SiteLocale>;
@@ -5770,96 +6134,19 @@ export type LayoutQueryVariables = Exact<{
 
 export type LayoutQuery = { __typename?: 'Query', _site: { __typename?: 'Site', faviconMetaTags: Array<{ __typename?: 'Tag', tag: string, content?: string | null, attributes?: Record<string, string> | null }>, globalSeo?: { __typename?: 'GlobalSeoField', siteName?: string | null, titleSuffix?: string | null, twitterAccount?: string | null, facebookPageUrl?: string | null, fallbackSeo?: { __typename?: 'SeoField', title?: string | null, twitterCard?: string | null, description?: string | null, image?: { __typename?: 'FileField', url: string, width?: number | null, height?: number | null } | null } | null } | null } };
 
-export type LegislationPageQueryVariables = Exact<{
-  locale?: InputMaybe<SiteLocale>;
-  fallbackLocales?: InputMaybe<Array<SiteLocale> | SiteLocale>;
-  slug: Scalars['String']['input'];
-}>;
-
-
-export type LegislationPageQuery = { __typename?: 'Query', legislationPage?: { __typename?: 'LegislationPageRecord', id: string, _modelApiKey: string, slug: string, title: string, subtitle?: string | null, text?: string | null, slugs?: Array<{ __typename?: 'StringNonNullMultiLocaleField', locale?: SiteLocale | null, value: string }> | null, cover?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null } | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null } | null, blocks: Array<{ __typename?: 'AttachmentRecord', id: string, _modelApiKey: string, attachmentTitle: string, attachmentFile: { __typename?: 'FileField', url: string } }>, seo: Array<{ __typename?: 'Tag', attributes?: Record<string, string> | null, content?: string | null, tag: string }> } | null, homepage?: { __typename?: 'HomepageRecord', id: string, _modelApiKey: string, splash1Title: string, splash1Text: string, splash1Cta2Text: string, splash1Cta3Text: string, splash1Cta1Text: string, splash1Image: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }, splash1Catalogue1Pdf: { __typename?: 'FileField', url: string }, splash1Catalogue2Pdf: { __typename?: 'FileField', url: string }, splash1Catalogue3Pdf: { __typename?: 'FileField', url: string } } | null };
-
 export type MenuQueryVariables = Exact<{
   locale?: InputMaybe<SiteLocale>;
-  fallbackLocales?: InputMaybe<Array<SiteLocale> | SiteLocale>;
 }>;
 
 
-export type MenuQuery = { __typename?: 'Query', allTechniques: Array<{ __typename?: 'TechniqueRecord', id: string, name: string, slug: string }>, allCategories: Array<{ __typename?: 'CategoryRecord', id: string, name: string, slug: string }>, newsPage?: { __typename?: 'NewsPageRecord', id: string, slug: string, title: string } | null, companyPage?: { __typename?: 'CompanyPageRecord', id: string, slug: string, title: string } | null, productsPage?: { __typename?: 'ProductsPageRecord', id: string, slug: string, title: string } | null, contactPage?: { __typename?: 'ContactPageRecord', id: string, slug: string, title: string } | null, siteInfo?: { __typename?: 'SiteInfoRecord', logoHome: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }, logo: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }, logoWhite: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }, tecniquesIcon: { __typename?: 'FileField', url: string }, categoriesIcon: { __typename?: 'FileField', url: string } } | null, _site: { __typename?: 'Site', locales: Array<SiteLocale> } };
-
-export type NewsPageQueryVariables = Exact<{
-  locale?: InputMaybe<SiteLocale>;
-  skip?: InputMaybe<Scalars['IntType']['input']>;
-  fallbackLocales?: InputMaybe<Array<SiteLocale> | SiteLocale>;
-}>;
-
-
-export type NewsPageQuery = { __typename?: 'Query', newsPage?: { __typename?: 'NewsPageRecord', id: string, _modelApiKey: string, slug: string, title: string, subtitle?: string | null, slugs?: Array<{ __typename?: 'StringNonNullMultiLocaleField', locale?: SiteLocale | null, value: string }> | null, seo: Array<{ __typename?: 'Tag', attributes?: Record<string, string> | null, content?: string | null, tag: string }> } | null, allNews: Array<{ __typename?: 'NewsRecord', id: string, slug?: string | null, url?: string | null, title: string, text?: string | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null } | null }> };
-
-export type ProductQueryVariables = Exact<{
-  locale?: InputMaybe<SiteLocale>;
-  fallbackLocales?: InputMaybe<Array<SiteLocale> | SiteLocale>;
-  slug: Scalars['String']['input'];
-}>;
-
-
-export type ProductQuery = { __typename?: 'Query', product?: { __typename?: 'ProductRecord', name: string, home?: boolean | null, description: string, id: string, _modelApiKey: string, indepth?: string | null, new?: boolean | null, serial: string, slug: string, images: Array<{ __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }>, videoContainer: Array<{ __typename?: 'VideoRecord', videoTitle?: string | null, videoUrl: { __typename?: 'VideoField', url: string, provider: string, providerUid: string, thumbnailUrl: string } }>, fullImages: Array<{ __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }>, thumb: Array<{ __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }>, techniques: Array<{ __typename?: 'TechniqueRecord', _modelApiKey: string, id: string, name: string, slug: string }>, category: { __typename?: 'CategoryRecord', _modelApiKey: string, id: string, name: string, slug: string }, slugs?: Array<{ __typename?: 'StringNonNullMultiLocaleField', locale?: SiteLocale | null, value: string }> | null, variantContainer: Array<{ __typename?: 'VariantRecord', id: string, _modelApiKey: string, code: string, feature?: string | null, note?: string | null }> } | null };
-
-export type ProductsPageQueryVariables = Exact<{
-  locale?: InputMaybe<SiteLocale>;
-  skip?: InputMaybe<Scalars['IntType']['input']>;
-  fallbackLocales?: InputMaybe<Array<SiteLocale> | SiteLocale>;
-}>;
-
-
-export type ProductsPageQuery = { __typename?: 'Query', productsPage?: { __typename?: 'ProductsPageRecord', id: string, _modelApiKey: string, slug: string, title: string, subtitle?: string | null, text?: string | null, slugs?: Array<{ __typename?: 'StringNonNullMultiLocaleField', locale?: SiteLocale | null, value: string }> | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null } | null, seo: Array<{ __typename?: 'Tag', attributes?: Record<string, string> | null, content?: string | null, tag: string }> } | null, allProducts: Array<{ __typename?: 'ProductRecord', name: string, home?: boolean | null, description: string, id: string, _modelApiKey: string, indepth?: string | null, new?: boolean | null, serial: string, slug: string, images: Array<{ __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }>, techniques: Array<{ __typename?: 'TechniqueRecord', _modelApiKey: string, id: string, name: string, slug: string }>, category: { __typename?: 'CategoryRecord', _modelApiKey: string, id: string, name: string, slug: string }, slugs?: Array<{ __typename?: 'StringNonNullMultiLocaleField', locale?: SiteLocale | null, value: string }> | null }>, _allProductsMeta: { __typename?: 'CollectionMetadata', count: number } };
+export type MenuQuery = { __typename?: 'Query', buildingCategoriesIndex?: { __typename?: 'BuildingCategoriesIndexRecord', id: string, menuLabel: string, _modelApiKey: string } | null, locationsIndex?: { __typename?: 'LocationsIndexRecord', id: string, menuLabel: string, _modelApiKey: string } | null, citiesIndex?: { __typename?: 'CitiesIndexRecord', id: string, menuLabel: string, _modelApiKey: string } | null, architectonicStylesIndex?: { __typename?: 'ArchitectonicStylesIndexRecord', id: string, menuLabel: string, _modelApiKey: string } | null, architectonicElementsIndex?: { __typename?: 'ArchitectonicElementsIndexRecord', id: string, menuLabel: string, _modelApiKey: string } | null, authorsIndex?: { __typename?: 'AuthorsIndexRecord', id: string, menuLabel: string, _modelApiKey: string } | null, photosCollectionsIndex?: { __typename?: 'PhotosCollectionsIndexRecord', id: string, menuLabel: string, _modelApiKey: string } | null, videosIndex?: { __typename?: 'VideosIndexRecord', id: string, menuLabel: string, _modelApiKey: string } | null, expositionsIndex?: { __typename?: 'ExpositionsIndexRecord', id: string, menuLabel: string, _modelApiKey: string } | null, articlesIndex?: { __typename?: 'ArticlesIndexRecord', id: string, menuLabel: string, _modelApiKey: string } | null, aboutPage?: { __typename?: 'AboutPageRecord', id: string, menuLabel: string, _modelApiKey: string } | null, _site: { __typename?: 'Site', locales: Array<SiteLocale> } };
 
 export type RImageFragment = { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null };
 
-export type SearchPageQueryVariables = Exact<{
-  locale?: InputMaybe<SiteLocale>;
-  fallbackLocales?: InputMaybe<Array<SiteLocale> | SiteLocale>;
-}>;
-
-
-export type SearchPageQuery = { __typename?: 'Query', searchPage?: { __typename?: 'SearchPageRecord', id: string, _modelApiKey: string, title: string, slug: string, abstract: string, slugs?: Array<{ __typename?: 'StringNonNullMultiLocaleField', locale?: SiteLocale | null, value: string }> | null, seo: Array<{ __typename?: 'Tag', attributes?: Record<string, string> | null, content?: string | null, tag: string }> } | null };
-
 export type SeoMetaFragmentFragment = { __typename?: 'Tag', attributes?: Record<string, string> | null, content?: string | null, tag: string };
-
-export type TechniqueQueryVariables = Exact<{
-  locale?: InputMaybe<SiteLocale>;
-  fallbackLocales?: InputMaybe<Array<SiteLocale> | SiteLocale>;
-  slug?: InputMaybe<Scalars['String']['input']>;
-  skip?: InputMaybe<Scalars['IntType']['input']>;
-}>;
-
-
-export type TechniqueQuery = { __typename?: 'Query', technique?: { __typename?: 'TechniqueRecord', id: string, name: string, slug: string, _modelApiKey: string, description?: string | null, slugs?: Array<{ __typename?: 'StringNonNullMultiLocaleField', locale?: SiteLocale | null, value: string }> | null, seo: Array<{ __typename?: 'Tag', attributes?: Record<string, string> | null, content?: string | null, tag: string }>, products: Array<{ __typename?: 'ProductRecord', name: string, home?: boolean | null, description: string, id: string, _modelApiKey: string, indepth?: string | null, new?: boolean | null, serial: string, slug: string, images: Array<{ __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }>, techniques: Array<{ __typename?: 'TechniqueRecord', _modelApiKey: string, id: string, name: string, slug: string }>, category: { __typename?: 'CategoryRecord', _modelApiKey: string, id: string, name: string, slug: string }, slugs?: Array<{ __typename?: 'StringNonNullMultiLocaleField', locale?: SiteLocale | null, value: string }> | null }> } | null };
-
-export type TechniqueToFilterQueryVariables = Exact<{
-  locale?: InputMaybe<SiteLocale>;
-  fallbackLocales?: InputMaybe<Array<SiteLocale> | SiteLocale>;
-  slug?: InputMaybe<Scalars['String']['input']>;
-  categoryId?: InputMaybe<Scalars['ItemId']['input']>;
-  skip?: InputMaybe<Scalars['IntType']['input']>;
-}>;
-
-
-export type TechniqueToFilterQuery = { __typename?: 'Query', technique?: { __typename?: 'TechniqueRecord', id: string, name: string, _modelApiKey: string, description?: string | null, slugs?: Array<{ __typename?: 'StringNonNullMultiLocaleField', locale?: SiteLocale | null, value: string }> | null, seo: Array<{ __typename?: 'Tag', attributes?: Record<string, string> | null, content?: string | null, tag: string }>, products: Array<{ __typename?: 'ProductRecord', name: string, home?: boolean | null, description: string, id: string, _modelApiKey: string, indepth?: string | null, new?: boolean | null, serial: string, slug: string, images: Array<{ __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, srcSet: string, base64?: string | null, width: number, height: number, alt?: string | null, title?: string | null } | null }>, techniques: Array<{ __typename?: 'TechniqueRecord', _modelApiKey: string, id: string, name: string, slug: string }>, category: { __typename?: 'CategoryRecord', _modelApiKey: string, id: string, name: string, slug: string }, slugs?: Array<{ __typename?: 'StringNonNullMultiLocaleField', locale?: SiteLocale | null, value: string }> | null }> } | null };
 
 export const RImageFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"rImage"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"srcSet"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<RImageFragment, unknown>;
 export const SeoMetaFragmentFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"seoMetaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}}]} as unknown as DocumentNode<SeoMetaFragmentFragment, unknown>;
-export const CategoryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Category"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"skip"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"IntType"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"category"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","alias":{"kind":"Name","value":"slugs"},"name":{"kind":"Name","value":"_allSlugLocales"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"seo"},"name":{"kind":"Name","value":"_seoMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"seoMetaFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","alias":{"kind":"Name","value":"products"},"name":{"kind":"Name","value":"_allReferencingProducts"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"skip"},"value":{"kind":"Variable","name":{"kind":"Name","value":"skip"}}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"name_ASC"}},{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"100"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"home"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"images"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"(min-width:1024px) 30vw, 95vw, 400px","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"400"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"max"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"indepth"}},{"kind":"Field","name":{"kind":"Name","value":"new"}},{"kind":"Field","name":{"kind":"Name","value":"serial"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"techniques"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","name":{"kind":"Name","value":"category"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"slugs"},"name":{"kind":"Name","value":"_allSlugLocales"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"seoMetaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"rImage"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"srcSet"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<CategoryQuery, CategoryQueryVariables>;
-export const CompanyPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"CompanyPage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"companyPage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","alias":{"kind":"Name","value":"slugs"},"name":{"kind":"Name","value":"_allSlugLocales"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"90vw, 990px","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"7:3","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"galleryProduction"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"(min-width:1024px) 50vw, 90vw, 990px","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"9:7","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"titleProduction"}},{"kind":"Field","name":{"kind":"Name","value":"imageProduction"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"subtitleProduction"}},{"kind":"Field","name":{"kind":"Name","value":"textProduction"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"(min-width:1024px) 90vw, 1990px","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"9:5","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"seo"},"name":{"kind":"Name","value":"_seoMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"seoMetaFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"rImage"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"srcSet"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"seoMetaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}}]} as unknown as DocumentNode<CompanyPageQuery, CompanyPageQueryVariables>;
-export const ContactPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"ContactPage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"contactPage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","alias":{"kind":"Name","value":"slugs"},"name":{"kind":"Name","value":"_allSlugLocales"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"map"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"latitude"}},{"kind":"Field","name":{"kind":"Name","value":"longitude"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"seo"},"name":{"kind":"Name","value":"_seoMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"seoMetaFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"cover"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"100vw, 1920px","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"4:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"homepage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Title"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Text"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"100vw","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"h"},"value":{"kind":"IntValue","value":"1000"}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"2000"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"splash1Cta2Text"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Cta3Text"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Cta1Text"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Catalogue1Pdf"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"splash1Catalogue2Pdf"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"splash1Catalogue3Pdf"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"seoMetaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"rImage"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"srcSet"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<ContactPageQuery, ContactPageQueryVariables>;
-export const FooterDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Footer"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"siteInfo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"address"}},{"kind":"Field","name":{"kind":"Name","value":"email"}}]}},{"kind":"Field","name":{"kind":"Name","value":"allTechniques"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"name_ASC"}},{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"500"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}}]}},{"kind":"Field","name":{"kind":"Name","value":"allCategories"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"name_ASC"}},{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"500"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}}]}},{"kind":"Field","name":{"kind":"Name","value":"allLegislationPages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}}]}},{"kind":"Field","name":{"kind":"Name","value":"homepage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"splash1Cta1Text"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Catalogue1Pdf"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"splash1Cta2Text"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Catalogue2Pdf"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"splash1Cta3Text"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Catalogue3Pdf"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<FooterQuery, FooterQueryVariables>;
-export const HomeDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Home"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"homepage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"heroTitle"}},{"kind":"Field","name":{"kind":"Name","value":"heroText"}},{"kind":"Field","name":{"kind":"Name","value":"heroCtaText"}},{"kind":"Field","name":{"kind":"Name","value":"heroCtaLink"}},{"kind":"Field","name":{"kind":"Name","value":"sliders"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"link"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CategoryRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CompanyPageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ContactPageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HomepageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ProductRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ProductsPageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TechniqueRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"cta"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"100vw","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"h"},"value":{"kind":"IntValue","value":"1080"}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"1920"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"video"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"video"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"muxPlaybackId"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"blurUpThumb"}},{"kind":"Field","name":{"kind":"Name","value":"mp4Url"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"res"},"value":{"kind":"EnumValue","value":"medium"}}]},{"kind":"Field","name":{"kind":"Name","value":"thumbnailUrl"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"format"},"value":{"kind":"EnumValue","value":"jpg"}}]},{"kind":"Field","name":{"kind":"Name","value":"muxAssetId"}},{"kind":"Field","name":{"kind":"Name","value":"framerate"}},{"kind":"Field","name":{"kind":"Name","value":"duration"}},{"kind":"Field","name":{"kind":"Name","value":"muxPlaybackId"}},{"kind":"Field","name":{"kind":"Name","value":"streamingUrl"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"heroImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"100vw","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"h"},"value":{"kind":"IntValue","value":"1000"}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"2000"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"splash1Title"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Text"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"100vw","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"h"},"value":{"kind":"IntValue","value":"1000"}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"2000"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"splash1Cta1Text"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Catalogue1Pdf"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"splash1Cta2Text"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Catalogue2Pdf"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"splash1Cta3Text"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Catalogue3Pdf"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"seo"},"name":{"kind":"Name","value":"_seoMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"seoMetaFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"allNews"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"StringValue","value":"4","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"date_DESC"}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"100vw","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"h"},"value":{"kind":"IntValue","value":"400"}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"600"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"allProducts"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}},{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"home"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"BooleanValue","value":true}}]}}]}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"name_ASC"}},{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"500"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"home"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"images"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"(min-width:1024px) 30vw, 95vw, 400px","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"400"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"max"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"indepth"}},{"kind":"Field","name":{"kind":"Name","value":"new"}},{"kind":"Field","name":{"kind":"Name","value":"serial"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"techniques"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","name":{"kind":"Name","value":"category"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"slugs"},"name":{"kind":"Name","value":"_allSlugLocales"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"rImage"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"srcSet"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"seoMetaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}}]} as unknown as DocumentNode<HomeQuery, HomeQueryVariables>;
+export const HomeDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Home"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"homepage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]}}]} as unknown as DocumentNode<HomeQuery, HomeQueryVariables>;
 export const LayoutDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"layout"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_site"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"faviconMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tag"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"attributes"}}]}},{"kind":"Field","name":{"kind":"Name","value":"globalSeo"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"siteName"}},{"kind":"Field","name":{"kind":"Name","value":"titleSuffix"}},{"kind":"Field","name":{"kind":"Name","value":"twitterAccount"}},{"kind":"Field","name":{"kind":"Name","value":"facebookPageUrl"}},{"kind":"Field","name":{"kind":"Name","value":"fallbackSeo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"twitterCard"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"compress"},{"kind":"EnumValue","value":"format"}]}}]}}]},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<LayoutQuery, LayoutQueryVariables>;
-export const LegislationPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"LegislationPage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"legislationPage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","alias":{"kind":"Name","value":"slugs"},"name":{"kind":"Name","value":"_allSlugLocales"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"cover"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"90vw, 990px","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"7:3","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"90vw, 990px","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"1000"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"max"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"attachmentTitle"}},{"kind":"Field","name":{"kind":"Name","value":"attachmentFile"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"seo"},"name":{"kind":"Name","value":"_seoMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"seoMetaFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"homepage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Title"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Text"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"100vw","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"h"},"value":{"kind":"IntValue","value":"1000"}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"2000"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"splash1Cta2Text"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Cta3Text"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Cta1Text"}},{"kind":"Field","name":{"kind":"Name","value":"splash1Catalogue1Pdf"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"splash1Catalogue2Pdf"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"splash1Catalogue3Pdf"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"rImage"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"srcSet"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"seoMetaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}}]} as unknown as DocumentNode<LegislationPageQuery, LegislationPageQueryVariables>;
-export const MenuDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Menu"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"allTechniques"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"name_ASC"}},{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"500"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","name":{"kind":"Name","value":"allCategories"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"name_ASC"}},{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"500"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","name":{"kind":"Name","value":"newsPage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"Field","name":{"kind":"Name","value":"companyPage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"Field","name":{"kind":"Name","value":"productsPage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"Field","name":{"kind":"Name","value":"contactPage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"Field","name":{"kind":"Name","value":"siteInfo"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"logoHome"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"100vw","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"240"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"max"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"logo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"100vw","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"240"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"max"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"logoWhite"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"100vw","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"240"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"max"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"tecniquesIcon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"categoriesIcon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"_site"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locales"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"rImage"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"srcSet"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<MenuQuery, MenuQueryVariables>;
-export const NewsPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"NewsPage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"skip"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"IntType"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"newsPage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","alias":{"kind":"Name","value":"slugs"},"name":{"kind":"Name","value":"_allSlugLocales"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","alias":{"kind":"Name","value":"seo"},"name":{"kind":"Name","value":"_seoMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"seoMetaFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"allNews"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"StringValue","value":"500","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"date_DESC"}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}},{"kind":"Argument","name":{"kind":"Name","value":"skip"},"value":{"kind":"Variable","name":{"kind":"Name","value":"skip"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"100vw","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"h"},"value":{"kind":"IntValue","value":"400"}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"600"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"seoMetaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"rImage"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"srcSet"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<NewsPageQuery, NewsPageQueryVariables>;
-export const ProductDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Product"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"product"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"home"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"images"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"95vw, 1600px","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"1600"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"max"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"videoContainer"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"videoTitle"}},{"kind":"Field","name":{"kind":"Name","value":"videoUrl"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"provider"}},{"kind":"Field","name":{"kind":"Name","value":"providerUid"}},{"kind":"Field","name":{"kind":"Name","value":"thumbnailUrl"}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"fullImages"},"name":{"kind":"Name","value":"images"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"100vw, 1920px","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"max"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"thumb"},"name":{"kind":"Name","value":"images"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"200px","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"200"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"max"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"indepth"}},{"kind":"Field","name":{"kind":"Name","value":"new"}},{"kind":"Field","name":{"kind":"Name","value":"serial"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"techniques"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","name":{"kind":"Name","value":"category"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"slugs"},"name":{"kind":"Name","value":"_allSlugLocales"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"variantContainer"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"code"}},{"kind":"Field","name":{"kind":"Name","value":"feature"}},{"kind":"Field","name":{"kind":"Name","value":"note"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"rImage"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"srcSet"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<ProductQuery, ProductQueryVariables>;
-export const ProductsPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"ProductsPage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"skip"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"IntType"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"productsPage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","alias":{"kind":"Name","value":"slugs"},"name":{"kind":"Name","value":"_allSlugLocales"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"90vw, 990px","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"7:3","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"seo"},"name":{"kind":"Name","value":"_seoMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"seoMetaFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"allProducts"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}},{"kind":"Argument","name":{"kind":"Name","value":"skip"},"value":{"kind":"Variable","name":{"kind":"Name","value":"skip"}}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"name_ASC"}},{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"100"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"home"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"images"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"(min-width:1024px) 30vw, 95vw, 400px","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"400"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"max"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"indepth"}},{"kind":"Field","name":{"kind":"Name","value":"new"}},{"kind":"Field","name":{"kind":"Name","value":"serial"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"techniques"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","name":{"kind":"Name","value":"category"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"slugs"},"name":{"kind":"Name","value":"_allSlugLocales"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"_allProductsMeta"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"name"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"isBlank"},"value":{"kind":"StringValue","value":"false","block":false}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"count"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"rImage"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"srcSet"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"seoMetaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}}]} as unknown as DocumentNode<ProductsPageQuery, ProductsPageQueryVariables>;
-export const SearchPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"searchPage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"searchPage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","alias":{"kind":"Name","value":"slugs"},"name":{"kind":"Name","value":"_allSlugLocales"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"abstract"}},{"kind":"Field","alias":{"kind":"Name","value":"seo"},"name":{"kind":"Name","value":"_seoMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"seoMetaFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"seoMetaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}}]} as unknown as DocumentNode<SearchPageQuery, SearchPageQueryVariables>;
-export const TechniqueDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Technique"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"skip"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"IntType"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"technique"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","alias":{"kind":"Name","value":"slugs"},"name":{"kind":"Name","value":"_allSlugLocales"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"seo"},"name":{"kind":"Name","value":"_seoMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"seoMetaFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","alias":{"kind":"Name","value":"products"},"name":{"kind":"Name","value":"_allReferencingProducts"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"skip"},"value":{"kind":"Variable","name":{"kind":"Name","value":"skip"}}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"name_ASC"}},{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"100"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"home"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"images"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"(min-width:1024px) 30vw, 95vw, 400px","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"400"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"max"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"indepth"}},{"kind":"Field","name":{"kind":"Name","value":"new"}},{"kind":"Field","name":{"kind":"Name","value":"serial"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"techniques"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","name":{"kind":"Name","value":"category"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"slugs"},"name":{"kind":"Name","value":"_allSlugLocales"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"seoMetaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"rImage"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"srcSet"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<TechniqueQuery, TechniqueQueryVariables>;
-export const TechniqueToFilterDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"TechniqueToFilter"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"categoryId"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"ItemId"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"skip"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"IntType"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"technique"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"fallbackLocales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fallbackLocales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","alias":{"kind":"Name","value":"slugs"},"name":{"kind":"Name","value":"_allSlugLocales"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"seo"},"name":{"kind":"Name","value":"_seoMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"seoMetaFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","alias":{"kind":"Name","value":"products"},"name":{"kind":"Name","value":"_allReferencingProducts"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"skip"},"value":{"kind":"Variable","name":{"kind":"Name","value":"skip"}}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"name_ASC"}},{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"100"}},{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"category"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"Variable","name":{"kind":"Name","value":"categoryId"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"home"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"images"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sizes"},"value":{"kind":"StringValue","value":"(min-width:1024px) 30vw, 95vw, 400px","block":false}},{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"format"},{"kind":"EnumValue","value":"compress"}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"IntValue","value":"400"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"max"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"rImage"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"indepth"}},{"kind":"Field","name":{"kind":"Name","value":"new"}},{"kind":"Field","name":{"kind":"Name","value":"serial"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"techniques"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","name":{"kind":"Name","value":"category"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"slugs"},"name":{"kind":"Name","value":"_allSlugLocales"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"seoMetaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"rImage"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"srcSet"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<TechniqueToFilterQuery, TechniqueToFilterQueryVariables>;
+export const MenuDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Menu"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SiteLocale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"buildingCategoriesIndex"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"menuLabel"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}}]}},{"kind":"Field","name":{"kind":"Name","value":"locationsIndex"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"menuLabel"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}}]}},{"kind":"Field","name":{"kind":"Name","value":"citiesIndex"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"menuLabel"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}}]}},{"kind":"Field","name":{"kind":"Name","value":"architectonicStylesIndex"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"menuLabel"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}}]}},{"kind":"Field","name":{"kind":"Name","value":"architectonicElementsIndex"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"menuLabel"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}}]}},{"kind":"Field","name":{"kind":"Name","value":"authorsIndex"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"menuLabel"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}}]}},{"kind":"Field","name":{"kind":"Name","value":"photosCollectionsIndex"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"menuLabel"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}}]}},{"kind":"Field","name":{"kind":"Name","value":"videosIndex"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"menuLabel"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}}]}},{"kind":"Field","name":{"kind":"Name","value":"expositionsIndex"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"menuLabel"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}}]}},{"kind":"Field","name":{"kind":"Name","value":"articlesIndex"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"menuLabel"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}}]}},{"kind":"Field","name":{"kind":"Name","value":"aboutPage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"menuLabel"}},{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}}]}},{"kind":"Field","name":{"kind":"Name","value":"_site"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locales"}}]}}]}}]} as unknown as DocumentNode<MenuQuery, MenuQueryVariables>;

@@ -49,7 +49,7 @@ const CardGeneric = ({ data, locale, variant }: PropsCard) => {
         )}
         <div className="duration-300 mt-4">
           <div className="grid gap-3">
-            <h2 className="font-serif tracking-widest text-base font-bold group-hover:underline group-hover:underline-offset-4">
+            <h2 className="font-sans tracking-widest text-base font-bold group-hover:underline group-hover:underline-offset-4">
               {name}
             </h2>
             {serial && (

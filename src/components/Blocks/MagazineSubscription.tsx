@@ -10,7 +10,7 @@ export default function MagazineSubscription({ locale, page }) {
           <div className="max-w-[900px] mx-auto">
             <div className="md:flex md:gap-x-4 xl:gap-x-8 xl:pt-8 justify-center">
               <div className="bg-base-300/30 p-6 relative border border-base-300 lg:w-2/3 xl:w-1/2 lg:min-h-[450px]">
-                <div className="font-serif text-[#E0CFA8] text-smd min-h-20 md:min-h-32 lg:text-lg">
+                <div className="font-sans text-[#E0CFA8] text-smd min-h-20 md:min-h-32 lg:text-lg">
                   {page.title}
                 </div>
                 <div
