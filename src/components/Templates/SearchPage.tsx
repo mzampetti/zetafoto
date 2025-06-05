@@ -180,7 +180,7 @@ function SearchBody({ querySearched, locale }) {
   return (
     <>
       <section className="">
-        <h2 className="font-sans text-lg mt-8 lg:text-xl lg:mb-12">
+        <h2 className="font-serif text-lg mt-8 lg:text-xl lg:mb-12">
           {!query && <>{translate("search.results", locale)} </>}
           {query && (
             <>

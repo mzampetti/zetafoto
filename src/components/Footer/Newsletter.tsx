@@ -25,7 +25,7 @@ export default function Newsletter({
           <div className="lg:col-span-9 xl:col-span-8">
             {subtitle && (
               <div
-                className="text-smd font-sans italic md:text-lg md:pt-4 lg:pt-0"
+                className="text-smd font-serif italic md:text-lg md:pt-4 lg:pt-0"
                 dangerouslySetInnerHTML={{ __html: `${subtitle}` }}
               />
             )}
@@ -49,7 +49,7 @@ export default function Newsletter({
                       defaultValue=""
                       name="EMAIL"
                       placeholder="Inserisci la tua email *"
-                      className="block w-full border-primary-content border-b bg-transparent py-4 text-base-content placeholder:text-[#4A4A4A] font-sans"
+                      className="block w-full border-primary-content border-b bg-transparent py-4 text-base-content placeholder:text-[#4A4A4A] font-serif"
                       id="mce-EMAIL"
                     />
                   </div>

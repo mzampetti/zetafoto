@@ -1,0 +1,27 @@
+query ArticlesIndex(
+  $locale: SiteLocale
+  $fallbackLocales: [SiteLocale!]
+  $skip: IntType
+) {
+  articlesIndex(locale: $locale, fallbackLocales: $fallbackLocales) {
+    id
+    menuLabel
+    title
+    _modelApiKey
+  }
+  allArticles(locale: $locale, first: "500", skip: $skip, orderBy: date_DESC) {
+    id
+    _modelApiKey
+    slugs: _allSlugLocales {
+      locale
+      value
+    }
+    title
+    date
+    text
+    externalLink
+    attachment {
+      url
+    }
+  }
+}

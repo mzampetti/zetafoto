@@ -1,0 +1,24 @@
+query ExpositionsIndex(
+  $locale: SiteLocale
+  $fallbackLocales: [SiteLocale!]
+  $skip: IntType
+) {
+  expositionsIndex(locale: $locale, fallbackLocales: $fallbackLocales) {
+    id
+    menuLabel
+    title
+    _modelApiKey
+  }
+  allExpositions(locale: $locale, first: "500", skip: $skip) {
+    id
+    _modelApiKey
+    slugs: _allSlugLocales {
+      locale
+      value
+    }
+    title
+    location
+    timePeriod
+    text
+  }
+}

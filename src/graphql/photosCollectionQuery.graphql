@@ -1,0 +1,18 @@
+query PhotosCollection($locale: SiteLocale, $slug: String) {
+  photosCollection(filter: { slug: { eq: $slug } }, locale: $locale) {
+    slug
+    name
+    _modelApiKey
+    id
+    slug
+    photos {
+      ...previewPhotoFragment
+    }
+  }
+  photosCollectionsIndex(locale: $locale) {
+    id
+    menuLabel
+    title
+    _modelApiKey
+  }
+}

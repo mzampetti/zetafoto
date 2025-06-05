@@ -1,0 +1,45 @@
+query PhotosCollectionsIndex(
+  $locale: SiteLocale
+  $fallbackLocales: [SiteLocale!]
+  $skip: IntType
+) {
+  photosCollectionsIndex(locale: $locale, fallbackLocales: $fallbackLocales) {
+    id
+    menuLabel
+    title
+    _modelApiKey
+  }
+  allPhotosCollections(locale: $locale, first: "500", skip: $skip) {
+    id
+    name
+    _modelApiKey
+    slugs: _allSlugLocales {
+      locale
+      value
+    }
+    photos {
+      id
+      _modelApiKey
+      slug
+      title
+      description
+      image {
+        id
+        responsiveImage(
+          sizes: "(min-width:768px) 50vw, (min-width:1024px) 33vw, 100vw, 400px"
+          imgixParams: { auto: [format, compress], fit: crop, ar: "1:1" }
+        ) {
+          ...rImage
+        }
+      }
+      location {
+        id
+        name
+      }
+      city {
+        id
+        name
+      }
+    }
+  }
+}

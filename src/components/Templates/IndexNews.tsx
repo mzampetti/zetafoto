@@ -9,7 +9,7 @@ import {
 import TextHero from "../Hero/TextHero";
 import { motion, Variants } from "framer-motion";
 import { useState } from "react";
-import CardProduct from "../Blocks/CardProduct";
+import CardProduct from "../Blocks/CardPhoto";
 import Pagination from "../Layout/Pagination";
 import CardNews from "../Blocks/CardNews";
 

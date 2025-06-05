@@ -10,12 +10,6 @@
   "sending": "sending...",
   "loading": "loading...",
 
-  "credits": {
-    "text": "Website design & development",
-    "url": "https://www.cantierecreativo.net",
-    "title": "Web agency & digital partner based in Florence"
-  },
-
   "404": {
     "title": "Page not found",
     "text": "The address may be misspelled or may not exist.",
@@ -91,10 +85,8 @@
   "backTop": "Back to top",
   "googleMaps": "Google Maps",
   "read": "read",
-  "label": {
-    "cart": "Cart",
-    "search": "Search"
-  },
+  "readMore": "Read more",
+  "downloadPdf": "Download document",
 
   "search": {
     "title": "Show results for",
@@ -115,47 +107,47 @@
   "photosTitle": "Photos",
   "buildingCategoriesIndex": {
     "title": "Building Categories",
-    "slug": "/categories"
+    "slug": "categories"
   },
   "locationsIndex": {
-    "title": "Book a visit",
-    "slug": "contact-us"
+    "title": "Locations",
+    "slug": "locations"
   },
   "citiesIndex": {
-    "title": "Book a visit",
-    "slug": "contact-us"
+    "title": "Indice città",
+    "slug": "cities"
   },
   "architectonicStylesIndex": {
-    "title": "Book a visit",
-    "slug": "contact-us"
+    "title": "Architectonic Styles",
+    "slug": "styles"
   },
   "architectonicElementsIndex": {
-    "title": "Book a visit",
-    "slug": "contact-us"
+    "title": "Architetocnic Elements",
+    "slug": "elements"
   },
   "authorsIndex": {
-    "title": "Book a visit",
-    "slug": "contact-us"
+    "title": "Authors",
+    "slug": "authors"
   },
   "photosCollectionsIndex": {
     "title": "Galleries",
-    "slug": "/galleries"
+    "slug": "galleries"
   },
   "videosIndex": {
     "title": "Video",
-    "slug": "/video"
+    "slug": "video"
   },
   "expositionsIndex": {
     "title": "Expositions",
-    "slug": "/expositions"
+    "slug": "expositions"
   },
   "articlesIndex": {
     "title": "News",
-    "slug": "/news"
+    "slug": "news"
   },
   "aboutPage": {
     "title": "About",
-    "slug": "/about"
+    "slug": "about"
   },
   "from": "from",
   "to": "to",
@@ -166,53 +158,6 @@
   "Thematic Visits": "Visite tematiche",
   "contacts_index": "",
   "donations_page": "Support us",
-  "course": {
-    "label": "Courses",
-    "list": "Courses",
-    "closed": "Closed course",
-    "to_be_scheduled": "To be scheduled",
-    "tags": "Tags",
-    "teachers": "Teachers",
-    "teacher": "Teacher",
-    "empty_list": "There are no courses for this tag",
-    "signup_title": "How to enroll for",
-    "signup_text_not_active": "You can book now this course. The course will take place once it has reached the required amount of particpiants. Book now and you will be notified soon!",
-    "signup_text_active": "The course has reached the required amount of participants and will take place on the announced dates.",
-    "sign_up_form": "Signup Form",
-    "signup_text_closed": "Applications are closed at the moment for this course.",
-    "step_one_signup_title": "1. Send the application form",
-    "step_one_signup_text": "Please fill out the registration form and send it back to us via email to",
-    "step_one_signup_cta": "Download the subscription form",
-    "step_two_signup_title": "2. Pay the deposit",
-    "step_two_signup_text_not_active": "After sending the enrollment form, you can choose to pay the deposit or directly the whole fee, using the same email address.",
-    "step_two_signup_text_active": "After sending the enrollment form, make the deposit payment using the same email address. The course will be activated to reach the minimum number of participants. You will be contacted by our staff to complete the registration.",
-    "step_two_signup_cta": "Pay for the deposit",
-    "step_two_bis_signup_title": "Finalize your enrollment!",
-    "step_two_bis_signup_text_active": "The course has reached the minimum of participants and will take place on the announced dates. Complete your registration using the same email address indicated to pay the deposit.",
-    "step_two_bis_signup_cta": "Pay the balance",
-    "step_three_signup_title": "3. Balance payment",
-    "step_three_signup_text": "After sending the enrollment form, make your payment using the same email address.",
-    "step_three_signup_cta": "Pay the whole fee",
-    "price_taxes": "taxes incl."
-  },
-  "purchase": {
-    "tax_included": "taxes incl.",
-    "subscription": "Subscribe and you will receive two issues of Jacquard Magazine.",
-    "offline": "You can also pay by bank transfer. Write to us or follow the instructions here - ",
-    "contact": "Contact us",
-    "shipping_title": "Shipping",
-    "shipping_text": "Italy: 5 working days. Other: 8/20 working days."
-  },
-  "relatedArticles": {
-    "title": "Related articles",
-    "url": "/en/culture/events-textile-culture/",
-    "cta": "All news"
-  },
-  "relatedTeachers": {
-    "title": "Faculties",
-    "url": "/en/education/faculty/",
-    "cta": "View all faculties"
-  },
   "categories": "Categories",
   "article": "Articles",
   "culture": "Culture",
@@ -228,89 +173,17 @@
     "action": "Donate with a credit card",
     "thanks": "Thanks for your donation."
   },
-  "nav": {
-    "shop": {
-      "url": "https://shop.fabbricapienza.com",
-      "title": "Shop"
-    },
-    "about": {
-      "url": "/en/who-we-are",
-      "title": "Who we are"
-    },
-    "wineclub": {
-      "url": "/en/wine-club",
-      "title": "Wine Club"
-    },
-    "orcia": {
-      "url": "/en/val-d-orcia",
-      "title": "Val d'Orcia"
-    },
-    "team": {
-      "url": "/en/team",
-      "title": "Team"
-    },
-    "wines": {
-      "url": "/en/our-wines",
-      "title": "Our Wines"
-    },
-    "wineMaking": {
-      "url": "/en/the-wine-making",
-      "title": "The wine-making"
-    },
-    "oil": {
-      "url": "/en/olive-oil",
-      "title": "Extra Virgin Olive Oil"
-    },
-    "tours": {
-      "url": "/en/wine-tours",
-      "title": "Wine tours"
-    },
-    "newton": {
-      "url": "/en/tasting",
-      "title": "Casa Newton"
-    },
-    "download": {
-      "url": "/en/download",
-      "title": "Download"
-    },
-    "contacts": {
-      "url": "/en/contacts",
-      "title": "Contacts"
-    },
-    "magazine": {
-      "url": "/en/magazine",
-      "title": "Magazine"
-    },
-    "vineyard": {
-      "url": "/en/the-vineyard",
-      "title": "The vineyard"
-    },
-    "winery": {
-      "url": "/en/winery",
-      "title": "Winery"
-    },
-    "contact": {
-      "url": "/contacts",
-      "title": "Contacts"
-    },
-    "hospitality": "Hospitality"
-  },
-  "wine": {
-    "winery": "Winery",
-    "refinement": "Refinement",
-    "misure": "Misure",
-    "tasting": "Tasting note",
-    "origin": "Origin",
-    "measures": "Measures",
-    "production": "Production",
-    "shop": "Go to Shop",
-    "ourWines": "Our wines",
-    "discoverOurWines": "Disover our wines",
-    "articles": "Articles"
-  },
+
   "technique": "Tecnique: ",
   "techniqueFilter": "Tecnique: ",
   "category": "Cetegory: ",
   "product": "Products: ",
-  "subtitleHp": "Zenithal phography of architecture"
+  "subtitleHp": "Zenithal phography of architecture",
+  "recentPhotos": "Recent photos",
+  "photo": "Photos",
+  "zoom": "Zoom",
+  "otherPhotos": "Other photos of ",
+  "view-all": "View all ",
+  "sellingOption": "Purchase options",
+  "contactEmail": "Email contact"
 }

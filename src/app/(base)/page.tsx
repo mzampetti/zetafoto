@@ -1,16 +1,22 @@
 import fetchDato from "@/lib/fetchDato";
 import { draftMode } from "next/headers";
-import { HomeDocument, SiteLocale } from "@/graphql/generated";
+import {
+  FileField,
+  HomeDocument,
+  HomepageRecord,
+  PhotoRecord,
+  SiteLocale,
+} from "@/graphql/generated";
 import { pickHrefs } from "@/lib/pickPageData";
 import { hrefsProp } from "@/_types";
 import Wrapper from "@/components/Wrapper";
 import HomePage from "@/components/Templates/HomePage";
 import getSeoMeta from "@/lib/seoUtils";
+import { shuffle } from "@/lib/shuffle";
 
 const locale = "it" as SiteLocale;
 const siteLocale = locale as SiteLocale;
 const defaultLocale = "it" as SiteLocale;
-
 export async function generateMetadata() {
   const data = await fetchDato(
     HomeDocument,
@@ -35,10 +41,15 @@ export default async function Page() {
     },
     isEnabled
   );
-  const hrefs: hrefsProp = pickHrefs(data.homepage);
+  const randomPhotos = shuffle(data.allPhotos as PhotoRecord[]).slice(0, 12);
+
   return (
-    <Wrapper hrefs={hrefs} locale={locale}>
-      "CIAO"
+    <Wrapper locale={locale}>
+      <HomePage
+        page={data?.homepage as HomepageRecord}
+        photos={randomPhotos as PhotoRecord[]}
+        locale={locale}
+      />
     </Wrapper>
   );
 }

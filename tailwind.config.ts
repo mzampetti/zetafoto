@@ -51,7 +51,6 @@ const config: Config = {
         center: true,
         padding: {
           DEFAULT: "1.5rem",
-          "2xl": "5rem",
         },
       },
       fontSize: {
@@ -60,7 +59,7 @@ const config: Config = {
         base: ["16px", "26px"],
         md: ["18px", "25px"],
         lg: ["22px", "26px"],
-        xl: ["38px", "46px"],
+        xl: ["27px", "30px"],
         "2xl": ["50px", "56px"],
         "3xl": ["67px", "75px"],
       },

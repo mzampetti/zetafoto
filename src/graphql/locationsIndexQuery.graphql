@@ -1,0 +1,49 @@
+query LocationsIndex(
+  $locale: SiteLocale
+  $fallbackLocales: [SiteLocale!]
+  $skip: IntType
+) {
+  locationsIndex(locale: $locale, fallbackLocales: $fallbackLocales) {
+    id
+    menuLabel
+    title
+    _modelApiKey
+  }
+  allLocations(locale: $locale, first: "500", skip: $skip) {
+    id
+    name
+    _modelApiKey
+    slugs: _allSlugLocales {
+      locale
+      value
+    }
+    photos: _allReferencingPhotos(
+      locale: $locale
+      first: "100"
+      orderBy: createdAt_DESC
+    ) {
+      id
+      _modelApiKey
+      slug
+      title
+      description
+      image {
+        id
+        responsiveImage(
+          sizes: "(min-width:768px) 50vw, (min-width:1024px) 33vw, 100vw, 400px"
+          imgixParams: { auto: [format, compress], fit: crop, ar: "1:1" }
+        ) {
+          ...rImage
+        }
+      }
+      location {
+        id
+        name
+      }
+      city {
+        id
+        name
+      }
+    }
+  }
+}

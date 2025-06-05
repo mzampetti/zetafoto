@@ -1,0 +1,21 @@
+query Location($locale: SiteLocale, $slug: String) {
+  location(filter: { slug: { eq: $slug } }, locale: $locale) {
+    slug
+    name
+    _modelApiKey
+    id
+    slug
+    photos: _allReferencingPhotos(
+      first: "500"
+      filter: { slug: { neq: $slug } }
+    ) {
+      ...previewPhotoFragment
+    }
+  }
+  locationsIndex(locale: $locale) {
+    id
+    menuLabel
+    title
+    _modelApiKey
+  }
+}

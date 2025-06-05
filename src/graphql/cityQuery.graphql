@@ -1,0 +1,21 @@
+query City($locale: SiteLocale, $slug: String) {
+  city(filter: { slug: { eq: $slug } }, locale: $locale) {
+    slug
+    name
+    _modelApiKey
+    id
+    slug
+    photos: _allReferencingPhotos(
+      first: "500"
+      filter: { slug: { neq: $slug } }
+    ) {
+      ...previewPhotoFragment
+    }
+  }
+  citiesIndex(locale: $locale) {
+    id
+    menuLabel
+    title
+    _modelApiKey
+  }
+}

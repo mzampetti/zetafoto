@@ -6,15 +6,18 @@ import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import translate from "@/labels";
 import CustomIcon from "@/components/Blocks/CustomIcon";
+import resolveLink from "@/lib/resolveLink";
 
 type Props = {
   lng: SiteLocale;
   languages: SiteLocale[];
   hrefs?: any;
+  model: string;
 };
 
-const LanguageSelector = ({ lng, languages, hrefs }: Props) => {
+const LanguageSelector = ({ lng, languages, hrefs, model }: Props) => {
   const pathname = usePathname();
+  // return model;
   return (
     <div className="hidden xl:flex border-l border-[#e0e0e0]">
       {languages.map((locale, i: number) => {
@@ -22,7 +25,11 @@ const LanguageSelector = ({ lng, languages, hrefs }: Props) => {
         return (
           <div className="flex items-center" key={locale}>
             <Link
-              href={hrefs?.[locale] || fallbackLocale}
+              href={
+                hrefs?.[locale] ||
+                resolveLink({ _modelApiKey: model, locale: locale }) ||
+                fallbackLocale
+              }
               className=""
               role="menuitem"
               title={hrefs?.[locale] || fallbackLocale}

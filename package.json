@@ -27,7 +27,6 @@
     "axios": "^1.6.2",
     "datocms-structured-text-utils": "^2.0.4",
     "dayjs": "^1.11.11",
-    "fancybox": "^3.0.1",
     "framer-motion": "^10.16.16",
     "graphql": "^16.8.1",
     "headlessui": "^0.0.0",

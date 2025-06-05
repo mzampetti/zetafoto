@@ -31,7 +31,7 @@ export default function TextBlock({ data, locale }) {
         variants={variants}
       >
         <h2
-          className="font-sans text-md inline-block w-full mb-6 lg:text-lg"
+          className="font-serif text-md inline-block w-full mb-6 lg:text-lg"
           dangerouslySetInnerHTML={{ __html: textTitle }}
         />
         {textText && (

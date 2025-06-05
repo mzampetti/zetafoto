@@ -1,0 +1,123 @@
+query Photo($locale: SiteLocale, $slug: String) {
+  photo(filter: { slug: { eq: $slug } }, locale: $locale) {
+    id
+    _modelApiKey
+    slug
+    title
+    description
+    permissions
+    sellingOptions {
+      name
+      price
+      description
+      id
+    }
+    image {
+      id
+      responsiveImage(
+        sizes: "100vw, 1000px"
+        imgixParams: { auto: [format, compress], fit: crop, ar: "1:1" }
+      ) {
+        ...rImage
+      }
+    }
+    location {
+      _modelApiKey
+      id
+      name
+      slug
+      otherPhotos: _allReferencingPhotos(
+        first: "3"
+        filter: { slug: { neq: $slug } }
+      ) {
+        ...previewPhotoFragment
+      }
+      allOtherPhotos: _allReferencingPhotos(
+        first: "500"
+        filter: { slug: { neq: $slug } }
+      ) {
+        id
+      }
+    }
+    city {
+      _modelApiKey
+      id
+      name
+      slug
+      otherPhotos: _allReferencingPhotos(
+        first: "3"
+        filter: { slug: { neq: $slug } }
+      ) {
+        ...previewPhotoFragment
+      }
+      allOtherPhotos: _allReferencingPhotos(
+        first: "500"
+        filter: { slug: { neq: $slug } }
+      ) {
+        id
+      }
+    }
+    slugs: _allSlugLocales {
+      locale
+      value
+    }
+    captureDate
+    buildingCategory {
+      name
+    }
+    authors {
+      name
+      _modelApiKey
+      id
+      slug
+      otherPhotos: _allReferencingPhotos(
+        first: "3"
+        filter: { slug: { neq: $slug } }
+      ) {
+        ...previewPhotoFragment
+      }
+      allOtherPhotos: _allReferencingPhotos(
+        first: "500"
+        filter: { slug: { neq: $slug } }
+      ) {
+        id
+      }
+    }
+    architectonicElements {
+      name
+      _modelApiKey
+      id
+      slug
+      otherPhotos: _allReferencingPhotos(
+        first: "3"
+        filter: { slug: { neq: $slug } }
+      ) {
+        ...previewPhotoFragment
+      }
+      allOtherPhotos: _allReferencingPhotos(
+        first: "500"
+        filter: { slug: { neq: $slug } }
+      ) {
+        id
+      }
+    }
+    architectonicStyles {
+      name
+      _modelApiKey
+      id
+      slug
+      otherPhotos: _allReferencingPhotos(
+        first: "3"
+        filter: { slug: { neq: $slug } }
+      ) {
+        ...previewPhotoFragment
+      }
+      allOtherPhotos: _allReferencingPhotos(
+        first: "500"
+        filter: { slug: { neq: $slug } }
+      ) {
+        id
+      }
+    }
+  }
+}

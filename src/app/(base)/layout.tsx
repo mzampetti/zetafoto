@@ -6,7 +6,7 @@ import {
   LayoutDocument,
   // FooterDocument,
 } from "@/graphql/generated";
-// import Footer from "@/components/Footer";
+import Footer from "@/components/Footer";
 import fetchDato from "@/lib/fetchDato";
 import SkipLinks from "@/components/Layout/SkipLinks";
 
@@ -41,17 +41,12 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const footerData = await fetchDato(FooterDocument, {
-  //   locale: siteLocale,
-  //   fallbackLocales: [defaultLocale],
-  // });
-
   return (
     <html lang={locale} data-theme="custom">
       <body className={`md:min-h-screen`}>
         <SkipLinks locale={locale} />
         <main>{children}</main>
-        {/* <Footer data={footerData} locale={siteLocale} /> */}
+        <Footer locale={siteLocale} />
       </body>
     </html>
   );

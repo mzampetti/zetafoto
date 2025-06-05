@@ -16,6 +16,7 @@ export default function InternalLink({
   className,
   children,
 }: InternalinkProps) {
+  // return record._modelApiKey;
   return (
     <>
       <Link

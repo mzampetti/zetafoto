@@ -26,7 +26,7 @@ const BackgroundImageHero = ({ heroTitle, image, prefix, post }: Props) => {
           priority={true}
         />
       </div>
-      <div className="absolute bottom-6 uppercase container font-sans block mx-auto z-10 text-white lg:pb-8">
+      <div className="absolute bottom-6 uppercase container font-serif block mx-auto z-10 text-white lg:pb-8">
         {prefix && (
           <div className="opacity-80 mb-2 xl:text-lg xl:mb-6">{prefix}</div>
         )}

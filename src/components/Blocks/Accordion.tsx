@@ -97,7 +97,7 @@ const Accordion = ({ record, i }: Props) => {
           />
         )}
         <div className="flex-1 text-left">
-          <div className="font-sans font-bold md:text-smd">
+          <div className="font-serif font-bold md:text-smd">
             {record.imgTitle}
           </div>
           <div className="mt-1 text-sm text-error-content">

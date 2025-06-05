@@ -9,11 +9,7 @@
   },
   "sending": "inviando...",
   "loading": "caricando...",
-  "credits": {
-    "text": "Progettazione e sviluppo",
-    "url": "https://www.cantierecreativo.net",
-    "title": "Cantiere Creativo Agenzia web Ruby on Rails Firenze"
-  },
+
   "404": {
     "title": "Pagina non trovata",
     "text": "La pagina che stai cercando non esiste, o l'indirizzo inserito non è corretto.",
@@ -78,6 +74,8 @@
   "backTop": "Torna al menu",
   "googleMaps": "Google Maps",
   "read": "leggi",
+  "readMore": "Leggi di più",
+  "downloadPdf": "Scarica l'allegato",
 
   "search": {
     "title": "Risultati della ricerca",
@@ -164,58 +162,19 @@
   "visit_page": "Visite tematiche",
   "contacts_index": "",
   "donations_page": "Donazioni",
-  "course": {
-    "label": "Corsi",
-    "list": "Corsi",
-    "closed": "Corso concluso",
-    "to_be_scheduled": "Corso da programmare",
-    "tags": "Tags",
-    "teachers": "Docenti",
-    "teacher": "Docente",
-    "empty_list": "Non ci sono corsi per questo tag",
-    "signup_title": "Iscrizione",
-    "signup_text_not_active": "Sono aperte le iscrizioni, il corso sarà attivato al raggiungimento del numero minimo di partecipanti.",
-    "signup_text_active": "Il corso ha raggiunto il numero minimo di partecipanti, prenota uno degli ultimi posti rimasti.",
-    "signup_text_closed": "Le iscrizioni al corso sono chiuse.",
-    "sign_up_form": "Modulo d'iscrizione",
-    "step_one_signup_title": "Invio del modulo d'iscrizione",
-    "step_one_signup_text": "Compila il modulo in tutte le sue parti e firma, poi invialo all'indirizzo",
-    "step_one_signup_cta": "Scarica",
-    "step_two_signup_title": "Pagamento quota anticipo",
-    "step_two_signup_text_not_active": "Dopo aver inviato il modulo, effettua il pagamento dell'anticipo utilizzando lo stesso indirizzo mail. Il corso si attiverà al raggiungimento del numero minimo di partecipanti. Sarai contattato dal nostro staff per concludere l'iscrizione.",
-    "step_two_signup_text_active": "Dopo aver inviato il modulo puoi scegliere se versare un anticipo o pagare direttamente l'intera quota, utilizzando lo stesso indirizzo mail.",
-    "step_two_signup_cta": "Paga l'anticipo",
-    "step_two_bis_signup_title": "Pagamento del saldo del corso",
-    "step_two_bis_signup_text_active": "Il corso ha raggiunto il numero minimo di partecipanti e partirà nelle date indicate. Completa la tua iscrizione al corso utilizzando lo stesso indirizzo mail indicato per pagare l'anticipo.",
-    "step_two_bis_signup_cta": "Paga il saldo",
-    "step_three_signup_title": "Pagamento quota totale",
-    "step_three_signup_text": "Dopo aver inviato il modulo, effettua il pagamento della quota utilizzando lo stesso indirizzo mail.",
-    "step_three_signup_cta": "Paga il totale",
-    "price_taxes": "tasse incl."
-  },
-  "purchase": {
-    "tax_included": "Tasse incluse",
-    "subscription": "Abbonati e potrai ricevere i due numeri della nostra rivista semestrale ad un prezzo vantaggioso",
-    "offline": "L’acquisto può essere effettuato anche tramite bonifico o conto corrente. ",
-    "contact": "Contattaci",
-    "shipping_title": "Spedizione",
-    "shipping_text": "Italia: 5 giorni lavorativi. Estero: 8/20 giorni lavorativi."
-  },
-  "donations": {
-    "amount": "Importo libero",
-    "name_label": "Nome e cognome *",
-    "name_hint": "Il tuo nome e necessario per ricevere la donazione.",
-    "message_label": "Messaggio",
-    "message_hint": "Se vuoi puoi lasciare un messaggio per la Fondazione.",
-    "amount_label": "Importo *",
-    "amount_hint": "Seleziona un importo o inserisci il valore dell'importo desiderato.",
-    "action": "Dona con carta di credito",
-    "thanks": "Grazie per la tua donazione"
-  },
+
   "articles": "Articoli",
   "technique": "Tecnica: ",
   "product": "Prodotti: ",
   "techniqueFilter": "Tecnica: ",
   "category": "Categoria: ",
-  "subtitleHp": "Fotografia zenitale di Architettura"
+  "subtitleHp": "Fotografia zenitale di Architettura",
+  "recentPhotos": "Alcune foto in anteprima",
+  "allRightsReserved": "Se non diversamente indicato, sono espressamente vietati l'uso, la riproduzione e la pubblicazione, in qualsiasi forma e modalità, delle immagini presenti in questo sito.",
+  "photo": "Foto",
+  "zoom": "Ingrandisci",
+  "otherPhotos": "Altre foto di ",
+  "view-all": "Vedi tutte ",
+  "sellingOption": "Opzioni di acquisto",
+  "contactEmail": "Contatta via email"
 }

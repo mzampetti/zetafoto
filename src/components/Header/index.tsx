@@ -16,9 +16,10 @@ type Props = {
   lng: SiteLocale;
   data: MenuQuery;
   hrefs?: any;
+  model: string;
 };
 
-const activeClass = "underline underline-offset-[16px]";
+const activeClass = "font-bold";
 const itemClass =
   "text-lg font-bold xl:text-md hover:underline underline-offset-[16px]";
 const itemClassSubmenu =
@@ -40,7 +41,7 @@ function useIsDesktop() {
   return isDesktop;
 }
 
-const Header = ({ lng, hrefs, data }: Props) => {
+const Header = ({ lng, data, model, hrefs }: Props) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [openMenuId, setOpenMenuId] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -216,7 +217,12 @@ const Header = ({ lng, hrefs, data }: Props) => {
                     </div>
                   </motion.nav>
                 </div>
-                <LanguageSelector lng={lng} languages={data._site.locales} />
+                <LanguageSelector
+                  lng={lng}
+                  languages={data._site.locales}
+                  model={model}
+                  hrefs={hrefs}
+                />
               </div>
               <ButtonMenu
                 navbarToggleHandler={() => setNavbarOpen((open) => !open)}

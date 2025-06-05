@@ -1,0 +1,21 @@
+query ArchitectonicElement($locale: SiteLocale, $slug: String) {
+  architectonicElement(filter: { slug: { eq: $slug } }, locale: $locale) {
+    slug
+    name
+    _modelApiKey
+    id
+    slug
+    photos: _allReferencingPhotos(
+      first: "500"
+      filter: { slug: { neq: $slug } }
+    ) {
+      ...previewPhotoFragment
+    }
+  }
+  architectonicElementsIndex(locale: $locale) {
+    id
+    menuLabel
+    title
+    _modelApiKey
+  }
+}

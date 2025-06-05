@@ -10,7 +10,7 @@ import { pickHrefs } from "@/lib/pickPageData";
 import { hrefsProp } from "@/_types";
 import Wrapper from "@/components/Wrapper";
 import getSeoMeta from "@/lib/seoUtils";
-import IndexProducts from "@/components/Templates/IndexProducts";
+import IndexProducts from "@/components/Templates/IndexCategories";
 import { notFound } from "next/navigation";
 
 type Params = {

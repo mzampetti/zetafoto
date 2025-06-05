@@ -1,0 +1,46 @@
+query AuthorsIndex(
+  $locale: SiteLocale
+  $fallbackLocales: [SiteLocale!]
+  $skip: IntType
+) {
+  authorsIndex(locale: $locale, fallbackLocales: $fallbackLocales) {
+    id
+    menuLabel
+    title
+    _modelApiKey
+  }
+  allAuthors(locale: $locale, first: "500", skip: $skip, orderBy: name_ASC) {
+    id
+    name
+    _modelApiKey
+    slug
+    photos: _allReferencingPhotos(
+      locale: $locale
+      first: "100"
+      orderBy: createdAt_DESC
+    ) {
+      id
+      _modelApiKey
+      slug
+      title
+      description
+      image {
+        id
+        responsiveImage(
+          sizes: "(min-width:768px) 50vw, (min-width:1024px) 33vw, 100vw, 400px"
+          imgixParams: { auto: [format, compress], fit: crop, ar: "1:1" }
+        ) {
+          ...rImage
+        }
+      }
+      location {
+        id
+        name
+      }
+      city {
+        id
+        name
+      }
+    }
+  }
+}

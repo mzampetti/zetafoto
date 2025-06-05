@@ -1,0 +1,21 @@
+query BuildingCategory($locale: SiteLocale, $slug: String) {
+  buildingCategory(filter: { slug: { eq: $slug } }, locale: $locale) {
+    slug
+    name
+    _modelApiKey
+    id
+    slug
+    photos: _allReferencingPhotos(
+      first: "500"
+      filter: { slug: { neq: $slug } }
+    ) {
+      ...previewPhotoFragment
+    }
+  }
+  buildingCategoriesIndex(locale: $locale) {
+    id
+    menuLabel
+    title
+    _modelApiKey
+  }
+}
