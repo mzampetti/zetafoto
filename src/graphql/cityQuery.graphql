@@ -11,6 +11,9 @@ query City($locale: SiteLocale, $slug: String) {
     ) {
       ...previewPhotoFragment
     }
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   citiesIndex(locale: $locale) {
     id

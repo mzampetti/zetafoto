@@ -1,0 +1,81 @@
+import fetchDato from "@/lib/fetchDato";
+import { draftMode } from "next/headers";
+import { AboutPageDocument, SiteLocale } from "@/graphql/generated";
+import Wrapper from "@/components/Wrapper";
+import getSeoMeta from "@/lib/seoUtils";
+import { notFound } from "next/navigation";
+import TextHero from "@/components/Hero/TextHero";
+import { SRCImage } from "react-datocms";
+
+const locale = "en" as SiteLocale;
+const siteLocale = locale as SiteLocale;
+const defaultLocale = "en" as SiteLocale;
+
+export async function generateMetadata() {
+  const data = await fetchDato(
+    AboutPageDocument,
+    { locale: siteLocale },
+    false
+  );
+  const page: any = data?.aboutPage || null;
+  const meta = getSeoMeta(page, locale);
+  return meta;
+}
+export default async function Page() {
+  const { isEnabled } = draftMode();
+  const data = await fetchDato(
+    AboutPageDocument,
+    {
+      locale: siteLocale,
+      fallbackLocales: [defaultLocale],
+    },
+    isEnabled
+  );
+  if (!data?.aboutPage) notFound();
+
+  return (
+    <Wrapper
+      locale={locale}
+      model={data.aboutPage._modelApiKey}
+      pages={[data.aboutPage]}
+    >
+      <TextHero heroTitle={data.aboutPage.title} locale={locale} />
+      <section className="bg-primary text-primary-content pb-16">
+        <div className="container">
+          <div className="grid gap-12 gap-x-6 xl:gap-x-20 md:grid-cols-12">
+            <div className="md:col-span-8">
+              <div
+                className="formatted"
+                dangerouslySetInnerHTML={{
+                  __html: data.aboutPage.techniqueText,
+                }}
+              />
+            </div>
+            <div className="md:col-span-4">
+              <SRCImage data={data.aboutPage.techniqueImage.responsiveImage} />
+            </div>
+          </div>
+          <div className="mt-6 xl:mt-10 grid gap-12 gap-x-6 xl:gap-x-20 md:grid-cols-12">
+            <div className="md:col-span-8">
+              <div
+                className="formatted"
+                dangerouslySetInnerHTML={{
+                  __html: data.aboutPage.aboutText,
+                }}
+              />
+              <div
+                className="formatted"
+                dangerouslySetInnerHTML={{
+                  __html: data.aboutPage.creditsText,
+                }}
+              />
+            </div>
+            <div className="md:col-span-4">
+              <SRCImage data={data.aboutPage.aboutImage.responsiveImage} />
+            </div>
+          </div>
+        </div>
+      </section>
+    </Wrapper>
+  );
+}

@@ -8,6 +8,9 @@ query PhotosCollection($locale: SiteLocale, $slug: String) {
     photos {
       ...previewPhotoFragment
     }
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   photosCollectionsIndex(locale: $locale) {
     id

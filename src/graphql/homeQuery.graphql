@@ -12,6 +12,9 @@ query Home($locale: SiteLocale, $fallbackLocales: [SiteLocale!]) {
         ...rImage
       }
     }
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   allPhotos(locale: $locale, first: "100", orderBy: createdAt_DESC) {
     id

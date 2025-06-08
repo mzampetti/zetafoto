@@ -3,9 +3,6 @@ import { SRCImage } from "react-datocms";
 import { SiteLocale } from "@/graphql/generated";
 import InternalLink from "../Links/InternalLink";
 import { getInfoFromModel } from "@/lib/getInfoFromModel";
-import { getDate } from "@/lib/getDate";
-import ButtonBlock from "./ButtonBlock";
-import CardProduct from "./CardPhoto";
 import CustomIcon from "./CustomIcon";
 
 type PropsCard = {

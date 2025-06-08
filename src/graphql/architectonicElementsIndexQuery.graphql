@@ -11,6 +11,9 @@ query ArchitectonicElementsIndex(
     menuLabel
     title
     _modelApiKey
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   allArchitectonicElements(locale: $locale, first: "500", skip: $skip) {
     id

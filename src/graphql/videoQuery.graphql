@@ -1,0 +1,23 @@
+query Video($locale: SiteLocale, $slug: String) {
+  video(filter: { slug: { eq: $slug } }, locale: $locale) {
+    id
+    _modelApiKey
+    slug
+    title
+    urlVideo {
+      url
+      providerUid
+      width
+      height
+    }
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
+  }
+  videosIndex(locale: $locale) {
+    id
+    menuLabel
+    title
+    _modelApiKey
+  }
+}

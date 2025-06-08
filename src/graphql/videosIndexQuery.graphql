@@ -8,6 +8,9 @@ query VideosIndex(
     menuLabel
     title
     _modelApiKey
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   allVideos(locale: $locale, first: "500", skip: $skip) {
     id

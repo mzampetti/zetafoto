@@ -8,6 +8,9 @@ query PhotosCollectionsIndex(
     menuLabel
     title
     _modelApiKey
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   allPhotosCollections(locale: $locale, first: "500", skip: $skip) {
     id

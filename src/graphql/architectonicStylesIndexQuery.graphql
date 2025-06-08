@@ -8,6 +8,9 @@ query ArchitectonicStylesIndex(
     menuLabel
     title
     _modelApiKey
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   allArchitectonicStyles(locale: $locale, first: "500", skip: $skip) {
     id

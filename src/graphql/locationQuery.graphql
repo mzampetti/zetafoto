@@ -11,6 +11,9 @@ query Location($locale: SiteLocale, $slug: String) {
     ) {
       ...previewPhotoFragment
     }
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   locationsIndex(locale: $locale) {
     id

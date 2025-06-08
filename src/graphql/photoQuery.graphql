@@ -119,5 +119,8 @@ query Photo($locale: SiteLocale, $slug: String) {
         id
       }
     }
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
 }

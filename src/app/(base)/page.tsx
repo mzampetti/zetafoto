@@ -1,14 +1,11 @@
 import fetchDato from "@/lib/fetchDato";
 import { draftMode } from "next/headers";
 import {
-  FileField,
   HomeDocument,
   HomepageRecord,
   PhotoRecord,
   SiteLocale,
 } from "@/graphql/generated";
-import { pickHrefs } from "@/lib/pickPageData";
-import { hrefsProp } from "@/_types";
 import Wrapper from "@/components/Wrapper";
 import HomePage from "@/components/Templates/HomePage";
 import getSeoMeta from "@/lib/seoUtils";
@@ -46,7 +43,7 @@ export default async function Page() {
   return (
     <Wrapper locale={locale}>
       <HomePage
-        page={data?.homepage as HomepageRecord}
+        page={data?.homepage as any}
         photos={randomPhotos as PhotoRecord[]}
         locale={locale}
       />

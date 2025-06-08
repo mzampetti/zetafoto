@@ -8,6 +8,9 @@ query ExpositionsIndex(
     menuLabel
     title
     _modelApiKey
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   allExpositions(locale: $locale, first: "500", skip: $skip) {
     id

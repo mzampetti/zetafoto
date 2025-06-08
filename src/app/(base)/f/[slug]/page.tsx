@@ -62,7 +62,7 @@ export default async function Page({ params: { slug } }: Params) {
       model={data.photo._modelApiKey}
       pages={[data.photo.city, data.photo.location, data.photo]}
     >
-      <div className="bg-secondary pb-12">
+      <header className="bg-secondary pb-12">
         <div className="container">
           <FancyboxWrapper>
             <a
@@ -80,14 +80,14 @@ export default async function Page({ params: { slug } }: Params) {
             </a>
           </FancyboxWrapper>
         </div>
-      </div>
+      </header>
       <div className="py-6 md:py-12">
         <div className="container grid xl:grid-cols-3 gap-6">
           <div className="xl:col-span-2">
             <div>
-              <h2 className="font-semibold text-lg md:text-xl">
+              <h1 className="font-semibold text-lg md:text-xl">
                 {data.photo.title}
-              </h2>
+              </h1>
               <div className="font-light text-md mt-2 md:text-lg">
                 {data.photo.location.name}
               </div>

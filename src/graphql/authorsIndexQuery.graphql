@@ -8,6 +8,9 @@ query AuthorsIndex(
     menuLabel
     title
     _modelApiKey
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   allAuthors(locale: $locale, first: "500", skip: $skip, orderBy: name_ASC) {
     id

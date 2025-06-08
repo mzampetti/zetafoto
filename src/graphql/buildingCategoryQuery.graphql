@@ -11,6 +11,9 @@ query BuildingCategory($locale: SiteLocale, $slug: String) {
     ) {
       ...previewPhotoFragment
     }
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   buildingCategoriesIndex(locale: $locale) {
     id

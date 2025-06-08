@@ -1,19 +1,17 @@
 {
-  "name": "cc-starter",
+  "name": "zetafoto",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "bdev": "bun --bun run dev",
     "dev": "next dev --turbo",
-    "algoliaData": "ts-node ./scripts/algolia/fetchData.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "fix": "node ./scripts/fix.mjs",
     "locales": "zx ./scripts/locales.mjs",
     "sitemap": "zx ./scripts/sitemap.mjs",
-    "codegen": "graphql-codegen --config codegen.ts && bun run fix",
-    "macina": "bun run locales && bun run codegen"
+    "codegen": "graphql-codegen --config codegen.ts && bun run fix"
   },
   "dependencies": {
     "@datocms/cma-client-node": "^3.1.3",

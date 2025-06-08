@@ -2,13 +2,7 @@ import { SiteLocale } from "@/graphql/generated";
 import TextBlock from "../Blocks/TextBlock";
 import GalleryBlock from "../Blocks/GalleryBlock";
 import CardPageBlock from "../Blocks/CardPageBlock";
-import ColumnsBlock from "@/components/Blocks/ColumnsBlock";
-import BannerCtaBlock from "../Blocks/BannerCtaBlock";
 import ImageBlock from "../Blocks/ImageBlock";
-import TextAnchorBlock from "../Blocks/DoubleImageBlock";
-import MapBlock from "../Map/MapBlock";
-import ExternalLink from "../Links/ExternalLink";
-import ButtonBlock from "../Blocks/ButtonBlock";
 import TitleTextBlock from "../Blocks/TitleTextBlock";
 import DoubleImageBlock from "../Blocks/DoubleImageBlock";
 import LabelsBlock from "../Blocks/LabelsBlock";
@@ -77,21 +71,6 @@ export default function Sections({ section, variant, locale, i, bg }: Props) {
       content = <LabelsBlock data={section} locale={locale} />;
       break;
     }
-
-    case "block_bg_image":
-      content =
-        section.bgTitle || section.bgText ? (
-          <BannerCtaBlock
-            title={section.bgTitle}
-            text={section.bgText}
-            locale={locale}
-            image={section?.bgCover}
-            titleSmall={true}
-          />
-        ) : (
-          <ImageBlock data={section.bgCover} locale={locale} />
-        );
-      break;
 
     default:
       content = (

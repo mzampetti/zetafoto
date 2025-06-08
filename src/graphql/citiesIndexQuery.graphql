@@ -8,6 +8,9 @@ query CitiesIndex(
     menuLabel
     title
     _modelApiKey
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   allCities(locale: $locale, first: "500", skip: $skip, orderBy: name_ASC) {
     id

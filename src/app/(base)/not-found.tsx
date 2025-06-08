@@ -11,7 +11,6 @@ export default async function NotFound() {
 
   const menuData = await fetchDato(MenuDocument, {
     locale: locale,
-    fallbackLocales: [defaultLocale],
   });
 
   return (

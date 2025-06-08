@@ -33,14 +33,5 @@ export default function WhichHero({ hero, locale }: PropsWhichHero) {
       );
     case "hero_slider":
       return <Carousel slides={hero.sliders} locale={locale} />;
-    case "hero_text":
-      return (
-        <TextHero
-          heroTitle={hero.heroTitle}
-          heroSubtitle={hero.heroSubtitle}
-          link={hero.link}
-          locale={locale}
-        />
-      );
   }
 }

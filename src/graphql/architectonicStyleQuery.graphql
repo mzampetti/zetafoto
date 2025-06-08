@@ -11,6 +11,9 @@ query ArchitectonicStyle($locale: SiteLocale, $slug: String) {
     ) {
       ...previewPhotoFragment
     }
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   architectonicStylesIndex(locale: $locale) {
     id

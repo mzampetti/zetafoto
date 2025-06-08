@@ -11,6 +11,9 @@ query Author($locale: SiteLocale, $slug: String) {
     ) {
       ...previewPhotoFragment
     }
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   authorsIndex(locale: $locale) {
     id

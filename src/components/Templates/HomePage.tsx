@@ -24,7 +24,7 @@ export default function HomePage({ page, locale, photos }: GenericPageProps) {
         heroTitle={page.title}
         heroText={page.text}
         locale={locale}
-        url={locale === "it" ? "/tecnica-biografica" : "/en/about"}
+        url={locale === "it" ? "/tecnica-biografia" : "/en/about"}
       />
       <section className="py-8 pb-16">
         <div className="container">

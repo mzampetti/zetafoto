@@ -1,0 +1,32 @@
+query Exposition($locale: SiteLocale, $slug: String) {
+  exposition(filter: { slug: { eq: $slug } }, locale: $locale) {
+    id
+    _modelApiKey
+    slug
+    title
+    location
+    timePeriod
+    text
+    galleryImages {
+      id
+      responsiveImage(
+        sizes: "(min-width:768px) 50vw, 100vw, 700px"
+        imgixParams: { auto: [format, compress], fit: max }
+      ) {
+        ...rImage
+      }
+    }
+    attachment {
+      url
+    }
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
+  }
+  expositionsIndex(locale: $locale) {
+    id
+    menuLabel
+    title
+    _modelApiKey
+  }
+}

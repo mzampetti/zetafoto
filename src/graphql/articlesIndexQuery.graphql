@@ -8,6 +8,9 @@ query ArticlesIndex(
     menuLabel
     title
     _modelApiKey
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   allArticles(locale: $locale, first: "500", skip: $skip, orderBy: date_DESC) {
     id

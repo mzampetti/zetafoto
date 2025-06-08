@@ -1,7 +1,7 @@
 #!/usr/bin/env zx
 const { promises: fsPromises } = require("fs");
 const ROOT_FOLDER = "./src/app/";
-const BASE_FOLDER = "(base)/it";
+const BASE_FOLDER = "(base)";
 const LANG_FOLDER = "(lang)";
 
 let labels = null;
@@ -81,7 +81,7 @@ let allfiles = await glob([
 
 //MOVE TO LANG DIRECTORY
 
-await cd(`../../${LANG_FOLDER}`);
+await cd(`../${LANG_FOLDER}`);
 await $`pwd`;
 
 within(async () => {

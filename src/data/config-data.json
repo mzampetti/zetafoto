@@ -1,0 +1,43 @@
+{
+  "defaultLocale": "it",
+  "locales": ["it", "en"],
+
+  "translations": {
+    "categorie": {
+      "en": "categories"
+    },
+    "luoghi": {
+      "en": "locations"
+    },
+    "citta": {
+      "en": "cities"
+    },
+    "autori": {
+      "en": "authors"
+    },
+    "elementi": {
+      "en": "elements"
+    },
+    "stili": {
+      "en": "styles"
+    },
+    "galleria-tema": {
+      "en": "galleries"
+    },
+    "video-sequenze": {
+      "en": "video"
+    },
+    "mostre": {
+      "en": "expositions"
+    },
+    "news": {
+      "en": "news"
+    },
+    "tecnica-biografia": {
+      "en": "about"
+    },
+    "f": {
+      "en": "f"
+    }
+  }
+}

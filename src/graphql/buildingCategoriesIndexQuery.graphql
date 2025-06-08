@@ -8,6 +8,9 @@ query BuildingCategoriesIndex(
     menuLabel
     title
     _modelApiKey
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   allBuildingCategories(locale: $locale, first: "500", skip: $skip) {
     id

@@ -8,6 +8,9 @@ query LocationsIndex(
     menuLabel
     title
     _modelApiKey
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
   allLocations(locale: $locale, first: "500", skip: $skip) {
     id

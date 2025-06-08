@@ -25,5 +25,8 @@ query AboutPage($locale: SiteLocale, $fallbackLocales: [SiteLocale!]) {
       }
     }
     creditsText
+    seo: _seoMetaTags {
+      ...seoMetaFragment
+    }
   }
 }
