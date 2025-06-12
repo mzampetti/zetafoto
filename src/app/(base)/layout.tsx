@@ -40,7 +40,6 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         <SkipLinks locale={locale} />
-        <ScrollToTop />
         <main id="content">{children}</main>
         <Footer locale={siteLocale} />
       </body>

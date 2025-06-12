@@ -3,14 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    @apply font-sans !scroll-smooth;
-  }
-  @media (prefers-reduced-motion) {
-    html {
-      @apply !scroll-auto;
-    }
-  }
   body {
     @apply bg-primary text-primary-content font-normal text-base;
   }
