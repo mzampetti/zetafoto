@@ -1,17 +1,11 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import Iubenda from "@/components/Footer/ExternalServices/Iubenda";
 import GoogleAnalytics from "@/components/Footer/ExternalServices/GoogleAnalytics";
 import { SiteLocale } from "@/graphql/generated";
 import translate from "@/labels";
-import InternalLink from "../Links/InternalLink";
-import Socials from "./Socials";
 import ExternalLink from "@/components/Links/ExternalLink";
-import ButtonBlock from "@/components/Blocks/ButtonBlock";
-import CustomIcon from "../Blocks/CustomIcon";
+import Iubenda from "./ExternalServices/Iubenda";
 
 interface Props {
   lng: SiteLocale;
@@ -28,7 +22,10 @@ const Footer = ({ lng }: Props) => {
   }, []);
   return (
     <>
-      <footer className="bg-secondary text-primary pt-6 text-center">
+      <footer
+        id="footer"
+        className="bg-secondary text-primary pt-6 text-center"
+      >
         <div className="container text-sm font-light">
           <div className="">
             Copyright 2008-{year} Franco Zampetti,{" "}
@@ -80,13 +77,8 @@ const Footer = ({ lng }: Props) => {
           </div>
         </div>
       </footer>
-      {/* <Iubenda
-        locale={lng}
-        siteId="995589"
-        policyId={lng === "it" ? "18730586" : "47205885"}
-        colorRev={true}
-      /> */}
-      <GoogleAnalytics id="G-LH8Q2CCNVD" />
+      <Iubenda locale={lng} siteId="309444" policyId="235583" />
+      <GoogleAnalytics id="G-N4HC2HHD2R&" />
     </>
   );
 };

@@ -6,15 +6,9 @@ type PropsIubenda = {
   siteId: string;
   policyId: string;
   locale: SiteLocale;
-  colorRev: Boolean;
 };
 
-export default function Iubenda({
-  siteId,
-  policyId,
-  locale,
-  colorRev,
-}: PropsIubenda) {
+export default function Iubenda({ siteId, policyId, locale }: PropsIubenda) {
   return (
     <>
       <Script
@@ -44,44 +38,14 @@ export default function Iubenda({
               "closeButtonDisplay":false,
               "customizeButtonDisplay":true,
               "position":"bottom",
-              "acceptButtonColor":"${
-                colorRev
-                  ? colorsTheme["accent-content"]
-                  : colorsTheme["accent-content"]
-              }",
-              "acceptButtonCaptionColor":"${
-                colorRev
-                  ? colorsTheme["primary-content"]
-                  : colorsTheme["primary-content"]
-              }",
-              "customizeButtonColor":"${
-                colorRev
-                  ? colorsTheme["accent-content"]
-                  : colorsTheme["accent-content"]
-              }",
-              "customizeButtonCaptionColor":"${
-                colorRev
-                  ? colorsTheme["primary-content"]
-                  : colorsTheme["primary-content"]
-              }",
-              "rejectButtonColor":"${
-                colorRev
-                  ? colorsTheme["accent-content"]
-                  : colorsTheme["accent-content"]
-              }",
-              "rejectButtonCaptionColor":"${
-                colorRev
-                  ? colorsTheme["primary-content"]
-                  : colorsTheme["primary-content"]
-              }",
-              "textColor":"${
-                colorRev
-                  ? colorsTheme["secondary-content"]
-                  : colorsTheme["secondary-content"]
-              }",
-              "backgroundColor":"${
-                colorRev ? colorsTheme["secondary"] : colorsTheme.primary
-              }",
+              "acceptButtonColor":"black",
+              "acceptButtonCaptionColor":"white",
+              "customizeButtonColor":"black",
+              "customizeButtonCaptionColor":"white",
+              "rejectButtonColor":"#0073CE",
+              "rejectButtonCaptionColor":"white",
+              "textColor":"white",
+              "backgroundColor":"#1d1d1b",
             }
           }`,
         }}

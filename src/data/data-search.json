@@ -1,0 +1,30 @@
+{
+  "models": [
+    "architectonicElement",
+    "architectonicStyle",
+    "article",
+    "author",
+    "buildingCategory",
+    "city",
+    "exposition",
+    "location",
+    "photo",
+    "photosCollection",
+    "video"
+  ],
+  "fields": {
+    "architectonicElement": ["name", "slug"],
+    "architectonicStyle": ["name", "slug"],
+    "article": ["text", "slug", "title"],
+    "author": ["name", "slug"],
+    "buildingCategory": ["name", "slug"],
+    "city": ["name", "slug"],
+    "exposition": ["title", "timePeriod", "text", "location", "slug"],
+    "photosCollection": ["name", "slug"],
+    "location": ["name", "slug"],
+    "photo": ["title", "slug", "description"],
+    "video": ["title", "slug"]
+  },
+  "locales": ["it", "en"],
+  "defaultLocale": "it"
+}
