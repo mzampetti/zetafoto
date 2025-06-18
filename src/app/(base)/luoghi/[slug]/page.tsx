@@ -5,6 +5,8 @@ import getSeoMeta from "@/lib/seoUtils";
 import { notFound } from "next/navigation";
 import IndexTmp from "@/components/Templates/IndexTmp";
 import Wrapper from "@/components/Wrapper";
+import { hrefsProp } from "@/_types";
+import { pickHrefs } from "@/lib/pickPageData";
 
 type Params = {
   params: {
@@ -41,9 +43,11 @@ export default async function Page({ params: { slug } }: Params) {
     isEnabled
   );
   if (!data?.location) notFound();
+  const hrefs: hrefsProp = pickHrefs(data.location);
 
   return (
     <Wrapper
+      hrefs={hrefs}
       locale={locale}
       model={data.location._modelApiKey}
       pages={[data.locationsIndex, data.location]}

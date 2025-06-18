@@ -25,7 +25,9 @@ const CardPhoto = ({ photo, locale }: PropsCardPhoto) => {
       />
       <div className="">
         {title && <h3 className="mt-2 font-semibold text-md">{title}</h3>}
-        {location && <div className="font-light">{location.name}</div>}
+        {location && location.name !== title && (
+          <div className="font-light">{location.name}</div>
+        )}
         {city && (
           <div
             dangerouslySetInnerHTML={{ __html: city.name }}

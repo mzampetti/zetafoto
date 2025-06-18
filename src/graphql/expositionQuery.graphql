@@ -22,6 +22,10 @@ query Exposition($locale: SiteLocale, $slug: String) {
     seo: _seoMetaTags {
       ...seoMetaFragment
     }
+    slugs: _allSlugLocales {
+      locale
+      value
+    }
   }
   expositionsIndex(locale: $locale) {
     id

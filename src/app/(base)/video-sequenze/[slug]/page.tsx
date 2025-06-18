@@ -4,6 +4,8 @@ import { VideoDocument, SiteLocale } from "@/graphql/generated";
 import Wrapper from "@/components/Wrapper";
 import getSeoMeta from "@/lib/seoUtils";
 import { notFound } from "next/navigation";
+import { hrefsProp } from "@/_types";
+import { pickHrefs } from "@/lib/pickPageData";
 
 type Params = {
   params: {
@@ -43,12 +45,14 @@ export default async function Page({ params: { slug } }: Params) {
 
   const video = data.video.urlVideo;
   const streamUrl = "https://www.youtube.com/embed/" + video.providerUid;
+  const hrefs: hrefsProp = pickHrefs(data.video);
 
   return (
     <Wrapper
       locale={locale}
       model={data.video._modelApiKey}
       pages={[data.videosIndex, data.video]}
+      hrefs={hrefs}
     >
       <div className="py-6 md:py-12">
         <div className="container">

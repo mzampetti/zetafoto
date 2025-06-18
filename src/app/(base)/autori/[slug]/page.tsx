@@ -5,6 +5,8 @@ import getSeoMeta from "@/lib/seoUtils";
 import { notFound } from "next/navigation";
 import IndexTmp from "@/components/Templates/IndexTmp";
 import Wrapper from "@/components/Wrapper";
+import { hrefsProp } from "@/_types";
+import { pickHrefs } from "@/lib/pickPageData";
 
 type Params = {
   params: {
@@ -41,12 +43,17 @@ export default async function Page({ params: { slug } }: Params) {
     isEnabled
   );
   if (!data?.author) notFound();
+  const hrefs = { it: "/autori/adrano", en: "/en/authors/adrano" };
 
   return (
     <Wrapper
       locale={locale}
       model={data.author._modelApiKey}
       pages={[data.authorsIndex, data.author]}
+      hrefs={{
+        it: `/autori/${data.author.slug}`,
+        en: `/en/authors/${data.author.slug}`,
+      }}
     >
       <IndexTmp locale={locale} record={data.author} />
     </Wrapper>

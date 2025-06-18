@@ -1,17 +1,19 @@
 import fetchDato from "@/lib/fetchDato";
 import { draftMode } from "next/headers";
-import { PhotoDocument, SiteLocale } from "@/graphql/generated";
+import { PhotoDocument, PhotoRecord, SiteLocale } from "@/graphql/generated";
 import Wrapper from "@/components/Wrapper";
 import getSeoMeta from "@/lib/seoUtils";
 import { notFound } from "next/navigation";
+import { hrefsProp } from "@/_types";
+
 import { SRCImage } from "react-datocms";
 import FancyboxWrapper from "@/components/Layout/FancyboxWrapper";
 import translate from "@/labels";
 import { MagnifyingGlassPlusIcon } from "@heroicons/react/24/solid";
-import ButtonBlock from "@/components/Blocks/ButtonBlock";
 import OtherPhotosSection from "@/components/Layout/OtherPhotosSection";
 import Link from "next/link";
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
+import { pickHrefs } from "@/lib/pickPageData";
 
 type Params = {
   params: {
@@ -56,8 +58,11 @@ export default async function Page({ params: { slug } }: Params) {
     ...(data.photo.architectonicStyles?.map((s: any) => s.name) || []),
   ].filter(Boolean);
 
+  const hrefs: hrefsProp = pickHrefs(data.photo);
+
   return (
     <Wrapper
+      hrefs={hrefs}
       locale={locale}
       model={data.photo._modelApiKey}
       pages={[data.photo.city, data.photo.location, data.photo]}
@@ -156,35 +161,38 @@ export default async function Page({ params: { slug } }: Params) {
         locale={locale}
       />
 
-      {data.photo.authors?.[0] && (
-        <OtherPhotosSection
-          title={data.photo.authors[0].name}
-          record={data.photo.authors[0]}
-          photos={data.photo.authors[0].otherPhotos}
-          total={data.photo.authors[0].allOtherPhotos.length}
-          locale={locale}
-        />
-      )}
+      {data.photo.authors &&
+        data.photo.authors.map((item: any) => (
+          <OtherPhotosSection
+            title={item.name}
+            record={item}
+            photos={item.otherPhotos}
+            total={item.allOtherPhotos.length}
+            locale={locale}
+          />
+        ))}
 
-      {data.photo.architectonicElements?.[0] && (
-        <OtherPhotosSection
-          title={data.photo.architectonicElements[0].name}
-          record={data.photo.architectonicElements[0]}
-          photos={data.photo.architectonicElements[0].otherPhotos}
-          total={data.photo.architectonicElements[0].allOtherPhotos.length}
-          locale={locale}
-        />
-      )}
+      {data.photo.architectonicElements &&
+        data.photo.architectonicElements.map((item: any) => (
+          <OtherPhotosSection
+            title={item.name}
+            record={item}
+            photos={item.otherPhotos}
+            total={item.allOtherPhotos.length}
+            locale={locale}
+          />
+        ))}
 
-      {data.photo.architectonicStyles?.[0] && (
-        <OtherPhotosSection
-          title={data.photo.architectonicStyles[0].name}
-          record={data.photo.architectonicStyles[0]}
-          photos={data.photo.architectonicStyles[0].otherPhotos}
-          total={data.photo.architectonicStyles[0].allOtherPhotos.length}
-          locale={locale}
-        />
-      )}
+      {data.photo.architectonicStyles &&
+        data.photo.architectonicStyles.map((item: any) => (
+          <OtherPhotosSection
+            title={item.name}
+            record={item}
+            photos={item.otherPhotos}
+            total={item.allOtherPhotos.length}
+            locale={locale}
+          />
+        ))}
     </Wrapper>
   );
 }

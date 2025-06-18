@@ -137,7 +137,7 @@ const Header = ({ lng, data, model, hrefs }: Props) => {
                 </Link>
               </motion.div>
 
-              <div className="absolute top-20 left-0 right-0 xl:relative xl:top-auto xl:left-auto xl:right-auto xl:flex">
+              <div className="absolute bg-primary top-[62px] left-0 right-0 xl:relative xl:top-auto xl:left-auto xl:right-auto xl:flex">
                 <div className="xl:flex gap-x-10">
                   <motion.nav
                     initial={false}
@@ -151,7 +151,7 @@ const Header = ({ lng, data, model, hrefs }: Props) => {
                     <div className="overflow-auto xl:overflow-visible h-full">
                       <ul
                         ref={menuRef}
-                        className="block items-center xl:max-w-auto xl:flex xl:gap-x-6 px-6 md:pt-10 xl:pt-0 overflow-auto max-h-[70vh] xl:overflow-visible"
+                        className="block items-center xl:max-w-auto xl:flex xl:gap-x-6 px-6 md:pt-10 xl:pt-0 overflow-auto xl:overflow-visible pt-6"
                       >
                         {menuData.map((menuItem) => {
                           const isMega = !!menuItem.submenu;

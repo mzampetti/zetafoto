@@ -13,6 +13,10 @@ query Video($locale: SiteLocale, $slug: String) {
     seo: _seoMetaTags {
       ...seoMetaFragment
     }
+    slugs: _allSlugLocales {
+      locale
+      value
+    }
   }
   videosIndex(locale: $locale) {
     id

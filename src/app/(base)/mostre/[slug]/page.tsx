@@ -9,6 +9,8 @@ import ExternalLink from "@/components/Links/ExternalLink";
 import ButtonBlock from "@/components/Blocks/ButtonBlock";
 import translate from "@/labels";
 import { SRCImage } from "react-datocms";
+import { hrefsProp } from "@/_types";
+import { pickHrefs } from "@/lib/pickPageData";
 
 type Params = {
   params: {
@@ -56,10 +58,12 @@ export default async function Page({ params: { slug } }: Params) {
     attachment,
     galleryImages,
   } = exposition;
+  const hrefs: hrefsProp = pickHrefs(data.exposition);
 
   return (
     <Wrapper
       locale={locale}
+      hrefs={hrefs}
       model={_modelApiKey}
       pages={[data.expositionsIndex, exposition]}
     >

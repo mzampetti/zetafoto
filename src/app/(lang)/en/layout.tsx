@@ -1,18 +1,13 @@
 import { toNextMetadata } from "react-datocms";
-import config from "@/data/config";
 import "@/styles/globals.css";
-import {
-  SiteLocale,
-  LayoutDocument,
-  // FooterDocument,
-} from "@/graphql/generated";
+import { SiteLocale, LayoutDocument } from "@/graphql/generated";
 import Footer from "@/components/Footer";
 import fetchDato from "@/lib/fetchDato";
 import SkipLinks from "@/components/Layout/SkipLinks";
+import ScrollToTop from "@/components/Layout/ScrollToTop";
 
 const locale = "en";
 const siteLocale = locale as SiteLocale;
-const defaultLocale = config.defaultLocale as SiteLocale;
 
 export async function generateMetadata() {
   const siteLocale = locale as SiteLocale;
@@ -42,10 +37,10 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang={locale} data-theme="custom">
-      <body className={`md:min-h-screen`}>
+    <html lang={locale}>
+      <body>
         <SkipLinks locale={locale} />
-        <main>{children}</main>
+        <main id="content">{children}</main>
         <Footer locale={siteLocale} />
       </body>
     </html>

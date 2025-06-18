@@ -5,6 +5,10 @@ query ArchitectonicElement($locale: SiteLocale, $slug: String) {
     _modelApiKey
     id
     slug
+    slugs: _allSlugLocales {
+      locale
+      value
+    }
     photos: _allReferencingPhotos(
       first: "500"
       filter: { slug: { neq: $slug } }

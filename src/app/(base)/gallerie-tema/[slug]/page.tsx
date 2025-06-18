@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import IndexTmp from "@/components/Templates/IndexTmp";
 import Wrapper from "@/components/Wrapper";
 import CardPhoto from "@/components/Blocks/CardPhoto";
+import { hrefsProp } from "@/_types";
+import { pickHrefs } from "@/lib/pickPageData";
 
 type Params = {
   params: {
@@ -42,10 +44,12 @@ export default async function Page({ params: { slug } }: Params) {
     isEnabled
   );
   if (!data?.photosCollection) notFound();
+  const hrefs: hrefsProp = pickHrefs(data.photosCollection);
 
   return (
     <Wrapper
       locale={locale}
+      hrefs={hrefs}
       model={data.photosCollection._modelApiKey}
       pages={[data.photosCollectionsIndex, data.photosCollection]}
     >

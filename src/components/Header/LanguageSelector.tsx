@@ -17,7 +17,6 @@ type Props = {
 
 const LanguageSelector = ({ lng, languages, hrefs, model }: Props) => {
   const pathname = usePathname();
-  // return model;
   return (
     <div className="hidden xl:flex border-l border-[#e0e0e0]">
       {languages.map((locale, i: number) => {
