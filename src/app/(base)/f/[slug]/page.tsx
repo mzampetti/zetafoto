@@ -93,9 +93,11 @@ export default async function Page({ params: { slug } }: Params) {
               <h1 className="font-semibold text-lg md:text-xl">
                 {data.photo.title}
               </h1>
-              <div className="font-light text-md mt-2 md:text-lg">
-                {data.photo.location.name}
-              </div>
+              {data.photo.title !== data.photo.location.name && (
+                <div className="font-light text-md mt-2 md:text-lg">
+                  {data.photo.location.name}
+                </div>
+              )}
               <div className="font-light text-md md:text-lg">
                 {data.photo.city.name}
               </div>

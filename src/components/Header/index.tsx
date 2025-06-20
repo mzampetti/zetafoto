@@ -116,7 +116,11 @@ const Header = ({ lng, data, model, hrefs }: Props) => {
                 animate={navbarOpen ? "open" : "closed"}
                 variants={invertVariants}
               >
-                <Link href="/" title="home" className="flex items-center">
+                <Link
+                  href={lng === "it" ? "/" : "/en"}
+                  title="home"
+                  className="flex items-center"
+                >
                   <div className="relative w-[36px] h-[36px] sm:w-[48px] sm:h-[48px]">
                     <Image
                       src="/logo.svg"

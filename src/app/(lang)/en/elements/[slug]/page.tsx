@@ -5,6 +5,8 @@ import getSeoMeta from "@/lib/seoUtils";
 import { notFound } from "next/navigation";
 import IndexTmp from "@/components/Templates/IndexTmp";
 import Wrapper from "@/components/Wrapper";
+import { hrefsProp } from "@/_types";
+import { pickHrefs } from "@/lib/pickPageData";
 
 type Params = {
   params: {
@@ -42,11 +44,14 @@ export default async function Page({ params: { slug } }: Params) {
   );
   if (!data?.architectonicElement) notFound();
 
+  const hrefs: hrefsProp = pickHrefs(data.architectonicElement);
+
   return (
     <Wrapper
       locale={locale}
       model={data.architectonicElement._modelApiKey}
       pages={[data.architectonicElementsIndex, data.architectonicElement]}
+      hrefs={hrefs}
     >
       <IndexTmp locale={locale} record={data.architectonicElement} />
     </Wrapper>

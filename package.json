@@ -5,7 +5,7 @@
   "scripts": {
     "bdev": "bun --bun run dev",
     "dev": "next dev --turbo",
-    "build": "next build",
+    "build": "bun run locales && next build",
     "start": "next start",
     "lint": "next lint",
     "fix": "node ./scripts/fix.mjs",

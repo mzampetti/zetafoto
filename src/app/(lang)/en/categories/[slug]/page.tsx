@@ -5,6 +5,8 @@ import getSeoMeta from "@/lib/seoUtils";
 import { notFound } from "next/navigation";
 import IndexTmp from "@/components/Templates/IndexTmp";
 import Wrapper from "@/components/Wrapper";
+import { hrefsProp } from "@/_types";
+import { pickHrefs } from "@/lib/pickPageData";
 
 type Params = {
   params: {
@@ -41,9 +43,11 @@ export default async function Page({ params: { slug } }: Params) {
     isEnabled
   );
   if (!data?.buildingCategory) notFound();
+  const hrefs: hrefsProp = pickHrefs(data.buildingCategory);
 
   return (
     <Wrapper
+      hrefs={hrefs}
       locale={locale}
       model={data.buildingCategory._modelApiKey}
       pages={[data.buildingCategoriesIndex, data.buildingCategory]}
