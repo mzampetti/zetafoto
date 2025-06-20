@@ -20,7 +20,7 @@ const CardPhoto = ({ photo, locale }: PropsCardPhoto) => {
       className="group"
     >
       <SRCImage
-        className="brightness-75 group-hover:brightness-100 transition-all motion-safe:duration-300"
+        className="xl:brightness-75 group-hover:brightness-100 transition-all motion-safe:duration-300"
         data={photo.image.responsiveImage}
       />
       <div className="">

@@ -15,7 +15,7 @@ export default function Breadcrumbs({
       aria-label="Breadcrumb"
       className="flex container py-3 pt-[75px] md:pt-20"
     >
-      <ol role="list" className="flex items-center space-x-2 flex-wrap">
+      <ol role="list" className="flex items-center flex-wrap justify-start">
         <li>
           <div>
             <a
@@ -31,12 +31,12 @@ export default function Breadcrumbs({
           return (
             <li key={page.title ? page.title : page.name}>
               <div className="flex items-center">
-                /
                 {isLast ? (
                   <span
                     aria-current="page"
-                    className="ml-2 text-[14px] block duration-75 3xl:text-xs text-gray-500 cursor-default"
+                    className="text-[14px] block duration-75 text-gray-500 cursor-default"
                   >
+                    <span className="font-light px-1.5">/</span>
                     {page.title ? page.title : page.name}
                   </span>
                 ) : (
@@ -46,8 +46,9 @@ export default function Breadcrumbs({
                       locale: locale,
                       slug: page.slug,
                     })}
-                    className="font-bold ml-2 text-[14px] hover:opacity-85 block duration-75 3xl:text-xs"
+                    className="font-bold text-[14px] hover:opacity-85 block duration-75"
                   >
+                    <span className="font-light px-1.5">/</span>
                     {page.title ? page.title : page.name}
                   </a>
                 )}

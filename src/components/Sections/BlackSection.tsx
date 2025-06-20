@@ -9,7 +9,7 @@ interface Props {
 
 export default function BlackSection({ locale, title, items }: Props) {
   return (
-    <section className="bg-secondary text-primary py-16">
+    <section className="bg-secondary text-primary md:py-16 py-10">
       <div className="container">
         {title && (
           <h2 className="text-lg font-bold mb-6 lg:text-xl">{title}</h2>

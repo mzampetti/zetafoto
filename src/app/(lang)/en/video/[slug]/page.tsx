@@ -63,7 +63,7 @@ export default async function Page({ params: { slug } }: Params) {
           </div>
         </div>
       </div>
-      <div className="bg-secondary pb-12">
+      <div className="bg-secondary lg:pb-12">
         <div className="container">
           <div className="aspect-video relative">
             <iframe

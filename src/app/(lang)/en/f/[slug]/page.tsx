@@ -67,7 +67,7 @@ export default async function Page({ params: { slug } }: Params) {
       model={data.photo._modelApiKey}
       pages={[data.photo.city, data.photo.location, data.photo]}
     >
-      <header className="bg-secondary pb-12">
+      <header className="bg-secondary lg:pb-12">
         <div className="container">
           <FancyboxWrapper>
             <a

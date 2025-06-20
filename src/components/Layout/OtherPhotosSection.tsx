@@ -20,25 +20,29 @@ export default function OtherPhotosSection({
   locale,
 }: Props) {
   if (!photos || photos.length === 0) return null;
-  // return record._modelApiKey;
   return (
-    <section className="bg-secondary text-primary py-16">
+    <section className="bg-secondary text-primary md:py-16 py-10">
       <div className="container">
-        <div className="flex justify-between">
-          <h2 className="text-lg font-bold mb-6 lg:text-xl">
+        <div className="flex justify-between gap-7 md:mb-6 mb-4 items-center">
+          <h2 className="text-lg font-bold md:text-xl">
             {translate("otherPhotos", locale)}
             {title}
           </h2>
           <InternalLink
             record={record}
             locale={locale}
-            className="group -translate-y-3 flex-none scale-110"
+            className="group flex-none"
             title={title}
           >
-            <ButtonBlock
-              color="white"
-              label={`${translate("view-all", locale)} ${total}`}
-            />
+            <div
+              className="bg-primary text-secondary group-hover:bg-primary/80
+              leading-none inline-block duration-200 py-2 pb-3 rounded-md px-4"
+            >
+              <span className="text-[15px] font-bold pb-2">{`${translate(
+                "view-all",
+                locale
+              )} ${total}`}</span>
+            </div>
           </InternalLink>
         </div>
         <div className="grid gap-12 gap-x-6 md:grid-cols-2 lg:grid-cols-3">
