@@ -9,6 +9,7 @@ import InternalLink from "@/components/Links/InternalLink";
 import translate from "@/labels";
 import ButtonBlock from "@/components/Blocks/ButtonBlock";
 import ExternalLink from "@/components/Links/ExternalLink";
+import { getDate } from "@/lib/getDate";
 
 const locale = "en" as SiteLocale;
 const siteLocale = locale as SiteLocale;
@@ -69,7 +70,7 @@ export default async function Page() {
           <div className="grid gap-12 gap-x-6 xl:gap-x-12 xl:grid-cols-2">
             {data.allArticles.map((item: any) => (
               <div>
-                <div className="">{item.date}</div>
+                <div className="">{getDate(item.date, locale)}</div>
                 <h2 className="text-lg pt-2 font-bold">{item.title}</h2>
                 <div
                   className="mt-2 max-w-prose"

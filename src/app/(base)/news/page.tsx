@@ -9,7 +9,7 @@ import InternalLink from "@/components/Links/InternalLink";
 import translate from "@/labels";
 import ButtonBlock from "@/components/Blocks/ButtonBlock";
 import ExternalLink from "@/components/Links/ExternalLink";
-import { formatDate } from "../../../../scripts/utils";
+import { getDate } from "@/lib/getDate";
 
 const locale = "it" as SiteLocale;
 const siteLocale = locale as SiteLocale;
@@ -70,7 +70,7 @@ export default async function Page() {
           <div className="grid gap-12 gap-x-6 xl:gap-x-12 xl:grid-cols-2">
             {data.allArticles.map((item: any) => (
               <div>
-                <div className="">{formatDate(item.date, locale)}</div>
+                <div className="">{getDate(item.date, locale)}</div>
                 <h2 className="text-lg pt-2 font-bold">{item.title}</h2>
                 <div
                   className="mt-2 max-w-prose"

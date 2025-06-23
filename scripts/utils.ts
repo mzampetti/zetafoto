@@ -1,6 +1,5 @@
 import dotenv from "dotenv";
 import axios from "axios";
-import dayjs from "dayjs";
 
 dotenv.config({ path: ".env.local" });
 const API_KEY = process.env.DATO_API_KEY ?? "";
@@ -122,9 +121,4 @@ export function formatItem(item: any) {
     objectID: item.id,
   };
   return obj;
-}
-
-export function formatDate(str, locale) {
-  const fmt = "DD/MM/YYYY";
-  return dayjs(str).locale(locale).format(fmt);
 }
