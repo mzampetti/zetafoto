@@ -4,7 +4,7 @@ import { SiteLocale } from "@/graphql/generated";
 import { Maybe } from "graphql/jsutils/Maybe";
 import { SRCImage } from "react-datocms";
 import { motion, Variants } from "framer-motion";
-import BowBlock from "../Blocks/BlowBlock";
+// import BowBlock from "../Blocks/BlowBlock";
 import CustomIcon from "@/components/Blocks/CustomIcon";
 
 type Props = {
@@ -54,14 +54,14 @@ const ImageTextHero = ({
         variants={variants}
       >
         <div className="relative z-20 mx-auto container -mt-36 md:-mt-64 lg:-mt-96 md:w-[80%] max-w-[850px] ">
-          <BowBlock
+          {/* <BowBlock
             title={heroTitle}
             text={heroSubtitle}
             locale={locale}
             prefix={prefix}
             date={date}
             endDate={endDate}
-          />
+          /> */}
         </div>
       </motion.div>
     </>
@@ -82,14 +82,14 @@ const ImageTextHero = ({
           viewport={{ once: true, amount: 0.2 }}
           variants={variants}
         >
-          <div className="relative z-10 isolate mx-auto container md:w-[80%] max-w-[850px]">
+          {/* <div className="relative z-10 isolate mx-auto container md:w-[80%] max-w-[850px]">
             <BowBlock
               title={heroTitle}
               text={heroSubtitle}
               locale={locale}
               prefix={prefix}
             />
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </>
