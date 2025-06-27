@@ -37,13 +37,15 @@ export async function getDynamicsRoute(
   const key = routes[route];
   const query = getQuery(key);
   const data = await generateRoutes(query, locale, key);
-
+  const isDefaultLocale = locale === "it";
   for (let d of data) {
     const { slug } = d;
     const path = replaceSlug(route, slug);
+    const cleanPath = isDefaultLocale ? path.replace(/^it\//, "") : path;
+
     slugs.push({
       ...metadata,
-      url: `${siteUrl}/${path}`,
+      url: `${siteUrl}/${cleanPath}`,
     });
   }
   return slugs;
