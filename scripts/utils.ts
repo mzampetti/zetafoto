@@ -20,13 +20,15 @@ type recurseQueryProps = {
 export async function getCollections(
   q: string,
   values: any,
-  propertyName: string
+  propertyName: string,
+  size?: number
 ) {
+  let pageSize = size || 500;
   return recurseQuery({
     q,
     values,
     propertyName,
-    pageSize: 100,
+    pageSize,
     prevResults: [],
     currentPage: 0,
     done: false,
@@ -55,7 +57,6 @@ export async function recurseQuery({
       console.log("results", results.length);
     } catch (error) {
       // console.error("ERROR", error);
-      console.log("ERROR", JSON.stringify(error, null, 2));
       throw error;
     }
 
@@ -104,21 +105,45 @@ export const fetchData = async (
     const data = response?.data;
     // console.info("data", data);
     if (data?.errors) {
-      console.error("QUERY ERROR", v, q, data?.errors);
+      // console.error("QUERY ERROR", v, q, data?.errors);
       throw new Error(data?.errors);
     }
     return data?.data;
   } catch (error) {
-    console.error("QUERY ERROR V", v);
-    console.error("QUERY ERROR Q", q);
+    console.error("QUERY ERROR", v);
+    console.error(q);
     throw error;
   }
 };
 
+function stripHtmlTags(str: string) {
+  if (str) {
+    return str.replace(/<\/?[^>]+(>|$)/g, "").replace(/\\+/g, "");
+  }
+}
+
+function extractAndCleanText(data: Array<Record<string, string>>): string {
+  let text = data
+    .flatMap((obj) => Object.values(obj))
+    .map((text) => stripHtmlTags(text))
+    .join("\n");
+
+  let encodedText = new TextEncoder().encode(text);
+  if (encodedText.length > 9999) {
+    text = new TextDecoder().decode(encodedText.slice(0, 9000));
+  }
+  return text;
+}
+
 export function formatItem(item: any) {
   let obj = {
     ...item,
+    cover: item.cover?.responsiveImage?.src || "",
+    abstract: item.abstract ? stripHtmlTags(item.abstract) : "",
     objectID: item.id,
+    content: item.sections ? extractAndCleanText(item.sections) : "",
   };
+
+  delete obj.sections;
   return obj;
 }

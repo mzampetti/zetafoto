@@ -1,12 +1,9 @@
-import * as dotenv from "dotenv"; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+import * as dotenv from "dotenv";
 import path from "path";
 import { promises as fs } from "fs";
 import { buildClient, LogLevel } from "@datocms/cma-client-node";
 
-dotenv.config({ path: ".env.local" }); //SE USATE direnv non serve specificare il path
-// dotenv.config();
-
-//contiene le rotte e loro prefissi
+dotenv.config({ path: ".env.local" });
 const conf = JSON.parse(
   await fs.readFile(new URL("../src/data/config-data.json", import.meta.url))
 );
@@ -24,7 +21,7 @@ const t = (section, locale) => {
 
 const { models, locales, defaultLocale } = conf || {};
 
-const API_KEY = process.env.DATO_API_KEY; //use your read api key variable name here
+const API_KEY = process.env.DATO_API_KEY;
 const ENV = process.env.DATO_ENV ?? "";
 const FOLDER = path.resolve("./public");
 let HOST = process.env.HOST || "";
