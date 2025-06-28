@@ -6,6 +6,7 @@
     "bdev": "bun --bun run dev",
     "dev": "next dev --turbo",
     "build": "bun run locales && next build",
+    "routes": "ts-node ./scripts/generateRoutes.ts",
     "start": "next start",
     "lint": "next lint",
     "fix": "node ./scripts/fix.mjs",
