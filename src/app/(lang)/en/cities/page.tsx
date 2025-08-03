@@ -13,39 +13,29 @@ const locale = "en" as SiteLocale;
 const siteLocale = locale as SiteLocale;
 const defaultLocale = "en" as SiteLocale;
 
+export const dynamic = "force-static";
+export const revalidate = 3600;
+
 export async function generateMetadata() {
-  const data = await fetchDato(
-    CitiesIndexDocument,
-    { locale: siteLocale },
-    false
-  );
+  const data = await fetchDato(CitiesIndexDocument, { locale: siteLocale });
   const page: any = data?.citiesIndex || null;
-  const meta = getSeoMeta(page, locale);
-  return meta;
+  if (!page) return {};
+  return getSeoMeta(page, locale);
 }
 export default async function Page() {
-  const { isEnabled } = draftMode();
-  const data = await fetchDato(
-    CitiesIndexDocument,
-    {
-      locale: siteLocale,
-      fallbackLocales: [defaultLocale],
-    },
-    isEnabled
-  );
+  const data = await fetchDato(CitiesIndexDocument, {
+    locale: siteLocale,
+    fallbackLocales: [defaultLocale],
+  });
   let list = [];
   let allCities = [];
   let exitCondition = true;
   let page = 0;
   while (exitCondition) {
-    const results = await fetchDato(
-      CitiesIndexDocument,
-      {
-        locale: siteLocale,
-        skip: page * 100,
-      },
-      isEnabled
-    );
+    const results = await fetchDato(CitiesIndexDocument, {
+      locale: siteLocale,
+      skip: page * 100,
+    });
     if (results?.allCities?.length > 0) {
       allCities = [...allCities, ...results.allCities];
       page++;

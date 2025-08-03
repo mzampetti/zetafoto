@@ -16,38 +16,25 @@ const siteLocale = locale as SiteLocale;
 const defaultLocale = "en" as SiteLocale;
 
 export async function generateMetadata() {
-  const data = await fetchDato(
-    ArticlesIndexDocument,
-    { locale: siteLocale },
-    false
-  );
+  const data = await fetchDato(ArticlesIndexDocument, { locale: siteLocale });
   const page: any = data?.articlesIndex || null;
-  const meta = getSeoMeta(page, locale);
-  return meta;
+  if (!page) return {};
+  return getSeoMeta(page, locale);
 }
 export default async function Page() {
-  const { isEnabled } = draftMode();
-  const data = await fetchDato(
-    ArticlesIndexDocument,
-    {
-      locale: siteLocale,
-      fallbackLocales: [defaultLocale],
-    },
-    isEnabled
-  );
+  const data = await fetchDato(ArticlesIndexDocument, {
+    locale: siteLocale,
+    fallbackLocales: [defaultLocale],
+  });
   let list = [];
   let allArticles = [];
   let exitCondition = true;
   let page = 0;
   while (exitCondition) {
-    const results = await fetchDato(
-      ArticlesIndexDocument,
-      {
-        locale: siteLocale,
-        skip: page * 100,
-      },
-      isEnabled
-    );
+    const results = await fetchDato(ArticlesIndexDocument, {
+      locale: siteLocale,
+      skip: page * 100,
+    });
     if (results?.allArticles?.length > 0) {
       allArticles = [...allArticles, ...results.allArticles];
       page++;

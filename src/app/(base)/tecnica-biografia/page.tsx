@@ -12,25 +12,16 @@ const siteLocale = locale as SiteLocale;
 const defaultLocale = "it" as SiteLocale;
 
 export async function generateMetadata() {
-  const data = await fetchDato(
-    AboutPageDocument,
-    { locale: siteLocale },
-    false
-  );
+  const data = await fetchDato(AboutPageDocument, { locale: siteLocale });
   const page: any = data?.aboutPage || null;
-  const meta = getSeoMeta(page, locale);
-  return meta;
+  if (!page) return {};
+  return getSeoMeta(page, locale);
 }
 export default async function Page() {
-  const { isEnabled } = draftMode();
-  const data = await fetchDato(
-    AboutPageDocument,
-    {
-      locale: siteLocale,
-      fallbackLocales: [defaultLocale],
-    },
-    isEnabled
-  );
+  const data = await fetchDato(AboutPageDocument, {
+    locale: siteLocale,
+    fallbackLocales: [defaultLocale],
+  });
   if (!data?.aboutPage) notFound();
 
   return (

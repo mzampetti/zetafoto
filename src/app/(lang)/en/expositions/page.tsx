@@ -13,40 +13,31 @@ import ButtonBlock from "@/components/Blocks/ButtonBlock";
 const locale = "en" as SiteLocale;
 const siteLocale = locale as SiteLocale;
 const defaultLocale = "en" as SiteLocale;
+export const dynamic = "force-static";
+export const revalidate = 3600;
 
 export async function generateMetadata() {
-  const data = await fetchDato(
-    ExpositionsIndexDocument,
-    { locale: siteLocale },
-    false
-  );
+  const data = await fetchDato(ExpositionsIndexDocument, {
+    locale: siteLocale,
+  });
   const page: any = data?.expositionsIndex || null;
-  const meta = getSeoMeta(page, locale);
-  return meta;
+  if (!page) return {};
+  return getSeoMeta(page, locale);
 }
 export default async function Page() {
-  const { isEnabled } = draftMode();
-  const data = await fetchDato(
-    ExpositionsIndexDocument,
-    {
-      locale: siteLocale,
-      fallbackLocales: [defaultLocale],
-    },
-    isEnabled
-  );
+  const data = await fetchDato(ExpositionsIndexDocument, {
+    locale: siteLocale,
+    fallbackLocales: [defaultLocale],
+  });
   let list = [];
   let allExpositions = [];
   let exitCondition = true;
   let page = 0;
   while (exitCondition) {
-    const results = await fetchDato(
-      ExpositionsIndexDocument,
-      {
-        locale: siteLocale,
-        skip: page * 100,
-      },
-      isEnabled
-    );
+    const results = await fetchDato(ExpositionsIndexDocument, {
+      locale: siteLocale,
+      skip: page * 100,
+    });
     if (results?.allExpositions?.length > 0) {
       allExpositions = [...allExpositions, ...results.allExpositions];
       page++;

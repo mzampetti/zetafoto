@@ -4,7 +4,6 @@ import { SiteLocale, LayoutDocument } from "@/graphql/generated";
 import Footer from "@/components/Footer";
 import fetchDato from "@/lib/fetchDato";
 import SkipLinks from "@/components/Layout/SkipLinks";
-import ScrollToTop from "@/components/Layout/ScrollToTop";
 
 const locale = "en";
 const siteLocale = locale as SiteLocale;

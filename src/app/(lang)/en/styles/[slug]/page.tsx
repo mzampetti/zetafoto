@@ -16,32 +16,25 @@ type Params = {
 
 const locale = "en" as SiteLocale;
 const siteLocale = locale as SiteLocale;
+export const dynamic = "force-static";
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }: Params) {
   const { slug } = params;
-  const data = await fetchDato(
-    ArchitectonicStyleDocument,
-    {
-      locale: siteLocale,
-      slug,
-    },
-    false
-  );
+  const data = await fetchDato(ArchitectonicStyleDocument, {
+    locale: siteLocale,
+    slug,
+  });
   const page: any = data?.architectonicStyle || null;
-  const meta = getSeoMeta(page, locale);
-  return meta;
+  if (!page) return {};
+  return getSeoMeta(page, locale);
 }
 
 export default async function Page({ params: { slug } }: Params) {
-  const { isEnabled } = draftMode();
-  const data = await fetchDato(
-    ArchitectonicStyleDocument,
-    {
-      locale: siteLocale,
-      slug,
-    },
-    isEnabled
-  );
+  const data = await fetchDato(ArchitectonicStyleDocument, {
+    locale: siteLocale,
+    slug,
+  });
   if (!data?.architectonicStyle) notFound();
   const hrefs: hrefsProp = pickHrefs(data.architectonicStyle);
 

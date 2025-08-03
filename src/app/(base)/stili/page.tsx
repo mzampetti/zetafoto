@@ -17,38 +17,27 @@ const siteLocale = locale as SiteLocale;
 const defaultLocale = "it" as SiteLocale;
 
 export async function generateMetadata() {
-  const data = await fetchDato(
-    ArchitectonicStylesIndexDocument,
-    { locale: siteLocale },
-    false
-  );
+  const data = await fetchDato(ArchitectonicStylesIndexDocument, {
+    locale: siteLocale,
+  });
   const page: any = data?.architectonicStylesIndex || null;
-  const meta = getSeoMeta(page, locale);
-  return meta;
+  if (!page) return {};
+  return getSeoMeta(page, locale);
 }
 export default async function Page() {
-  const { isEnabled } = draftMode();
-  const data = await fetchDato(
-    ArchitectonicStylesIndexDocument,
-    {
-      locale: siteLocale,
-      fallbackLocales: [defaultLocale],
-    },
-    isEnabled
-  );
+  const data = await fetchDato(ArchitectonicStylesIndexDocument, {
+    locale: siteLocale,
+    fallbackLocales: [defaultLocale],
+  });
   let list = [];
   let allArchitectonicStyles = [];
   let exitCondition = true;
   let page = 0;
   while (exitCondition) {
-    const results = await fetchDato(
-      ArchitectonicStylesIndexDocument,
-      {
-        locale: siteLocale,
-        skip: page * 100,
-      },
-      isEnabled
-    );
+    const results = await fetchDato(ArchitectonicStylesIndexDocument, {
+      locale: siteLocale,
+      skip: page * 100,
+    });
     if (results?.allArchitectonicStyles?.length > 0) {
       allArchitectonicStyles = [
         ...allArchitectonicStyles,
