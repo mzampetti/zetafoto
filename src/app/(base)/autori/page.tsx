@@ -1,5 +1,4 @@
 import fetchDato from "@/lib/fetchDato";
-import { draftMode } from "next/headers";
 import { AuthorsIndexDocument, SiteLocale } from "@/graphql/generated";
 import Wrapper from "@/components/Wrapper";
 import getSeoMeta from "@/lib/seoUtils";
@@ -13,50 +12,43 @@ const locale = "it" as SiteLocale;
 const siteLocale = locale as SiteLocale;
 const defaultLocale = "it" as SiteLocale;
 
+export const dynamic = "force-static";
+export const revalidate = 3600; // rigenera ogni ora
+
 export async function generateMetadata() {
-  const data = await fetchDato(
-    AuthorsIndexDocument,
-    { locale: siteLocale },
-    false
-  );
-  const page: any = data?.authorsIndex || null;
-  const meta = getSeoMeta(page, locale);
-  return meta;
+  const data = await fetchDato(AuthorsIndexDocument, { locale: siteLocale });
+
+  const page = data?.authorsIndex;
+  if (!page) return {};
+  return getSeoMeta(page, locale);
 }
+
 export default async function Page() {
-  const { isEnabled } = draftMode();
-  const data = await fetchDato(
-    AuthorsIndexDocument,
-    {
-      locale: siteLocale,
-      fallbackLocales: [defaultLocale],
-    },
-    isEnabled
-  );
-  let list = [];
-  let allAuthors = [];
-  let exitCondition = true;
+  const data = await fetchDato(AuthorsIndexDocument, {
+    locale: siteLocale,
+    fallbackLocales: [defaultLocale],
+  });
+
+  if (!data?.authorsIndex) return notFound();
+
+  // Caricamento di tutti gli autori paginati
+  let allAuthors: any[] = [];
   let page = 0;
-  while (exitCondition) {
-    const results = await fetchDato(
-      AuthorsIndexDocument,
-      {
-        locale: siteLocale,
-        skip: page * 100,
-      },
-      isEnabled
-    );
+  while (true) {
+    const results = await fetchDato(AuthorsIndexDocument, {
+      locale: siteLocale,
+      skip: page * 100,
+    });
+
     if (results?.allAuthors?.length > 0) {
       allAuthors = [...allAuthors, ...results.allAuthors];
       page++;
     } else {
-      exitCondition = false;
+      break;
     }
   }
-  list = allAuthors;
-  if (!data?.authorsIndex) notFound();
 
-  const authorsWithPhotos = data.allAuthors.filter(
+  const authorsWithPhotos = allAuthors.filter(
     (item: any) => item.photos && item.photos.length > 0
   );
 
@@ -89,7 +81,7 @@ export default async function Page() {
                     data={item.randomPhoto.image.responsiveImage}
                   />
                 )}
-                <div className="">
+                <div>
                   {item.name && (
                     <h3 className="mt-2 font-semibold text-md">{item.name}</h3>
                   )}

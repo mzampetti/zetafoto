@@ -1,6 +1,5 @@
 import fetchDato from "@/lib/fetchDato";
-import { draftMode } from "next/headers";
-import { PhotoDocument, PhotoRecord, SiteLocale } from "@/graphql/generated";
+import { PhotoDocument, SiteLocale } from "@/graphql/generated";
 import Wrapper from "@/components/Wrapper";
 import getSeoMeta from "@/lib/seoUtils";
 import { notFound } from "next/navigation";
@@ -9,10 +8,12 @@ import { hrefsProp } from "@/_types";
 import { SRCImage } from "react-datocms";
 import FancyboxWrapper from "@/components/Layout/FancyboxWrapper";
 import translate from "@/labels";
-import { MagnifyingGlassPlusIcon } from "@heroicons/react/24/solid";
+import {
+  MagnifyingGlassPlusIcon,
+  EnvelopeIcon,
+} from "@heroicons/react/24/solid";
 import OtherPhotosSection from "@/components/Layout/OtherPhotosSection";
 import Link from "next/link";
-import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import { pickHrefs } from "@/lib/pickPageData";
 
 type Params = {
@@ -22,60 +23,58 @@ type Params = {
 };
 
 const locale = "en" as SiteLocale;
-const siteLocale = locale as SiteLocale;
+const defaultLocale = "en" as SiteLocale;
+
+export const dynamic = "force-static";
+export const revalidate = 3600; // ogni ora
 
 export async function generateMetadata({ params }: Params) {
   const { slug } = params;
-  const data = await fetchDato(
-    PhotoDocument,
-    {
-      locale: siteLocale,
-      slug,
-    },
-    false
-  );
+  const data = await fetchDato(PhotoDocument, {
+    locale,
+    slug,
+  });
+
   const page: any = data?.photo || null;
-  const meta = getSeoMeta(page, locale);
-  return meta;
+  if (!page) return {};
+  return getSeoMeta(page, locale);
 }
 
 export default async function Page({ params: { slug } }: Params) {
-  const { isEnabled } = draftMode();
-  const data = await fetchDato(
-    PhotoDocument,
-    {
-      locale: siteLocale,
-      slug,
-    },
-    isEnabled
-  );
-  if (!data?.photo) notFound();
+  const data = await fetchDato(PhotoDocument, {
+    locale,
+    slug,
+  });
+
+  if (!data?.photo) return notFound();
+
+  const { photo } = data;
 
   const tags: string[] = [
-    data.photo.buildingCategory?.name,
-    ...(data.photo.authors?.map((a: any) => a.name) || []),
-    ...(data.photo.architectonicElements?.map((e: any) => e.name) || []),
-    ...(data.photo.architectonicStyles?.map((s: any) => s.name) || []),
+    photo.buildingCategory?.name,
+    ...(photo.authors?.map((a: any) => a.name) || []),
+    ...(photo.architectonicElements?.map((e: any) => e.name) || []),
+    ...(photo.architectonicStyles?.map((s: any) => s.name) || []),
   ].filter(Boolean);
 
-  const hrefs: hrefsProp = pickHrefs(data.photo);
+  const hrefs: hrefsProp = pickHrefs(photo);
 
   return (
     <Wrapper
       hrefs={hrefs}
       locale={locale}
-      model={data.photo._modelApiKey}
-      pages={[data.photo.city, data.photo.location, data.photo]}
+      model={photo._modelApiKey}
+      pages={[photo.city, photo.location, photo]}
     >
       <header className="bg-secondary lg:pb-12">
         <div className="container">
           <FancyboxWrapper>
             <a
-              href={data.photo.image.responsiveImage.src}
+              href={photo.image.responsiveImage.src}
               data-fancybox="gallery"
               className="group"
             >
-              <SRCImage data={data.photo.image.responsiveImage} />
+              <SRCImage data={photo.image.responsiveImage} />
               <div className="bg-secondary text-secondary-content sticky bottom-0 inline-block mx-auto left-1/2 -translate-x-1/2 group-hover:-translate-y-2 duration-300 px-4 py-2 rounded-md font-bold">
                 <div className="flex items-center gap-1">
                   <MagnifyingGlassPlusIcon className="size-6 text-white" />
@@ -86,28 +85,29 @@ export default async function Page({ params: { slug } }: Params) {
           </FancyboxWrapper>
         </div>
       </header>
+
       <div className="py-6 md:py-12">
         <div className="container grid xl:grid-cols-3 gap-6">
           <div className="xl:col-span-2">
             <div>
               <h1 className="font-semibold text-lg md:text-xl">
-                {data.photo.title}
+                {photo.title}
               </h1>
-              {data.photo.title !== data.photo.location.name && (
+              {photo.title !== photo.location.name && (
                 <div className="font-light text-md mt-2 md:text-lg">
-                  {data.photo.location.name}
+                  {photo.location.name}
                 </div>
               )}
               <div className="font-light text-md md:text-lg">
-                {data.photo.city.name}
+                {photo.city.name}
               </div>
-              {data.photo.captureDate && (
+              {photo.captureDate && (
                 <div className="mt-2 font-light md:mt-3">
-                  {data.photo.captureDate}
+                  {photo.captureDate}
                 </div>
               )}
-              {data.photo.permissions && (
-                <div className="mt-1 font-light">{data.photo.permissions}</div>
+              {photo.permissions && (
+                <div className="mt-1 font-light">{photo.permissions}</div>
               )}
             </div>
             <div className="flex flex-wrap gap-2 pt-6 pb-2 md:max-w-2/3">
@@ -121,14 +121,15 @@ export default async function Page({ params: { slug } }: Params) {
               ))}
             </div>
           </div>
+
           <div className="formatted">
-            {data.photo.sellingOptions.length > 0 && (
+            {photo.sellingOptions.length > 0 && (
               <>
                 <div className="font-bold text-md mb-2">
                   {translate("sellingOption", locale)}
                 </div>
                 <ul>
-                  {data.photo.sellingOptions.map((item) => (
+                  {photo.sellingOptions.map((item) => (
                     <li key={item.id}>{item.name}</li>
                   ))}
                 </ul>
@@ -145,56 +146,56 @@ export default async function Page({ params: { slug } }: Params) {
             )}
           </div>
         </div>
-        {}
       </div>
+
       <OtherPhotosSection
-        title={data.photo.location.name}
-        record={data.photo.location}
-        photos={data.photo.location.otherPhotos}
-        total={data.photo.location.allOtherPhotos.length}
+        title={photo.location.name}
+        record={photo.location}
+        photos={photo.location.otherPhotos}
+        total={photo.location.allOtherPhotos.length}
         locale={locale}
       />
 
       <OtherPhotosSection
-        title={data.photo.city.name}
-        record={data.photo.city}
-        photos={data.photo.city.otherPhotos}
-        total={data.photo.city.allOtherPhotos.length}
+        title={photo.city.name}
+        record={photo.city}
+        photos={photo.city.otherPhotos}
+        total={photo.city.allOtherPhotos.length}
         locale={locale}
       />
 
-      {data.photo.authors &&
-        data.photo.authors.map((item: any) => (
-          <OtherPhotosSection
-            title={item.name}
-            record={item}
-            photos={item.otherPhotos}
-            total={item.allOtherPhotos.length}
-            locale={locale}
-          />
-        ))}
+      {photo.authors?.map((item: any) => (
+        <OtherPhotosSection
+          key={item.id}
+          title={item.name}
+          record={item}
+          photos={item.otherPhotos}
+          total={item.allOtherPhotos.length}
+          locale={locale}
+        />
+      ))}
 
-      {data.photo.architectonicElements &&
-        data.photo.architectonicElements.map((item: any) => (
-          <OtherPhotosSection
-            title={item.name}
-            record={item}
-            photos={item.otherPhotos}
-            total={item.allOtherPhotos.length}
-            locale={locale}
-          />
-        ))}
+      {photo.architectonicElements?.map((item: any) => (
+        <OtherPhotosSection
+          key={item.id}
+          title={item.name}
+          record={item}
+          photos={item.otherPhotos}
+          total={item.allOtherPhotos.length}
+          locale={locale}
+        />
+      ))}
 
-      {data.photo.architectonicStyles &&
-        data.photo.architectonicStyles.map((item: any) => (
-          <OtherPhotosSection
-            title={item.name}
-            record={item}
-            photos={item.otherPhotos}
-            total={item.allOtherPhotos.length}
-            locale={locale}
-          />
-        ))}
+      {photo.architectonicStyles?.map((item: any) => (
+        <OtherPhotosSection
+          key={item.id}
+          title={item.name}
+          record={item}
+          photos={item.otherPhotos}
+          total={item.allOtherPhotos.length}
+          locale={locale}
+        />
+      ))}
     </Wrapper>
   );
 }
