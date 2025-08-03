@@ -78,7 +78,7 @@ const Footer = ({ lng }: Props) => {
         </div>
       </footer>
       <Iubenda locale={lng} siteId="309444" policyId="235583" />
-      <GoogleAnalytics id="G-3J97LTNFEE" />
+      <GoogleAnalytics id="G-N4HC2HHD2R" />
     </>
   );
 };
