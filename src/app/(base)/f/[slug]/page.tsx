@@ -25,9 +25,6 @@ type Params = {
 const locale = "it" as SiteLocale;
 const defaultLocale = "it" as SiteLocale;
 
-export const dynamic = "force-static";
-export const revalidate = 3600; // ogni ora
-
 export async function generateMetadata({ params }: Params) {
   const { slug } = params;
   const data = await fetchDato(PhotoDocument, {

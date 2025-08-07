@@ -9,7 +9,6 @@ const locale = "en" as SiteLocale;
 const defaultLocale = "en" as SiteLocale;
 
 export const dynamic = "force-static";
-export const revalidate = 3600;
 
 export async function generateMetadata() {
   const data = await fetchDato(HomeDocument, {

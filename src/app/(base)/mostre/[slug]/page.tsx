@@ -20,8 +20,6 @@ type Params = {
 
 const locale = "it" as SiteLocale;
 const siteLocale = locale as SiteLocale;
-export const dynamic = "force-static";
-export const revalidate = 3600;
 
 export async function generateMetadata({ params }: Params) {
   const { slug } = params;

@@ -17,9 +17,6 @@ const locale = "it" as SiteLocale;
 const siteLocale = locale as SiteLocale;
 const defaultLocale = "it" as SiteLocale;
 
-export const dynamic = "force-static";
-export const revalidate = 3600;
-
 export async function generateMetadata() {
   const data = await fetchDato(PhotosCollectionsIndexDocument, {
     locale: siteLocale,
