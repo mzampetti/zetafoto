@@ -22,15 +22,15 @@ export default async function fetchDato<
   const query = print(document);
 
   const cache = process.env.MODE === "development" ? "no-store" : "force-cache";
-  const next =
-    process.env.MODE === "development"
-      ? { revalidate: 0 }
-      : { revalidate: 60 * 60, tags: ["datocms"] };
+  // const next =
+  //   process.env.MODE === "development"
+  //     ? { revalidate: 0 }
+  //     : { revalidate: 60 * 60, tags: ["datocms"] };
 
   try {
     const res = await fetch("https://graphql.datocms.com/", {
       cache,
-      next,
+      // next,
       method: "POST",
       headers,
       body: JSON.stringify({ query, variables }),
