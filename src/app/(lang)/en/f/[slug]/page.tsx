@@ -87,17 +87,19 @@ export default async function Page({ params: { slug } }: Params) {
         <div className="container grid xl:grid-cols-3 gap-6">
           <div className="xl:col-span-2">
             <div>
-              <h1 className="font-semibold text-lg md:text-xl">
-                {photo.title}
-              </h1>
-              {photo.title !== photo.location.name && (
-                <div className="font-light text-md mt-2 md:text-lg">
-                  {photo.location.name}
+              <h1>
+                <div className="font-semibold text-lg md:text-xl">
+                  {photo.title}
                 </div>
-              )}
-              <div className="font-light text-md md:text-lg">
-                {photo.city.name}
-              </div>
+                {photo.title !== photo.location.name && (
+                  <div className="font-light text-md mt-2 md:text-lg">
+                    {photo.location.name}
+                  </div>
+                )}
+                <div className="font-light text-md md:text-lg">
+                  {photo.city.name}
+                </div>
+              </h1>
               {photo.captureDate && (
                 <div className="mt-2 font-light md:mt-3">
                   {photo.captureDate}
