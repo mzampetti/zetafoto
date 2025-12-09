@@ -34,7 +34,34 @@ export async function generateMetadata({ params }: Params) {
 
   const page: any = data?.photo || null;
   if (!page) return {};
-  return getSeoMeta(page, locale);
+
+  // --- COSTRUZIONE TITLE CUSTOM ---
+  const titleParts = [page.title];
+
+  // Aggiungi location solo se è diversa dal titolo
+  if (page.title !== page.location.name) {
+    titleParts.push(page.location.name);
+  }
+
+  // Aggiungi sempre la city
+  titleParts.push(page.city.name);
+
+  const customTitle = titleParts.join(", ");
+
+  // Usa il titolo del CMS SOLO se esiste
+  const finalTitle = page.seo?.title?.trim()
+    ? page.seo.title
+    : customTitle;
+
+  const enrichedPage = {
+    ...page,
+    seo: {
+      ...page.seo,
+      title: finalTitle,
+    },
+  };
+
+  return getSeoMeta(enrichedPage, locale);
 }
 
 export default async function Page({ params: { slug } }: Params) {
