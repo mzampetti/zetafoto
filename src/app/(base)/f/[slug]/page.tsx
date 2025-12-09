@@ -27,7 +27,6 @@ const defaultLocale = "it" as SiteLocale;
 
 export async function generateMetadata({ params }: Params) {
   const { slug } = params;
-
   const data = await fetchDato(PhotoDocument, {
     locale,
     slug,
@@ -35,42 +34,7 @@ export async function generateMetadata({ params }: Params) {
 
   const page: any = data?.photo || null;
   if (!page) return {};
-
-  // Protezioni
-  const photoTitle = page.title || "";
-  const locationName = page?.location?.name || "";
-  const cityName = page?.city?.name || "";
-
-  // --- BUILD CUSTOM TITLE ---
-  const titleParts = [photoTitle];
-
-  // Aggiungi location solo se esiste e diversa dal title
-  if (locationName && photoTitle !== locationName) {
-    titleParts.push(locationName);
-  }
-
-  // Aggiungi city se esiste
-  if (cityName) {
-    titleParts.push(cityName);
-  }
-
-  const customTitle = titleParts.join(", ");
-
-  // Se il CMS ha già un title → lo usi
-  const finalTitle = page?.seo?.title?.trim()
-    ? page.seo.title
-    : customTitle;
-
-  // Override SEO sicuro
-  const enrichedPage = {
-    ...page,
-    seo: {
-      ...(page.seo || {}), // evita errori se page.seo è null
-      title: finalTitle,
-    },
-  };
-
-  return getSeoMeta(enrichedPage, locale);
+  return getSeoMeta(page, locale);
 }
 
 export default async function Page({ params: { slug } }: Params) {
