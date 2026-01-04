@@ -12,6 +12,7 @@ import InternalLink from "@/components/Links/InternalLink";
 import { SRCImage } from "react-datocms";
 import { shuffle } from "@/lib/shuffle";
 import translate from "@/labels";
+import { getPhotoAltText } from "@/lib/getPhotoAltText";
 
 const locale = "it" as SiteLocale;
 const siteLocale = locale as SiteLocale;
@@ -62,28 +63,42 @@ export default async function Page() {
       <section className="bg-secondary text-primary py-16">
         <div className="container">
           <div className="grid gap-12 gap-x-6 md:grid-cols-2 lg:grid-cols-3">
-            {allPhotosCollections.map((item: any) => (
-              <InternalLink
-                record={item}
-                locale={locale}
-                title={`${item.photos[0].location.name} - ${item.photos[0].city.name}`}
-                className="group"
-                key={item.id}
-              >
-                {item.photos[0].image && (
-                  <SRCImage
-                    className="brightness-75 group-hover:brightness-100 transition-all motion-safe:duration-300"
-                    data={item.photos[0].image.responsiveImage}
-                  />
-                )}
-                <div className="">
-                  {item.name && (
-                    <h3 className="mt-2 font-semibold text-md">{item.name}</h3>
+            {allPhotosCollections.map((item: any) => {
+              const photo = item.photos[0];
+              const altImage = getPhotoAltText(
+                photo.title,
+                photo.location,
+                photo.city
+              );
+              return (
+                <InternalLink
+                  record={item}
+                  locale={locale}
+                  title={`${photo.location.name} - ${photo.city.name}`}
+                  className="group"
+                  key={item.id}
+                >
+                  {photo.image && (
+                    <SRCImage
+                      className="brightness-75 group-hover:brightness-100 transition-all motion-safe:duration-300"
+                      data={{
+                        ...photo.image.responsiveImage,
+                        alt: altImage,
+                        title: altImage,
+                      }}
+                    />
                   )}
-                  {item.photos.length} {translate("photo", locale)}
-                </div>
-              </InternalLink>
-            ))}
+                  <div className="">
+                    {item.name && (
+                      <h3 className="mt-2 font-semibold text-md">
+                        {item.name}
+                      </h3>
+                    )}
+                    {item.photos.length} {translate("photo", locale)}
+                  </div>
+                </InternalLink>
+              );
+            })}
           </div>
         </div>
       </section>

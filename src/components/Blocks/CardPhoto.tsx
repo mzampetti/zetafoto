@@ -3,6 +3,7 @@
 import { SRCImage } from "react-datocms";
 import { PhotoRecord, SiteLocale } from "@/graphql/generated";
 import InternalLink from "../Links/InternalLink";
+import { getPhotoAltText } from "@/lib/getPhotoAltText";
 
 type PropsCardPhoto = {
   locale: SiteLocale;
@@ -11,6 +12,7 @@ type PropsCardPhoto = {
 
 const CardPhoto = ({ photo, locale }: PropsCardPhoto) => {
   const { image, title, location, city } = photo;
+  const altImage = getPhotoAltText(title, location, city);
 
   return (
     <InternalLink
@@ -21,7 +23,11 @@ const CardPhoto = ({ photo, locale }: PropsCardPhoto) => {
     >
       <SRCImage
         className="xl:brightness-75 group-hover:brightness-100 transition-all motion-safe:duration-300"
-        data={photo.image.responsiveImage}
+        data={{
+          ...photo.image.responsiveImage,
+          alt: altImage,
+          title: altImage,
+        }}
       />
       <div className="">
         {title && <h3 className="mt-2 font-semibold text-md">{title}</h3>}

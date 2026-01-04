@@ -8,6 +8,7 @@ import TextHero from "@/components/Hero/TextHero";
 import InternalLink from "@/components/Links/InternalLink";
 import { SRCImage } from "react-datocms";
 import { shuffle } from "@/lib/shuffle";
+import { getPhotoAltText } from "@/lib/getPhotoAltText";
 
 const locale = "en" as SiteLocale;
 const siteLocale = locale as SiteLocale;
@@ -62,32 +63,45 @@ export default async function Page() {
       <section className="bg-secondary text-primary py-16">
         <div className="container">
           <div className="grid gap-12 gap-x-6 md:grid-cols-2 lg:grid-cols-3">
-            {locationsWithRandomPhoto.map((item: any) => (
-              <InternalLink
-                record={item}
-                locale={locale}
-                title={`${item.randomPhoto.location.name} - ${item.randomPhoto.city.name}`}
-                className="group"
-                key={item.id}
-              >
-                {item.randomPhoto.image && (
-                  <SRCImage
-                    className="brightness-75 group-hover:brightness-100 transition-all motion-safe:duration-300"
-                    data={item.randomPhoto.image.responsiveImage}
-                  />
-                )}
-                <div className="">
-                  {item.name && (
-                    <h3 className="mt-2 font-semibold text-md">{item.name}</h3>
+            {locationsWithRandomPhoto.map((item: any) => {
+              const altImage = getPhotoAltText(
+                item.randomPhoto.title,
+                item.randomPhoto.location,
+                item.randomPhoto.city
+              );
+              return (
+                <InternalLink
+                  record={item}
+                  locale={locale}
+                  title={`${item.randomPhoto.location.name} - ${item.randomPhoto.city.name}`}
+                  className="group"
+                  key={item.id}
+                >
+                  {item.randomPhoto.image && (
+                    <SRCImage
+                      className="brightness-75 group-hover:brightness-100 transition-all motion-safe:duration-300"
+                      data={{
+                        ...item.randomPhoto.image.responsiveImage,
+                        alt: altImage,
+                        title: altImage,
+                      }}
+                    />
                   )}
-                  {item.randomPhoto.city && (
-                    <div className="font-light">
-                      {item.randomPhoto.city.name}
-                    </div>
-                  )}
-                </div>
-              </InternalLink>
-            ))}
+                  <div className="">
+                    {item.name && (
+                      <h3 className="mt-2 font-semibold text-md">
+                        {item.name}
+                      </h3>
+                    )}
+                    {item.randomPhoto.city && (
+                      <div className="font-light">
+                        {item.randomPhoto.city.name}
+                      </div>
+                    )}
+                  </div>
+                </InternalLink>
+              );
+            })}
           </div>
         </div>
       </section>
