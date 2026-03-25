@@ -1,5 +1,12 @@
 # example netlify.toml
 [build]
-  command = "bun run build"
+  command = "bun run sitemap && bun run build"
   functions = "netlify/functions"
   publish = ".next"
+
+# Redirect non-www → www (301 permanente)
+[[redirects]]
+  from = "https://francozampetti.com/*"
+  to = "https://www.francozampetti.com/:splat"
+  status = 301
+  force = true
