@@ -3,27 +3,13 @@ import { buildClient } from "@datocms/cma-client-node";
 import resolveLink from "@/lib/resolveLink";
 import config from "@/data/config";
 
+// Forza rendering dinamico (non pre-renderizzare a build time)
+export const dynamic = "force-dynamic";
+export const revalidate = 3600; // rigenera ogni ora
+
 const HOST = process.env.HOST || "https://www.francozampetti.com";
 const API_KEY = process.env.DATO_API_KEY!;
 const ENV = process.env.DATO_ENV || "";
-
-// Modelli DatoCMS con il loro _modelApiKey
-const MODELS_TO_FETCH = [
-  "page",
-  "photo",
-  "location",
-  "city",
-  "author",
-  "architectonic_style",
-  "architectonic_element",
-  "photos_collection",
-  "video",
-  "exposition",
-  "article",
-  "building_category",
-  "about_page",
-  "category",
-];
 
 // Modelli index (pagine lista, senza slug dinamico)
 const INDEX_MODELS = [
@@ -45,9 +31,21 @@ async function getRecords() {
 
   const client = buildClient(options);
 
+  // Recupera tutti i modelli e filtra solo quelli con slug field
+  const allItemTypes = await client.itemTypes.list();
   const itemTypesMap: Record<string, string> = {};
-  for (const itemType of await client.itemTypes.list()) {
+  const modelsWithSlug: string[] = [];
+
+  for (const itemType of allItemTypes) {
     itemTypesMap[itemType.id] = itemType.api_key;
+    // Recupera i campi per verificare quali modelli hanno uno slug
+    const fields = await client.fields.list(itemType.id);
+    const hasSlug = fields.some(
+      (f) => f.field_type === "slug" || f.api_key === "slug"
+    );
+    if (hasSlug) {
+      modelsWithSlug.push(itemType.api_key);
+    }
   }
 
   const records: Array<{
@@ -56,9 +54,11 @@ async function getRecords() {
     updatedAt: string;
   }> = [];
 
+  if (modelsWithSlug.length === 0) return records;
+
   for await (const record of client.items.listPagedIterator({
     filter: {
-      type: MODELS_TO_FETCH.join(","),
+      type: modelsWithSlug.join(","),
       slugField: { exists: true },
     },
   })) {
