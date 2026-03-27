@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk -F',' 'NR>1' \"/Users/guidosquillace/Downloads/francozampetti.com-Coverage-Validation-2026-03-25/Tabella.csv\")",
+      "Bash(grep -E '/$')",
+      "Bash(grep -Ev '/$')",
+      "Bash(curl:*)",
+      "Bash(ls:*)",
+      "Bash(find /Users/guidosquillace/Myworks/zetafoto/src/app -type f \\\\\\(-name route.* -o -name *sitemap* \\\\\\))",
+      "Bash(find /Users/guidosquillace/Myworks/zetafoto/src/app \\\\\\(-name layout.* -o -name page.* \\\\\\))",
+      "Bash(find /Users/guidosquillace/Myworks/zetafoto -path */node_modules -prune -o -type f -name *route* -print)",
+      "Bash(grep -r \"canonical\\\\|hreflang\" /Users/guidosquillace/Myworks/zetafoto/src/app --include=*.tsx --include=*.ts)",
+      "Bash(grep -r \"redirect\\\\|rewrite\" /Users/guidosquillace/Myworks/zetafoto/src --include=*.ts --include=*.tsx)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(find /Users/guidosquillace/Myworks/zetafoto -type f -name *sitemap*)",
+      "Bash(grep -E \"\\\\.\\(ts|tsx|graphql\\)$\")",
+      "Bash(grep -r \"HOST\\\\|francozampetti\" /Users/guidosquillace/Myworks/zetafoto --include=*.ts --include=*.js --include=*.json --include=*.toml)",
+      "Bash(npx tsc:*)",
+      "Read(//usr/local/bin/**)",
+      "Read(//Users/guidosquillace/.local/share/fnm/**)",
+      "Read(//Users/guidosquillace/.volta/**)",
+      "Bash(export PATH=\"/usr/local/bin:$PATH\")"
+    ]
+  }
+}

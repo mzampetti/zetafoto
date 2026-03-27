@@ -1,11 +1,9 @@
 import { MetadataRoute } from "next";
-import { buildClient } from "@datocms/cma-client-node";
 import resolveLink from "@/lib/resolveLink";
 import config from "@/data/config";
 
-// Forza rendering dinamico (non pre-renderizzare a build time)
 export const dynamic = "force-dynamic";
-export const revalidate = 3600; // rigenera ogni ora
+export const revalidate = 3600;
 
 const HOST = process.env.HOST || "https://www.francozampetti.com";
 const API_KEY = process.env.DATO_API_KEY!;
@@ -25,62 +23,86 @@ const INDEX_MODELS = [
   "building_categories_index",
 ];
 
-async function getRecords() {
-  const options: any = { apiToken: API_KEY };
-  if (ENV) options.environment = ENV;
+// Modelli dinamici con slug — nome query GraphQL + apiKey per resolveLink
+const DYNAMIC_MODELS: Array<{
+  allQuery: string;
+  countQuery: string;
+  apiKey: string;
+}> = [
+  { allQuery: "allPhotos", countQuery: "_allPhotosMeta", apiKey: "photo" },
+  { allQuery: "allPages", countQuery: "_allPagesMeta", apiKey: "page" },
+  { allQuery: "allLocations", countQuery: "_allLocationsMeta", apiKey: "location" },
+  { allQuery: "allCities", countQuery: "_allCitiesMeta", apiKey: "city" },
+  { allQuery: "allAuthors", countQuery: "_allAuthorsMeta", apiKey: "author" },
+  { allQuery: "allArchitectonicStyles", countQuery: "_allArchitectonicStylesMeta", apiKey: "architectonic_style" },
+  { allQuery: "allArchitectonicElements", countQuery: "_allArchitectonicElementsMeta", apiKey: "architectonic_element" },
+  { allQuery: "allPhotosCollections", countQuery: "_allPhotosCollectionsMeta", apiKey: "photos_collection" },
+  { allQuery: "allVideos", countQuery: "_allVideosMeta", apiKey: "video" },
+  { allQuery: "allExpositions", countQuery: "_allExpositionsMeta", apiKey: "exposition" },
+  { allQuery: "allArticles", countQuery: "_allArticlesMeta", apiKey: "article" },
+  { allQuery: "allBuildingCategories", countQuery: "_allBuildingCategoriesMeta", apiKey: "building_category" },
+];
 
-  const client = buildClient(options);
+const PAGE_SIZE = 100;
 
-  // Recupera tutti i modelli e filtra solo quelli con slug field
-  const allItemTypes = await client.itemTypes.list();
-  const itemTypesMap: Record<string, string> = {};
-  const modelsWithSlug: string[] = [];
+type SlugLocale = { locale: string; value: string };
 
-  for (const itemType of allItemTypes) {
-    itemTypesMap[itemType.id] = itemType.api_key;
-    // Recupera i campi per verificare quali modelli hanno uno slug
-    const fields = await client.fields.list(itemType.id);
-    const hasSlug = fields.some(
-      (f) => f.field_type === "slug" || f.api_key === "slug"
-    );
-    if (hasSlug) {
-      modelsWithSlug.push(itemType.api_key);
-    }
+interface DatoRecord {
+  _updatedAt: string;
+  _allSlugLocales: SlugLocale[];
+}
+
+async function datoFetch(query: string): Promise<any> {
+  const headers: Record<string, string> = {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+    Authorization: `Bearer ${API_KEY}`,
+    "X-Exclude-Invalid": "true",
+  };
+  if (ENV) headers["X-Environment"] = ENV;
+
+  const res = await fetch("https://graphql.datocms.com/", {
+    method: "POST",
+    headers,
+    body: JSON.stringify({ query }),
+    cache: "no-store",
+  });
+
+  const json = await res.json();
+  if (json.errors) {
+    console.error("Sitemap DatoCMS error:", JSON.stringify(json.errors));
+  }
+  return json.data || {};
+}
+
+async function fetchAllRecords(model: (typeof DYNAMIC_MODELS)[number]): Promise<DatoRecord[]> {
+  // Prima ottieni il conteggio totale
+  const countData = await datoFetch(`{ ${model.countQuery} { count } }`);
+  const total = countData?.[model.countQuery]?.count || 0;
+  if (total === 0) return [];
+
+  const allRecords: DatoRecord[] = [];
+
+  for (let skip = 0; skip < total; skip += PAGE_SIZE) {
+    const query = `{
+      ${model.allQuery}(first: ${PAGE_SIZE}, skip: ${skip}) {
+        _updatedAt
+        _allSlugLocales { locale value }
+      }
+    }`;
+    const data = await datoFetch(query);
+    const records = data?.[model.allQuery] || [];
+    allRecords.push(...records);
   }
 
-  const records: Array<{
-    slug: any;
-    apiKey: string;
-    updatedAt: string;
-  }> = [];
-
-  if (modelsWithSlug.length === 0) return records;
-
-  for await (const record of client.items.listPagedIterator({
-    filter: {
-      type: modelsWithSlug.join(","),
-      slugField: { exists: true },
-    },
-  })) {
-    const apiKey = itemTypesMap[record.item_type.id];
-    if (record.slug) {
-      records.push({
-        slug: record.slug,
-        apiKey,
-        updatedAt: record.meta.updated_at as string,
-      });
-    }
-  }
-
-  return records;
+  return allRecords;
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const records = await getRecords();
   const { locales, defaultLocale } = config;
   const entries: MetadataRoute.Sitemap = [];
 
-  // Pagine indice statiche (per ogni locale)
+  // Pagine indice statiche
   for (const model of INDEX_MODELS) {
     for (const locale of locales) {
       const path = resolveLink({
@@ -95,31 +117,40 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
-  // Pagine dinamiche da DatoCMS
-  for (const record of records) {
-    for (const locale of locales) {
-      const slug =
-        typeof record.slug === "string"
-          ? record.slug
-          : record.slug[locale] || null;
+  // Pagine dinamiche da DatoCMS via GraphQL CDA
+  const allResults = await Promise.all(
+    DYNAMIC_MODELS.map(async (model) => {
+      const records = await fetchAllRecords(model);
+      return records.map((r) => ({ ...r, apiKey: model.apiKey }));
+    })
+  );
 
-      if (!slug) continue;
+  for (const records of allResults) {
+    for (const record of records) {
+      for (const locale of locales) {
+        const slug = record._allSlugLocales?.find(
+          (s) => s.locale === locale
+        )?.value;
 
-      const path = resolveLink({
-        _modelApiKey: record.apiKey,
-        locale: locale as any,
-        slug,
-      });
+        if (!slug) continue;
 
-      // Salta homepage duplicata
-      if (slug === "home" && locale !== defaultLocale && path === "/") continue;
+        const path = resolveLink({
+          _modelApiKey: record.apiKey,
+          locale: locale as any,
+          slug,
+        });
 
-      entries.push({
-        url: `${HOST}${path}`,
-        lastModified: record.updatedAt,
-        changeFrequency: record.apiKey === "photo" ? "monthly" : "weekly",
-        priority: record.apiKey === "page" ? 1.0 : 0.7,
-      });
+        // Salta homepage duplicata
+        if (slug === "home" && locale !== defaultLocale && path === "/")
+          continue;
+
+        entries.push({
+          url: `${HOST}${path}`,
+          lastModified: record._updatedAt,
+          changeFrequency: record.apiKey === "photo" ? "monthly" : "weekly",
+          priority: record.apiKey === "page" ? 1.0 : 0.7,
+        });
+      }
     }
   }
 

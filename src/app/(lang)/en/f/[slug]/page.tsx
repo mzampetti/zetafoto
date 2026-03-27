@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { hrefsProp } from "@/_types";
 
 import { SRCImage } from "react-datocms";
+import { getPhotoAltText } from "@/lib/getPhotoAltText";
 import FancyboxWrapper from "@/components/Layout/FancyboxWrapper";
 import translate from "@/labels";
 import {
@@ -71,7 +72,11 @@ export default async function Page({ params: { slug } }: Params) {
               data-fancybox="gallery"
               className="group"
             >
-              <SRCImage data={photo.image.responsiveImage} />
+              <SRCImage data={{
+                ...photo.image.responsiveImage,
+                alt: getPhotoAltText(photo.title, photo.location, photo.city),
+                title: getPhotoAltText(photo.title, photo.location, photo.city),
+              }} />
               <div className="bg-secondary text-secondary-content sticky bottom-0 inline-block mx-auto left-1/2 -translate-x-1/2 group-hover:-translate-y-2 duration-300 px-4 py-2 rounded-md font-bold">
                 <div className="flex items-center gap-1">
                   <MagnifyingGlassPlusIcon className="size-6 text-white" />
