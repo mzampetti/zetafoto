@@ -35,7 +35,9 @@ export async function generateMetadata({ params }: Params) {
 
   const page: any = data?.photo || null;
   if (!page) return {};
-  return getSeoMeta(page, locale);
+  const meta: any = getSeoMeta(page, locale) || {};
+  const seoTitle = getPhotoAltText(page.title, page.location, page.city);
+  return { ...meta, title: seoTitle, openGraph: { ...meta.openGraph, title: seoTitle } };
 }
 
 export default async function Page({ params: { slug } }: Params) {
